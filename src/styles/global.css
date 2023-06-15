@@ -1,0 +1,86 @@
+@import url('./variables.css');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  line-height: calc(18 / 14);
+  color: #111111;
+  letter-spacing: -0.04em;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+@media screen and (min-width: 375px) {
+  .container {
+    max-width: 375px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 0 32px;
+    max-width: 768px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    padding: 0 24px;
+    max-width: 1440px;
+  }
+}
+
+.global-title,
+.global-p {
+  margin: 0;
+}
+
+.global-link {
+  color: currentColor;
+  text-decoration: none;
+}
+
+.global-button {
+  color: currentColor;
+
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+
+  line-height: inherit;
+  letter-spacing: inherit;
+
+  cursor: pointer;
+
+  border: none;
+}
+
+.global-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Готова сітка з флексами */
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--flex-item-gap);
+}
+
+.flex-container-item {
+  flex-basis: calc(
+    (100% - (var(--flex-item) - 1) * var(--flex-item-gap)) / var(--flex-item)
+  );
+}
