@@ -2,8 +2,8 @@
 
 .support-aside {
   display: block;
-  width: 356px;
-  height: 490px;
+  width: 335px;
+  height: 352px;
   list-style: none;
   box-shadow: 0px 10px 10px 0px #f5f5f71a;
   border-radius: 10px;
@@ -28,7 +28,6 @@
   line-height: 1.14;
   letter-spacing: 0.04em;
   margin-bottom: 40px;
-  
 }
 
 .support-item {
@@ -43,4 +42,17 @@
 .item-number {
   font-size: 14px;
   line-height: 1.29;
+}
+
+@media screen and (min-width: 376px) and (max-width: 767px) {
+  .support-aside {
+    height: 472px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .support-aside {
+    width: 356px;
+    height: 490px;
+  }
 }
