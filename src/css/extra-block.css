@@ -1,1 +1,46 @@
 @import url('./variables.css');
+
+.support-aside {
+  display: block;
+  width: 356px;
+  height: 490px;
+  list-style: none;
+  box-shadow: 0px 10px 10px 0px #f5f5f71a;
+  border-radius: 10px;
+  background: radial-gradient(ellipse at top, #4f2ee8 18.03%, #ffffff 100%);
+}
+.support-aside,
+.support-item a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.support-list {
+  display: block;
+  padding-left: 0px;
+  padding-top: 24px;
+}
+
+.support-title {
+  text-align: center;
+  display: block;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.14;
+  letter-spacing: 0.04em;
+  margin-bottom: 40px;
+  
+}
+
+.support-item {
+  display: flex;
+  gap: 14px;
+  margin-left: 40px;
+  margin-bottom: 14px;
+  width: 115px;
+  height: 36px;
+}
+
+.item-number {
+  font-size: 14px;
+  line-height: 1.29;
+}
