@@ -1,32 +1,30 @@
 @import url('./variables.css');
 
 .support-aside {
-  display: block;
   width: 335px;
   height: 352px;
-  list-style: none;
   box-shadow: 0px 10px 10px 0px #f5f5f71a;
   border-radius: 10px;
-  background: radial-gradient(ellipse at top, #4f2ee8 18.03%, #ffffff 100%);
+  background: radial-gradient(
+    ellipse at top,
+    var(--extra-bg-color) 18.03%,
+    var(--light-text-color) 100%
+  );
 }
 .support-aside,
 .support-item a {
-  color: #ffffff;
-  text-decoration: none;
+  color: var(--light-text-color);
 }
 .support-list {
-  display: block;
   padding-left: 0px;
   padding-top: 24px;
 }
 
 .support-title {
   text-align: center;
-  display: block;
   font-weight: 700;
   font-size: 28px;
   line-height: 1.14;
-  letter-spacing: 0.04em;
   margin-bottom: 40px;
 }
 
@@ -40,7 +38,6 @@
 }
 
 .item-number {
-  font-size: 14px;
   line-height: 1.29;
 }
 

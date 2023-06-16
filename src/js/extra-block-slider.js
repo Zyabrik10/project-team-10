@@ -8,7 +8,7 @@ const supportUkraineMarkup = support_array
     return `<li class="support-item"><span class="item-number">${addNum(
       index + 1
     )}</span>
-     <a class="support-link" href=${url} target="_blank">
+     <a class="support-link global-link" href=${url} target="_blank">
   ${title}
 </a>
 </li>
@@ -16,16 +16,6 @@ const supportUkraineMarkup = support_array
   })
   .join('');
 
-{
-  /* <a class="support-link">
-  <svg class="support-svg">
-    <use
-      class="icon"
-      href=${img}
-    ></use>
-  </svg>
-</a>; */
-}
 supportEl.insertAdjacentHTML('beforeend', supportUkraineMarkup);
 
 function addNum(value) {
