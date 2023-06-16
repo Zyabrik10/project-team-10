@@ -28,8 +28,8 @@ function switchTheme() {
   const light_elemets = document.querySelectorAll('.light-theme');
   const dark_elemets = document.querySelectorAll('.dark-theme');
 
-  if (light_elemets > 0) shopping_info.theme = 'dark';
-  else if (dark_elemets > 0) shopping_info.theme = 'light';
+  if (light_elemets.length > 0) shopping_info.theme = 'dark';
+  else if (dark_elemets.length > 0) shopping_info.theme = 'light';
 
   saveShoppingList();
   renderTheme();
