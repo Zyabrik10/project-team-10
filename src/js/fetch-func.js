@@ -16,11 +16,10 @@ import axios from 'axios';
 
 export async function fetchTopBooks() {
   try {
-    return { data } =  await axios.get('', {
-      baseURL: 'https://books-backend.p.goit.global/books/top-books'
-    })
-  }catch (error) {
+    return await axios.get('', {
+      baseURL: 'https://books-backend.p.goit.global/books/top-books',
+    });
+  } catch (error) {
     console.error(error);
   }
-
 }
