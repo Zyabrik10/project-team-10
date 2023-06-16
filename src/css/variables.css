@@ -1,4 +1,17 @@
 :root {
   --flex-item: 5;
   --flex-item-gap: 20px;
+
+  /* text */
+  --main-text-color: #111111;
+  --main-text-color-60: rgba(17, 17, 17, 0.6);
+  --extra-text-color: #4f2ee8;
+  --sub-text-color: #b4afaf;
+
+  /* background */
+  --main-bg-color: #111111;
+  --extra-bg-color: #4f2ee8;
+  --place-color: #eac645;
+
+  --empty: #ffff;
 }
