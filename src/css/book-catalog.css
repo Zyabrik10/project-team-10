@@ -56,7 +56,6 @@ color: var(--main-text-color);
   text-transform: uppercase;
   font-weight: 400;
   font-size: 14px;
-  line-height: calc(18/14);
   letter-spacing: 0.03em;
   color: var(--sub-text-color);
 }
@@ -150,7 +149,6 @@ color: var(--main-text-color);
   /* float: right; */
   font-weight: 700;
   font-size: 14px;
-  line-height: calc(18/14);
   letter-spacing: -0.01em;
   text-transform: uppercase;
   padding: 14px 28px;
