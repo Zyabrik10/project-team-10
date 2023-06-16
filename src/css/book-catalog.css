@@ -1,1 +1,68 @@
 @import url('./variables.css');
+
+
+.heading-primaary {
+  font-family: 'DM Sans';
+  font-weight: 700;
+  font-size: 48px;
+  line-height: calc(52/48);
+  letter-spacing: -0.04em;
+  color: #111111;
+}
+
+.colored-heading {
+  color: #4F2EE8;
+}
+
+.tb-category {
+  font-family: 'DM Sans';
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: calc(24/14);
+  letter-spacing: 0.03em;
+  color: #B4AFAF;
+}
+
+.tb-book-img {
+  box-sizing: border-box;
+  width: 180px;
+  height: 256px;
+  border-radius: 8px;
+  /* border: 0.5px solid #B4AFAF; */
+  margin: 0 0 14px 0;
+}
+
+.tb-book-title {
+  font-family: 'DM Sans';
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: calc(18/16);
+  letter-spacing: -0.04em;
+  color: #111111;
+  margin: 0 0 4px 0;
+}
+
+.tb-book-author {
+  font-family: 'DM Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: calc(14/12);
+  letter-spacing: -0.04em;
+  color: #B4AFAF;
+  margin: 0;
+}
+
+.tb-book-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 180px;
+}
+
+.tb-books-container {
+  display: flex;
+  gap: 24px;
+}

@@ -11,4 +11,8 @@ export function fetchExactBook() {}
 export function fetchBooksByExactCategory() {}
 
 //REST API: https://books-backend.p.goit.global/books/top-books
-export function fetchTopBooks() {}
+export function fetchTopBooks() {
+  return fetch('https://books-backend.p.goit.global/books/top-books').then(response => {
+  return response.json();
+})
+}
