@@ -11,8 +11,16 @@ export function fetchExactBook() {}
 export function fetchBooksByExactCategory() {}
 
 //REST API: https://books-backend.p.goit.global/books/top-books
-export function fetchTopBooks() {
-  return fetch('https://books-backend.p.goit.global/books/top-books').then(response => {
-  return response.json();
-})
+
+import axios from 'axios';
+
+export async function fetchTopBooks() {
+  try {
+    return { data } =  await axios.get('', {
+      baseURL: 'https://books-backend.p.goit.global/books/top-books'
+    })
+  }catch (error) {
+    console.error(error);
+  }
+
 }

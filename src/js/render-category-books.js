@@ -8,8 +8,7 @@ const containerTbEl = document.querySelector(".tb-container")
 fetchTopBooks().then(renderTopBooks)
 
 export function renderTopBooks(bestsellersArray) {
-  console.log(bestsellersArray);
-  const markup1 = bestsellersArray.map(({ list_name, books }) => {
+  const markup1 = bestsellersArray.data.map(({ list_name, books }) => {
     const markup = books.map(({ author, title, book_image }) => {
       return `<a href=# class="global-link"><div class="tb-book-card">
       <img class="tb-book-img img" src="${book_image}" alt="${title}">

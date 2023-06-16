@@ -2,7 +2,7 @@
 
 
 .heading-primaary {
-
+  margin: 40px 0 0 0;
   font-weight: 700;
   font-size: 48px;
   line-height: calc(52/48);
@@ -19,6 +19,7 @@
 }
 
 .tb-category {
+  text-align: left;
   text-transform: uppercase;
   font-weight: 400;
   font-size: 14px;
@@ -70,6 +71,7 @@
 }
 
 .tb-button{
+
   /* float: right; */
   text-align: right;
   font-weight: 700;
@@ -93,11 +95,12 @@
 }
 
 .tb-books-container {
+  text-align: left;
   display: flex;
   gap: 24px;
 }
 
 .tb-category-container{
-  position: relative;
+  text-align: right;
   margin-top: 40px;
 }
