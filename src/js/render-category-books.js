@@ -19,7 +19,7 @@ export function renderTopBooks(bestsellersArray) {
     return `<div class="tb-category-container">
     <h2 class='tb-category'>${list_name}</h2>
     <div class='tb-books-container'>${markup}</div>
-    <button class="tb-button global-button">See more</button>
+    <button class="tb-button global-button light-theme theme-switch">See more</button>
     </div>
     `
   }).join('')
