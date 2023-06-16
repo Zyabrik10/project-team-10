@@ -10,7 +10,7 @@ body {
   font-family: 'DM Sans', sans-serif;
   font-size: 14px;
   line-height: calc(18 / 14);
-  color: #111111;
+  color: var(--main-text-color);
   letter-spacing: -0.04em;
 }
 
