@@ -8,7 +8,7 @@ const supportUkraineMarkup = support_array
     return `<li class="support-item"><span class="item-number">${addNum(
       index + 1
     )}</span>
-     <a class="support-link" href=${url}>
+     <a class="support-link" href=${url} target="_blank">
   ${title}
 </a>
 </li>
