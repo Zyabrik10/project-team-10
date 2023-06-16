@@ -8,13 +8,19 @@
   --main-text-color-60: rgba(17, 17, 17, 0.6);
   --extra-text-color: #4f2ee8;
   --sub-text-color: #b4afaf;
+  --light-text-color: #fff;
+  --light-text-color-60: rgba(255, 255, 255, 0.6);
+  --place-text-color: #eac645;
 
   /* background */
   --main-bg-color: #111111;
   --extra-bg-color: #4f2ee8;
-  --place-color: #eac645;
+  --place-bg-color: #eac645;
 
-  --empty: #ffff;
+  /* border */
+  --extra-border-color: #4f2ee8;
+
+  --empty: #fff;
 
   /* transition */
   --transition-property: color, background, box-shadow;
