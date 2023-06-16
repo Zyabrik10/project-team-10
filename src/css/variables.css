@@ -1,4 +1,5 @@
 :root {
+  /* cell */
   --flex-item: 5;
   --flex-item-gap: 20px;
 
@@ -14,4 +15,9 @@
   --place-color: #eac645;
 
   --empty: #ffff;
+
+  /* transition */
+  --transition-property: color, background, box-shadow;
+  --transition-duration: 0.3s;
+  --transition-timing-function: ease-out;
 }
