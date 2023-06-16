@@ -1,5 +1,5 @@
-// Функції для додавання до shopping_list книги да приберання
-import { shopping_list, saveShoppingList } from './shopping-list';
+// Функції для додавання до shopping_info книги да приберання
+import { shopping_info, saveShoppingList } from './shopping-list';
 
 export function addBook() {
   // ...your code
