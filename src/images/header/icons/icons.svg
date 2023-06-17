@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+  <defs>
+
+    <symbol id="icon-menu" viewBox="0 0 32 32">
+  <path d="M0 2h32v4h-32zM0 8h20v4h-20zM0 20h20v4h-20zM0 14h32v4h-32zM0 26h32v4h-32z" ></path>
+</symbol>
+
+
+    <symbol id="icon-kolo" viewBox="0 0 32 32">
+<path d="M14.769 24.615c6.118 0 11.077-4.959 11.077-11.077s-4.959-11.077-11.077-11.077v0c-6.118 0-11.077 4.959-11.077 11.077s4.959 11.077 11.077 11.077v0z"></path>
+</symbol>
+
+  </defs>
+</svg>
+

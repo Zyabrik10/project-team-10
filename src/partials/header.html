@@ -1,5 +1,46 @@
 <header>
-    <div class="container">
-        <include src="./partials/burger-menu.html"></include>
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/global.css">
+  
+    <!-- <div class="container-head container"> -->
+      <include src="./partials/burger-menu.html"></include>
+  
+      <div class="logo">
+        <img src="/src/images/header/logo.png" alt="Logo">
+        <span class="text-logo">Bookshelf</span>
+      </div>
+  
+      <div class="header-links">
+        <a class="header-link" href="#">Home</a>
+        <a class="header-link" href="#">Shopping List</a>
+      </div>
+  
+      <div class="switcher">
+        <div class="switcher-handle">
+          <svg class="switcher-kolo">
+            <use href="./images/header/icons/icons.svg#icon-kolo"></use>
+          </svg>
+        </div>
+      </div>
+      
+      <div class="user-profile">
+        <img src="/src/images/header/user-avatar.png" alt="User Photo" class="avatar">
+        <span class="username">John Doe</span>
+      </div>
+
+      <button class="menu-button global-button">
+        <svg class="menu-icon" width="24" height="24">
+          <use href="./images/header/icons/icons.svg#icon-menu"></use>
+        </svg>
+      </button>
+    <!-- </div> -->
+  
+    <div class="modal">
+      <div class="modal-content">
+        <span class="modal-close">&times;</span>info
+      </div>
     </div>
-</header>
+  
+    <script src="./js/header.js"></script>
+  </header>
+  
