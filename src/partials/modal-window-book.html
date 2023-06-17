@@ -1,1 +1,115 @@
-<div></div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="backdrop is-hidden">
+      <div class="modal is-hidden">
+        <button class="modal-close-btn">
+          <svg
+            class="modal-close-icon"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 32 32"
+          >
+            <title>x-close</title>
+            <path
+              d="M7.626 6.245c-0.291 0.085-0.749 0.427-1.029 0.774-0.432 0.533-0.509 1.054-0.24 1.616 0.088 0.184 1.011 1.143 3.665 3.806l3.547 3.56-3.551 3.56c-3.907 3.918-3.806 3.799-3.805 4.44 0 0.449 0.157 0.77 0.586 1.199 0.429 0.43 0.75 0.586 1.199 0.586 0.634 0 0.526 0.093 4.44-3.808l3.56-3.547 3.56 3.547c3.914 3.901 3.806 3.808 4.44 3.808 0.449 0 0.77-0.157 1.199-0.586 0.43-0.429 0.586-0.75 0.586-1.199 0-0.634 0.093-0.526-3.808-4.44l-3.547-3.56 3.547-3.56c3.901-3.914 3.808-3.806 3.808-4.44 0-0.449-0.157-0.77-0.586-1.199-0.429-0.43-0.75-0.586-1.199-0.586-0.634 0-0.526-0.093-4.44 3.808l-3.56 3.547-3.56-3.547c-2.721-2.712-3.619-3.576-3.814-3.67-0.29-0.138-0.728-0.186-1-0.109z"
+            ></path>
+          </svg>
+        </button>
+        <div class="modal-wrapper">
+          <img class="modal-img" src="" alt="Book image" />
+          <div class="modal-content">
+            <h3 class="modal-title"></h3>
+            <p class="modal-author"></p>
+            <p class="modal-description"></p>
+            <ul class="modal-list">
+              <li class="modal-item" name="Amazon">
+                <a
+                  class="modal-link"
+                  href=""
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    class="modal-shop-img"
+                    src="https://slipuykamin.github.io/books-project/image-1@1x.626c9508.png"
+                    srcset="
+                      https://slipuykamin.github.io/books-project/image-1@1x.626c9508.png 1x,
+                      https://slipuykamin.github.io/books-project/image-1@2x.104a65be.png 2x
+                    "
+                    alt="Amazom logo"
+                    width="62"
+                    height="19"
+                  />
+                </a>
+              </li>
+              <li class="modal-item" name="Apple Books">
+                <a
+                  class="modal-link"
+                  href="https://goto.applebooks.apple/9781728205489?at=10lIEQ"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    class="modal-shop-img"
+                    src="https://slipuykamin.github.io/books-project/image-2@1x.652b354e.png"
+                    srcset="
+                      https://slipuykamin.github.io/books-project/image-2@1x.652b354e.png 1x,
+                      https://slipuykamin.github.io/books-project/image-2@2x.15632d7d.png 2x
+                    "
+                    alt="Apple Books logo"
+                    width="33"
+                    height="32"
+                  />
+                </a>
+              </li>
+              <li class="modal-item" name="Barnes and Noble">
+                <a
+                  class="modal-link"
+                  href="https://www.anrdoezrs.net/click-7990613-11819508?url=https%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9781728205489"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    class="modal-shop-img"
+                    src="https://slipuykamin.github.io/books-project/image-3@1x.e377c706.png"
+                    srcset="
+                      https://slipuykamin.github.io/books-project/image-3@1x.e377c706.png 1x,
+                      https://slipuykamin.github.io/books-project/image-3@2x.62451a44.png 2x
+                    "
+                    alt="Barnes and Noble logo"
+                    width="38"
+                    height="36"
+                  />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <button class="modal-add-btn is-hidden" type="submit">
+          add to shopping list
+        </button>
+        <div class="modal-remove">
+          <div class="modal-remove-btn-wrapper is-hidden">
+            <button class="modal-remove-btn is-hidden" type="submit">
+              remove from the shopping list
+            </button>
+          </div>
+
+          <p class="modal-remove-btn-message is-hidden">
+            Сongratulations! You have added the book to the shopping list. To
+            delete, press the button “Remove from the shopping list”.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

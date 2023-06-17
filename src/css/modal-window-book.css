@@ -1,1 +1,282 @@
 @import url('./variables.css');
+
+li {
+    list-style-type: none;
+}
+
+.backdrop {
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: white; */
+    overflow-y: scroll;
+    overflow: hidden;
+
+    transition: opacity cubic-time, visibility cubic-time;
+
+    &.backdrop.is-hidden {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+}
+
+.modal {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+
+    padding: 40px 22px;
+    width: calc(100% - 20px * 2);
+
+    background: white;
+    border: 2px solid #111111;
+    border-radius: 18px;
+
+   
+
+    &.is-hidden {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.4);
+        visibility: 0;
+    }
+
+    @media screen and (min-width: 375px) and (max-width: 767px) {
+        max-height: calc(100% - 20px * 2);
+        overflow-y: scroll;
+    }
+
+    @media screen and (min-width: 375px) {
+        width: 335px;
+    }
+
+    @media screen and (min-width: 768px) {
+        width: 579px;
+        min-height: 465px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+
+    background: inherit;
+    border: none;
+    color: #111111;
+
+    
+
+    &:hover,
+    &:focus {
+        color: #4F2EE8;
+    }
+
+    @media screen and (min-width: 768px) {
+        top: 24px;
+        right: 24px;
+
+        width: 28px;
+        height: 28px;
+    }
+}
+
+.modal-close-icon {
+    fill: currentColor;
+
+    @media screen and (min-width: 768px) {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.modal-wrapper {
+
+    @media screen and (min-width: 768px) {
+        display: flex;
+        gap: 24px;
+        margin-bottom: 40px;
+    }
+}
+
+.modal-img {
+    margin-bottom: 14px;
+
+    width: 287px;
+    height: 408px;
+
+    border-radius: 8px;
+    object-fit: cover;
+    overflow: hidden;
+
+    @media screen and (min-width: 768px) {
+        width: 192px;
+        height: 281px;
+        margin-bottom: 0;
+    }
+}
+
+.modal-content {
+    @media screen and (min-width: 768px) {
+        width: 280px;
+    }
+}
+
+.modal-title {
+    margin-bottom: 4px;
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: calc(18 / 16);
+
+    @media screen and (min-width: 768px) {
+        margin-bottom: 8px;
+        font-size: 24px;
+        line-height: calc(28 / 24);
+    }
+}
+
+.modal-author {
+    margin-bottom: 18px;
+
+    font-style: italic;
+    font-size: 12px;
+    line-height: calc(14 / 12);
+
+    color: #B4AFAF;
+
+    @media screen and (min-width: 768px) {
+        margin-bottom: 20px;
+        font-size: 14px;
+        line-height: calc(18 / 14);
+    }
+}
+
+.modal-description {
+    max-width: 279px;
+    margin-bottom: 14px;
+
+    font-size: 14px;
+    line-height: calc(18 / 14);
+
+    @media screen and (min-width: 768px) {
+        margin-bottom: 20px;
+    }
+}
+
+.modal-list {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-left: 0;
+    margin-bottom: 40px;
+}
+
+.modal-link {
+    mix-blend-mode: luminosity;
+
+    &:hover,
+    &:focus {
+        filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
+    }
+}
+
+.modal-add-btn,
+.modal-remove-btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 12px 28px;
+
+    border: 2px solid blue;
+    border-radius: 40px;
+
+    background-color: inherit;
+
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: calc(18 / 14);
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: inherit;
+
+
+    @media screen and (min-width: 768px) {
+        width: 100%;
+        padding: 20px 0;
+    }
+}
+
+.modal-add-btn:hover,
+.modal-remove-btn:hover {
+    color: white;
+    background-color: #4F2EE8;
+}
+
+.modal-add-btn:focus,
+.modal-remove-btn:focus {
+    color: white;
+    background-color: #4F2EE8;
+}
+
+
+.modal-remove-btn {
+    margin-bottom: 8px;
+
+    padding-left: 23px;
+    padding-right: 23px;
+}
+
+/* .modal-add-btn.is-hidden, */
+.modal-remove-btn-wrapper.is-hidden {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.modal-remobe-btn-message {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 5px;
+    padding-right: 5px;
+    max-width: 242px;
+
+    font-size: 10px;
+    line-height: calc(12 / 10);
+    text-align: center;
+
+    color: #111111;
+
+    @media screen and (min-width: 768px) {
+        max-width: 324px;
+        padding: 0;
+
+        font-size: 12px;
+        line-height: calc(14 / 12);
+    }
+}
+
+.modal-remove-btn-message.is-hidden {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
