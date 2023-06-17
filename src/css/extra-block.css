@@ -20,21 +20,25 @@
 }
 
 .support-title {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: 700;
   font-size: 28px;
   line-height: 1.14;
   margin-bottom: 40px;
   padding-top: 24px;
 }
+.support-title img {
+  margin-left: 12px;
+}
 
 .support-item {
   display: flex;
+  align-items: center;
   gap: 14px;
   margin-left: 40px;
   margin-bottom: 14px;
-  width: 115px;
-  height: 36px;
 }
 
 .item-number {
