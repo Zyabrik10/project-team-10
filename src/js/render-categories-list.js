@@ -3,8 +3,7 @@
 import { fetchAllCategories } from './fetch-func';
 const categoryList = document.querySelector('.category-list');
 const loadCategory = document.querySelector('.load');
-const afterOrg = document.querySelector('.after-org');
-const bookThumb = document.querySelector('.book-thumb');
+
 
 fetchAllCategories()
   .then(data => {

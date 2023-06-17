@@ -18,7 +18,16 @@ export function fetchAllCategories() {
 export function fetchExactBook() {}
 
 //REST API: https://books-backend.p.goit.global/books/category?category=$
-export function fetchBooksByExactCategory() {}
+export function fetchBooksByExactCategory(item) {
+    return  fetch(`${BASE_URL}/books/category?category=${item}`)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(response.status);
+        }
+      console.log(response);
+        return response.json();
+    })   
+}
 
 //REST API: https://books-backend.p.goit.global/books/top-books
 export function fetchTopBooks() {}
