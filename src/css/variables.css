@@ -11,6 +11,7 @@
   --light-text-color: #fff;
   --light-text-color-60: rgba(255, 255, 255, 0.6);
   --place-text-color: #eac645;
+  --dark-text-color-60: rgba(0, 0, 0, 0.6);
 
   /* background */
   --main-bg-color: #111111;
