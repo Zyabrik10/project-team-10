@@ -1,1 +1,21 @@
 @import url('./variables.css');
+
+.shop_title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38px;
+}
+
+.shop_plug {
+  margin: 120px 55px auto 55px;
+}
+.shop_plug-title {
+  text-align: center;
+}
+
+.shop_plug-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
