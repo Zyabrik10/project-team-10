@@ -85,3 +85,41 @@ body {
     (100% - (var(--flex-item) - 1) * var(--flex-item-gap)) / var(--flex-item)
   );
 }
+
+.main-block > .container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .main-block > .container {
+    gap: 100px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .main-block > .container {
+    flex-direction: row;
+    gap: 40px;
+  }
+}
+
+.asides {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .asides {
+    gap: 32px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .asides {
+    flex: 1 1 auto;
+    gap: 86px;
+  }
+}
