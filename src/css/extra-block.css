@@ -1,1 +1,59 @@
 @import url('./variables.css');
+
+.support-aside {
+  width: 335px;
+  height: 352px;
+  box-shadow: 0px 10px 10px 0px #f5f5f71a;
+  border-radius: 10px;
+  background: radial-gradient(
+    ellipse at top,
+    var(--extra-bg-color) 18.03%,
+    var(--light-text-color) 100%
+  );
+}
+.support-aside,
+.support-item a {
+  color: var(--light-text-color);
+}
+.support-list {
+  padding-left: 0px;
+}
+
+.support-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.14;
+  margin-bottom: 40px;
+  padding-top: 24px;
+}
+.support-title img {
+  margin-left: 12px;
+}
+
+.support-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-left: 40px;
+  margin-bottom: 14px;
+}
+
+.item-number {
+  line-height: 1.29;
+}
+
+@media screen and (min-width: 376px) and (max-width: 767px) {
+  .support-aside {
+    height: 472px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .support-aside {
+    width: 356px;
+    height: 490px;
+  }
+}
