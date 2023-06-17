@@ -40,21 +40,21 @@ export const support_array = [
   {
     title: 'UNITED24',
     url: 'https://u24.gov.ua/uk',
-    img: require('../images/extra-block/saveCh.png'),
+    img: require('../images/extra-block/united.png'),
     id: '07',
   },
 
   {
     title: 'Medicins Sans Frontieres',
     url: 'https://www.msf.org/ukraine',
-    img: require('../images/extra-block/saveCh.png'),
+    img: require('../images/extra-block/sans.png'),
     id: '08',
   },
 
   {
     title: 'World vision',
     url: 'https://www.wvi.org/emergencies/ukraine',
-    img: require('../images/extra-block/saveCh.png'),
+    img: require('../images/extra-block/vision.png'),
     id: '09',
   },
 ];
