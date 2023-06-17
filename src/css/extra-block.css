@@ -20,6 +20,34 @@
   padding-left: 0px;
 }
 
+.support-img-01 {
+  width: 131px;
+}
+.support-img-02 {
+  width: 62px;
+}
+.support-img-03 {
+  width: 101px;
+}
+.support-img-04 {
+  width: 82px;
+}
+.support-img-05 {
+  width: 55px;
+}
+.support-img-06 {
+  width: 116px;
+}
+.support-img-07 {
+  width: 149px;
+}
+.support-img-08 {
+  width: 133px;
+}
+.support-img-09 {
+  width: 81px;
+}
+
 .support-title {
   display: flex;
   justify-content: center;
