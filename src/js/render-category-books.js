@@ -4,11 +4,16 @@ import { fetchBooksByExactCategory, fetchTopBooks } from './fetch-func';
 // export function renderCategoryBooks() {}
 
 const containerTbEl = document.querySelector('.tb-container');
+const noBooksEl = document.querySelector('.no-books-card')
+
 
 fetchTopBooks().then(renderTopBooks);
 
 export function renderTopBooks(bestsellersArray) {
-  const markup1 = bestsellersArray.data
+    if (bestsellersArray.data.length == 0) {
+    noBooksEl.classList.remove("is-hidden")
+  } else{
+  const markupCategory = bestsellersArray.data
     .map(({ list_name, books }) => {
       const markup = books
         .map(({ author, title, book_image, _id }) => {
@@ -31,7 +36,7 @@ export function renderTopBooks(bestsellersArray) {
         <div class='tb-books-container'>
           <ul class="global-list flex-container">
             ${markup}
-          </ul>  
+          </ul>
         </div>
         <button class="tb-button global-button light-theme theme-switch">See more</button>
       </div>
@@ -39,5 +44,6 @@ export function renderTopBooks(bestsellersArray) {
     })
     .join('');
 
-  containerTbEl.insertAdjacentHTML('beforeend', markup1);
-}
+    containerTbEl.insertAdjacentHTML('beforeend', markupCategory);}
+  }
+
