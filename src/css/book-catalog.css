@@ -51,11 +51,9 @@ color: var(--main-text-color);
   white-space: nowrap;
   text-overflow: ellipsis;
   font-weight: 400;
-  font-size: 14px;
   text-align: left;
   text-transform: uppercase;
-  font-weight: 400;
-  font-size: 14px;
+
   letter-spacing: 0.03em;
   color: var(--sub-text-color);
 }
@@ -148,7 +146,6 @@ color: var(--main-text-color);
 
   /* float: right; */
   font-weight: 700;
-  font-size: 14px;
   letter-spacing: -0.01em;
   text-transform: uppercase;
   padding: 14px 28px;
