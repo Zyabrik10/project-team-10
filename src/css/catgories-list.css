@@ -21,17 +21,15 @@
   line-height: 1.13;
   letter-spacing: -0.02em;
 
-  /* color: --main-text-color-60; */
-
-  color: rgba(17, 17, 17, 0.6);
+  color: var(--main-text-color-60);
+ 
 }
 
 .category-list-item:hover, 
 .category-list-item:focus {
         font-weight: 500;
         text-transform: uppercase;
-        /* color: --extra-text-color; */
-        color: #4F2EE8;  
+        color: var(--extra-text-color);
 }
 
 .book-item {
