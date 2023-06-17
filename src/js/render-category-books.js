@@ -10,7 +10,10 @@ const noBooksEl = document.querySelector('.no-books-card')
 fetchTopBooks().then(renderTopBooks);
 
 export function renderTopBooks(bestsellersArray) {
-  const markup1 = bestsellersArray.data
+    if (bestsellersArray.data.length == 0) {
+    noBooksEl.classList.remove("is-hidden")
+  } else{
+  const markupCategory = bestsellersArray.data
     .map(({ list_name, books }) => {
       const markup = books
         .map(({ author, title, book_image, _id }) => {
@@ -41,6 +44,6 @@ export function renderTopBooks(bestsellersArray) {
     })
     .join('');
 
-    containerTbEl.insertAdjacentHTML('beforeend', markupCategory);
+    containerTbEl.insertAdjacentHTML('beforeend', markupCategory);}
   }
-}
+
