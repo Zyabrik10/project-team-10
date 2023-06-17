@@ -18,6 +18,8 @@
 }
 .support-list {
   padding-left: 0px;
+  height: 200px;
+  overflow: hidden;
 }
 
 .support-img-01 {
@@ -84,5 +86,10 @@
   .support-aside {
     width: 356px;
     height: 490px;
+  }
+}
+@media screen and (min-width: 376px) {
+  .support-list {
+    height: 280px;
   }
 }
