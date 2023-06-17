@@ -3,6 +3,7 @@ import { fetchBooksByExactCategory, fetchTopBooks } from './fetch-func';
 
 
 export function renderTopBooks() { }
+export function renderCategoryBooks() { }
 
 const categoryList = document.querySelector('.category-list');
 const bookThumb = document.querySelector('.book-thumb');
