@@ -1,6 +1,7 @@
 @import url('./variables.css');
 
 .shop_title {
+  margin: 40px 0;
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
@@ -11,11 +12,102 @@
   margin: 120px 55px auto 55px;
 }
 .shop_plug-title {
+  font-weight: 400;
+  font-size: 14px;
   text-align: center;
+  letter-spacing: -0.02em;
+
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .shop_plug-img {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* розмітка картки з книжкою в shopingList */
+.shop_card {
+  margin-bottom: 20px;
+  height: 170px;
+  display: flex;
+  padding: 14px;
+  border: 2px solid rgba(79, 46, 232, 0.4);
+  border-radius: 16px;
+}
+
+.shop_card image {
+  object-fit: contain;
+}
+
+.shop_card-div_description {
+  margin-left: 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.shop_card-title {
+  font-size: 16px;
+  line-height: 18px;
+
+  text-transform: uppercase;
+}
+
+.shop_card-category {
+  margin-top: 4px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.03em;
+
+  color: #b4afaf;
+}
+
+.shop_card button {
+  width: 28px;
+  height: 28px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: var(--light-text-color);
+  background-image: url('../images/shoppin-list/icons/del.svg');
+  border: none;
+  cursor: pointer;
+}
+
+.shop_card-div_title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.shop_card-description {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.shop_card-description:focus,
+.shop_card-description:hover {
+  overflow: auto;
+}
+
+.shop_card-empty_place {
+  flex-grow: 1;
+}
+
+.shop_card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.shop_card-author {
+  font-style: italic;
+  font-size: 12px;
+  line-height: 14px;
+
+  color: var(--sub-text-color);
+}
+
+.shop_card-link {
+  margin-left: 8px;
 }
