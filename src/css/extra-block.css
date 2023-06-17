@@ -6,10 +6,11 @@
   box-shadow: 0px 10px 10px 0px #f5f5f71a;
   border-radius: 10px;
   background: radial-gradient(
-    ellipse at top,
-    var(--extra-bg-color) 18.03%,
-    var(--light-text-color) 100%
-  );
+      183.6% 183.01% at 59.76% -23.42%,
+      #4f2ee8 18.03%,
+      #ffffff 100%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
 }
 .support-aside,
 .support-item a {
