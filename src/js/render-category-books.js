@@ -1,6 +1,6 @@
 // Рендер однієї секції категорії з книгами
 import { fetchBooksByExactCategory, fetchTopBooks } from './fetch-func';
-
+import { modalWindow } from './modal-window'
 // export function renderCategoryBooks() { }
 
 const categoryList = document.querySelector('.category-list');
@@ -76,5 +76,6 @@ export function renderTopBooks(bestsellersArray) {
       .join('');
 
     containerTbEl.insertAdjacentHTML('beforeend', markupCategory);
+    modalWindow()
   }
 }
