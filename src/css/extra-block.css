@@ -66,8 +66,9 @@
 }
 
 .support-svg {
-  height: 6.53px;
-  width: 12.82px;
+  display: block;
+  height: 5.98px;
+  width: 11.67px;
   fill: var(--extra-text-color);
 }
 .support-button {
@@ -76,10 +77,10 @@
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
   border-radius: 50%;
-  padding-top: 10.1px;
-  padding-bottom: 9.9px;
-  padding-right: 12.58px;
-  padding-left: 12.58px;
+  padding-top: 13.1px;
+  padding-bottom: 12.93px;
+  padding-right: 10.17px;
+  padding-left: 10.17px;
   background: var(--light-text-color);
 }
 
@@ -116,5 +117,16 @@
 @media screen and (min-width: 376px) {
   .support-list {
     height: 300px;
+  }
+
+  .support-svg {
+    height: 6.58px;
+    width: 12.83px;
+  }
+  .support-button {
+    padding-top: 15.8px;
+    padding-bottom: 15.62px;
+    padding-right: 12.58px;
+    padding-left: 12.58px;
   }
 }
