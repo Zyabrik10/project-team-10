@@ -5,4 +5,4 @@ import { fetchAllCategories } from './fetch-func';
 import { renderCategoryBooks, renderTopBooks } from './render-category-books';
 
 // одразу рендеремо секцію топ
-renderTopBooks();
+// renderTopBooks();

@@ -9,6 +9,7 @@
 body {
   font-family: 'DM Sans', sans-serif;
   font-size: 14px;
+  font-weight: 400;
   line-height: calc(18 / 14);
   color: var(--main-text-color);
   letter-spacing: -0.04em;
