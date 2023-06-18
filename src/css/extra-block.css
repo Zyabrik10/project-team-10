@@ -80,6 +80,7 @@
   padding-bottom: 9.9px;
   padding-right: 12.58px;
   padding-left: 12.58px;
+  background: var(--light-text-color);
 }
 
 .support-item {
@@ -98,6 +99,9 @@
   .support-aside {
     height: 472px;
   }
+  .support-button {
+    bottom: 0px;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -105,12 +109,12 @@
     width: 356px;
     height: 490px;
   }
+  .support-button {
+    bottom: 5px;
+  }
 }
 @media screen and (min-width: 376px) {
   .support-list {
     height: 300px;
-  }
-  .support-button {
-    bottom: 2px;
   }
 }
