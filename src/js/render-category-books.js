@@ -1,7 +1,7 @@
 // Рендер однієї секції категорії з книгами
 import { fetchBooksByExactCategory, fetchTopBooks } from './fetch-func';
 
-// export function renderCategoryBooks() { }
+export function renderCategoryBooks() { }
 
 const categoryList = document.querySelector('.category-list');
 const bookThumb = document.querySelector('.tb-container');
