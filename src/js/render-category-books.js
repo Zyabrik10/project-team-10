@@ -21,7 +21,7 @@ function createMarkupBook({ data }) {
   bookThumb.innerHTML = '';
     const markup = data.map(({ author, title, book_image }) => {
       return `
-    <li class="book-item flex-container-item">
+    <li class="book-item tb-books-container flex-container-item">
     <img class="book-img tb-book-img img" src="${book_image}" alt="${title}">
     <p class="book-title tb-book-author global-p">${title}</p>
     <p>${author}</p>
