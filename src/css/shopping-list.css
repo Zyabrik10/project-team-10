@@ -1,10 +1,25 @@
 @import url('./variables.css');
 
+:root {
+  --instep_4: 4px;
+  --instep_8: 8px;
+  --instep_14: 14px;
+  --instep_card: 20px;
+  --instep_title: 40px;
+  --instep_shop_plug: 120px;
+
+  --font-size-title: 32px;
+  --font-size_desc: 12px;
+  --font-size_plug-title: 14px;
+  --font-size_card-title: 16px;
+
+  --button-size: 28px;
+}
+
 .shop_title {
-  margin: 40px 0;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 32px;
+  margin: var(--instep_title) 0;
+  font-weight: bold;
+  font-size: var(--font-size-title);
   line-height: 38px;
 }
 .shop_title--violet {
@@ -12,15 +27,15 @@
 }
 
 .shop_plug {
-  margin: 120px 55px auto 55px;
+  margin: var(--instep_shop_plug) auto auto auto;
 }
 .shop_plug-title {
-  font-weight: 400;
-  font-size: 14px;
+  font-size: var(--font-size_plug-title);
+  font-weight: normal;
   text-align: center;
   letter-spacing: -0.02em;
 
-  color: rgba(0, 0, 0, 0.6);
+  color: var(--dark-text-color-60);
 }
 
 .shop_plug-img {
@@ -33,36 +48,36 @@
 
 /* розмітка картки з книжкою в shopingList */
 .shop_card {
-  margin-bottom: 20px;
+  margin-bottom: var(--instep_card);
   height: 170px;
   display: flex;
-  padding: 14px;
-  border: 2px solid rgba(79, 46, 232, 0.4);
+  padding: var(--instep_14);
+  border: 2px solid var(--extra-border-color-40);
   border-radius: 16px;
 }
 
-.shop_card image {
+.shop_card img {
   object-fit: contain;
 }
 
 .shop_card-div_description {
   width: 100%;
-  margin-left: 14px;
+  margin-left: var(--instep_14);
   display: flex;
   flex-direction: column;
 }
 
 .shop_card-title {
-  font-size: 16px;
+  font-size: var(--font-size_card-title);
   line-height: 18px;
 
   text-transform: uppercase;
 }
 
 .shop_card-category {
-  margin-top: 4px;
-  font-weight: 400;
-  font-size: 12px;
+  margin-top: var(--instep_4);
+  font-weight: normal;
+  font-size: var(--font-size_desc);
   line-height: 14px;
   letter-spacing: 0.03em;
 
@@ -70,8 +85,8 @@
 }
 
 .shop_card button {
-  width: 28px;
-  height: 28px;
+  width: var(--button-size);
+  height: var(--button-size);
   background-size: contain;
   background-repeat: no-repeat;
   background-color: var(--light-text-color);
@@ -86,14 +101,10 @@
 }
 
 .shop_card-description {
-  margin-top: 8px;
-  margin-bottom: 8px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.shop_card-description:focus,
-.shop_card-description:hover {
+  margin-top: var(--instep_8);
+  margin-bottom: var(--instep_8);
   overflow: auto;
+  text-overflow: ellipsis;
 }
 
 .shop_card-empty_place {
@@ -108,12 +119,12 @@
 
 .shop_card-author {
   font-style: italic;
-  font-size: 12px;
+  font-size: var(--font-size_desc);
   line-height: 14px;
 
   color: var(--sub-text-color);
 }
 
 .shop_card-link {
-  margin-left: 8px;
+  margin-left: var(--instep_8);
 }
