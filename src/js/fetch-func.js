@@ -27,8 +27,6 @@ export async function fetchTopBooks() {
 //REST API: books-backend.p.goit.global/books/bookId
 export function fetchExactBook() {}
 
-export function fetchTopBooks() {}
-
 //REST API: https://books-backend.p.goit.global/books/category?category=$
 
 export async function fetchBooksByExactCategory(item) {
