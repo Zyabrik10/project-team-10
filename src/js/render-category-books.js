@@ -1,39 +1,47 @@
 // Рендер однієї секції категорії з книгами
 import { fetchBooksByExactCategory, fetchTopBooks } from './fetch-func';
 
-
 // export function renderCategoryBooks() { }
 
 const categoryList = document.querySelector('.category-list');
 const bookThumb = document.querySelector('.book-thumb');
-categoryList.addEventListener('click', renderCategoryBooks)
-export function renderCategoryBooks(event) {
+
+categoryList.addEventListener('click', renderCategoryBooks);
+async function renderCategoryBooks(event) {
   const item = event.target.textContent;
-  console.log(item)
+  console.log(item);
+  const data = await fetchBooksByExactCategory(item);
+  console.log(data);
+  createMarkupBook(data);
+}
+function createMarkupBook({ data }) {
   bookThumb.innerHTML = '';
-  
-  fetchBooksByExactCategory(item)
-  .then(data => {
-    console.log(data)
-    const markup = data.map(({ list_name, author, title, book_image }) => {
+  const markupBook = data
+    .map(({ list_name }) => {
+      const markup = data
+        .map(({ author, title, book_image }) => {
+          return `
+        <li class="book-item">
+        <img class="book-img" src="${book_image}" alt="${title}">
+        <p class="book-title">${title}</p>
+        <p>${author}</p>
+        </li>`;
+        })
+        .join('');
       return `
-      <h2 class="category-title">${list_name}</h2>
-      <li class="book-item">
-      <img class="book-img" src="${book_image}" alt="${title}">
-      <p class="book-title">${title}</p>
-      <p>${author}</p>
-      </li>`
-      
+
+    <h2 class="category-title">${list_name}</h2>
+    <ul>${markup}</ul>
+    `;
     })
     .join('');
-    bookThumb.innerHTML = markup
-  }).catch(error => {
-    console.log(error)
-  })
+  bookThumb.innerHTML = markupBook;
+  console.log(markupBook);
 }
 
-// export function renderTopBooks() { }
 
+
+// export function renderTopBooks() { }
 
 const containerTbEl = document.querySelector('.tb-container');
 
