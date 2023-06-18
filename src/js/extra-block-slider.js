@@ -21,3 +21,21 @@ supportEl.insertAdjacentHTML('afterbegin', supportUkraineMarkup);
 function addNum(value) {
   return value.toString().padStart(2, '0');
 }
+
+// ///////////
+
+const supportBtn = document.querySelector('.js-sup-btn');
+let isScrolledToEnd = false;
+supportBtn.addEventListener('click', onScrollBtn);
+
+function onScrollBtn() {
+  if (isScrolledToEnd) {
+    supportEl.scrollTop = 0;
+    supportBtn.classList.remove('support-button-rotate');
+  } else {
+    supportEl.scrollTop = supportEl.scrollHeight;
+    supportBtn.classList.add('support-button-rotate');
+  }
+  
+  isScrolledToEnd = !isScrolledToEnd;
+};

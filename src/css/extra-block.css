@@ -17,12 +17,15 @@
 .support-item a {
   color: var(--light-text-color);
 }
-.support-list {
+.support-list{
   padding-left: 0px;
   height: 200px;
-  overflow: hidden;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
 }
-
+.support-list::-webkit-scrollbar{
+  display: block;
+}
 .support-img-01 {
   width: 131px;
 }
@@ -82,6 +85,10 @@
   padding-right: 10.17px;
   padding-left: 10.17px;
   background: var(--light-text-color);
+  transition: transform 0.3s ease;
+}
+.support-button.support-button-rotate{
+  transform: translate(-50%, -50%) scale(1) rotate(180deg);
 }
 
 .support-item {
