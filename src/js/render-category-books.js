@@ -1,7 +1,39 @@
 // Рендер однієї секції категорії з книгами
 import { fetchBooksByExactCategory, fetchTopBooks } from './fetch-func';
 
-// export function renderCategoryBooks() {}
+// export function renderCategoryBooks() { }
+
+const categoryList = document.querySelector('.category-list');
+const bookThumb = document.querySelector('.tb-container');
+const headingEl = document.querySelector('.heading-primary')
+
+categoryList.addEventListener('click', renderCategoryBooks);
+async function renderCategoryBooks(event) {
+  const item = event.target.textContent;
+  headingEl.textContent = item;
+  headingEl.classList.add('ctg-maintitle');
+  console.log(item);
+  const data = await fetchBooksByExactCategory(item);
+  console.log(data);
+  createMarkupBook(data);
+}
+function createMarkupBook({ data }) {
+  bookThumb.innerHTML = '';
+    const markup = data.map(({ author, title, book_image }) => {
+      return `
+    <li class="book-item tb-books-container flex-container-item">
+    <img class="book-img tb-book-img img" src="${book_image}" alt="${title}">
+    <p class="book-title tb-book-author global-p">${title}</p>
+    <p>${author}</p>
+    </li>`
+    
+    })
+      .join('');
+  bookThumb.innerHTML = markup;
+  }
+  
+
+// export function renderTopBooks() { }
 
 const containerTbEl = document.querySelector('.tb-container');
 const noBooksEl = document.querySelector('.no-books-card')
