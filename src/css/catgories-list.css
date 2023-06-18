@@ -1,4 +1,5 @@
 @import url('./variables.css');
+@import url('./book-catalog.css');
 
 .unvisible {
   display: none;
@@ -82,7 +83,9 @@
   color: var(--main-text-color);
   /* color: #111111; */
 }
-
+.ctg-maintitle {
+  margin-bottom: 40px;
+}
 .book-img {
   display: block;
   margin-bottom: 14px;

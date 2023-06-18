@@ -11,6 +11,7 @@ categoryList.addEventListener('click', renderCategoryBooks);
 async function renderCategoryBooks(event) {
   const item = event.target.textContent;
   headingEl.textContent = item;
+  headingEl.classList.add('ctg-maintitle');
   console.log(item);
   const data = await fetchBooksByExactCategory(item);
   console.log(data);
