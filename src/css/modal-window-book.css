@@ -1,8 +1,6 @@
 @import url('./variables.css');
+@import url('./global.css');
 
-li {
-    list-style-type: none;
-}
 
 .backdrop {
     position: fixed;
@@ -11,18 +9,17 @@ li {
     left: 0;
     width: 100%;
     height: 100%;
-    /* background-color: white; */
     overflow-y: scroll;
     overflow: hidden;
 
-    transition: opacity cubic-time, visibility cubic-time;
-
-    &.backdrop.is-hidden {
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-    }
+    transition: var(--transition-property), var(--transition-duration), var(--transition-timing-function);
 }
+/* .backdrop.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+} */
+
 
 .modal {
     position: absolute;
@@ -35,34 +32,40 @@ li {
     padding: 40px 22px;
     width: calc(100% - 20px * 2);
 
-    background: white;
-    border: 2px solid #111111;
+    background: var(--empty);
+    border: 2px solid var(--main-text-color);
     border-radius: 18px;
 
    
+}
+/* modal.is-hidden {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.4);
+    visibility: 0;
+} */
 
-    &.is-hidden {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(0.4);
-        visibility: 0;
-    }
-
-    @media screen and (min-width: 375px) and (max-width: 767px) {
+@media screen and (min-width: 375px) and (max-width: 767px) {
+    .modal {
         max-height: calc(100% - 20px * 2);
         overflow-y: scroll;
     }
+}
 
-    @media screen and (min-width: 375px) {
+@media screen and (min-width: 375px) {
+    .modal {
         width: 335px;
     }
+}
 
-    @media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
+    .modal {
         width: 579px;
         min-height: 465px;
         padding-left: 40px;
         padding-right: 40px;
-    }
+    }       
 }
+
 
 .modal-close-btn {
     position: absolute;
@@ -77,42 +80,48 @@ li {
     height: 24px;
 
     background: inherit;
-    border: none;
-    color: #111111;
-
+    
+    color: var(--main-text-color);
+}
     
 
-    &:hover,
-    &:focus {
-        color: #4F2EE8;
-    }
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+    color: var(--extra-border-color);
+}
 
-    @media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
+    .modal-close-btn {
         top: 24px;
         right: 24px;
-
+        
         width: 28px;
         height: 28px;
     }
 }
 
+
 .modal-close-icon {
     fill: currentColor;
-
-    @media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 768px) {
+    .modal-close-icon {
         width: 24px;
         height: 24px;
     }
 }
 
-.modal-wrapper {
 
-    @media screen and (min-width: 768px) {
+
+
+@media screen and (min-width: 768px) {
+    .modal-wrapper {
         display: flex;
         gap: 24px;
         margin-bottom: 40px;
     }
 }
+
 
 .modal-img {
     margin-bottom: 14px;
@@ -123,19 +132,23 @@ li {
     border-radius: 8px;
     object-fit: cover;
     overflow: hidden;
-
-    @media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 768px) {
+    .modal-img {
         width: 192px;
         height: 281px;
         margin-bottom: 0;
-    }
+    }    
 }
 
-.modal-content {
-    @media screen and (min-width: 768px) {
+
+
+@media screen and (min-width: 768px) {
+    .modal-content {
         width: 280px;
     }
 }
+
 
 .modal-title {
     margin-bottom: 4px;
@@ -143,13 +156,15 @@ li {
     font-weight: 700;
     font-size: 16px;
     line-height: calc(18 / 16);
-
-    @media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 768px) {
+    .modal-title {
         margin-bottom: 8px;
         font-size: 24px;
         line-height: calc(28 / 24);
     }
 }
+
 
 .modal-author {
     margin-bottom: 18px;
@@ -158,14 +173,16 @@ li {
     font-size: 12px;
     line-height: calc(14 / 12);
 
-    color: #B4AFAF;
-
-    @media screen and (min-width: 768px) {
+    color: var(--sub-text-color);
+}
+@media screen and (min-width: 768px) {
+    .modal-author {
         margin-bottom: 20px;
         font-size: 14px;
         line-height: calc(18 / 14);
     }
 }
+
 
 .modal-description {
     max-width: 279px;
@@ -173,8 +190,9 @@ li {
 
     font-size: 14px;
     line-height: calc(18 / 14);
-
-    @media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 768px) {
+    .modal-description {
         margin-bottom: 20px;
     }
 }
@@ -189,12 +207,12 @@ li {
 
 .modal-link {
     mix-blend-mode: luminosity;
-
-    &:hover,
-    &:focus {
-        filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
-    }
 }
+.modal-link:hover,
+.modal-link:focus {
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
+}
+
 
 .modal-add-btn,
 .modal-remove-btn {
@@ -204,7 +222,7 @@ li {
 
     padding: 12px 28px;
 
-    border: 2px solid blue;
+    border: 2px solid var(--extra-border-color);
     border-radius: 40px;
 
     background-color: inherit;
@@ -217,8 +235,10 @@ li {
     text-transform: uppercase;
     color: inherit;
 
-
-    @media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 768px) {
+    .modal-add-btn,
+    .modal-remove-btn {
         width: 100%;
         padding: 20px 0;
     }
@@ -226,14 +246,14 @@ li {
 
 .modal-add-btn:hover,
 .modal-remove-btn:hover {
-    color: white;
-    background-color: #4F2EE8;
+    color: var(--empty);
+    background-color: var(--extra-border-color);
 }
 
 .modal-add-btn:focus,
 .modal-remove-btn:focus {
-    color: white;
-    background-color: #4F2EE8;
+    color: var(--empty);
+    background-color: var(--extra-border-color);
 }
 
 
@@ -263,9 +283,10 @@ li {
     line-height: calc(12 / 10);
     text-align: center;
 
-    color: #111111;
-
-    @media screen and (min-width: 768px) {
+    color: var(--main-text-color);
+}
+@media screen and (min-width: 768px) {
+    .modal-remobe-btn-message {
         max-width: 324px;
         padding: 0;
 
