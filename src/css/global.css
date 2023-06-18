@@ -113,12 +113,14 @@ body {
 
 @media screen and (min-width: 768px) {
   .asides {
+    flex-direction: row;
     gap: 32px;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .asides {
+    flex-direction: column;
     flex: 1 1 auto;
     gap: 86px;
   }
