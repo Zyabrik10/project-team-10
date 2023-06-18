@@ -73,7 +73,7 @@
 }
 .support-button {
   position: absolute;
-  bottom: -2px;
+  bottom: 5px;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
   border-radius: 50%;
@@ -109,9 +109,6 @@
   .support-aside {
     width: 356px;
     height: 490px;
-  }
-  .support-button {
-    bottom: 5px;
   }
 }
 @media screen and (min-width: 376px) {
