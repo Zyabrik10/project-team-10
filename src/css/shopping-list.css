@@ -7,6 +7,9 @@
   font-size: 32px;
   line-height: 38px;
 }
+.shop_title--violet {
+  color: var(--extra-bg-color);
+}
 
 .shop_plug {
   margin: 120px 55px auto 55px;
@@ -21,6 +24,8 @@
 }
 
 .shop_plug-img {
+  width: 100px;
+  height: 142px;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -41,6 +46,7 @@
 }
 
 .shop_card-div_description {
+  width: 100%;
   margin-left: 14px;
   display: flex;
   flex-direction: column;
@@ -60,7 +66,7 @@
   line-height: 14px;
   letter-spacing: 0.03em;
 
-  color: #b4afaf;
+  color: var(--sub-text-color);
 }
 
 .shop_card button {
