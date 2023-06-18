@@ -5,33 +5,32 @@ import { fetchBooksByExactCategory, fetchTopBooks } from './fetch-func';
 
 const categoryList = document.querySelector('.category-list');
 const bookThumb = document.querySelector('.tb-container');
-const headingEl = document.querySelector('.heading-primary')
+const headingEl = document.querySelector('.heading-primary');
 
 categoryList.addEventListener('click', renderCategoryBooks);
 async function renderCategoryBooks(event) {
   const item = event.target.textContent;
   headingEl.textContent = item;
   headingEl.classList.add('ctg-maintitle');
-  console.log(item);
+  bookThumb.classList.add('flex-container');
+
   const data = await fetchBooksByExactCategory(item);
-  console.log(data);
   createMarkupBook(data);
 }
+
 function createMarkupBook({ data }) {
   bookThumb.innerHTML = '';
-    const markup = data.map(({ author, title, book_image }) => {
+  const markup = data
+    .map(({ author, title, book_image, _id }) => {
       return `
-    <li class="book-item tb-books-container flex-container-item">
-    <img class="book-img tb-book-img img" src="${book_image}" alt="${title}">
-    <p class="book-title tb-book-author global-p">${title}</p>
-    <p>${author}</p>
-    </li>`
-    
+    <div class="flex-container-item"><a href=# class="global-link" data-id="${_id}">
+    <img class="book-img img" src="${book_image}" alt="${title}">
+    <p class="book-title light-theme theme-switch global-p">${title}</p>
+    <p class="tb-book-author global-p">${author}</p></a></div>`;
     })
-      .join('');
+    .join('');
   bookThumb.innerHTML = markup;
-  }
-  
+}
 
 // export function renderTopBooks() { }
 
