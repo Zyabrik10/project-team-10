@@ -4,11 +4,13 @@ import { fetchBooksByExactCategory, fetchTopBooks } from './fetch-func';
 // export function renderCategoryBooks() { }
 
 const categoryList = document.querySelector('.category-list');
-const bookThumb = document.querySelector('.book-thumb');
+const bookThumb = document.querySelector('.tb-container');
+const headingEl = document.querySelector('.heading-primary')
 
 categoryList.addEventListener('click', renderCategoryBooks);
 async function renderCategoryBooks(event) {
   const item = event.target.textContent;
+  headingEl.textContent = item;
   console.log(item);
   const data = await fetchBooksByExactCategory(item);
   console.log(data);
@@ -16,30 +18,19 @@ async function renderCategoryBooks(event) {
 }
 function createMarkupBook({ data }) {
   bookThumb.innerHTML = '';
-  const markupBook = data
-    .map(({ list_name }) => {
-      const markup = data
-        .map(({ author, title, book_image }) => {
-          return `
-        <li class="book-item">
-        <img class="book-img" src="${book_image}" alt="${title}">
-        <p class="book-title">${title}</p>
-        <p>${author}</p>
-        </li>`;
-        })
-        .join('');
+    const markup = data.map(({ author, title, book_image }) => {
       return `
-
-    <h2 class="category-title">${list_name}</h2>
-    <ul>${markup}</ul>
-    `;
+    <li class="book-item flex-container-item">
+    <img class="book-img tb-book-img img" src="${book_image}" alt="${title}">
+    <p class="book-title tb-book-author global-p">${title}</p>
+    <p>${author}</p>
+    </li>`
+    
     })
-    .join('');
-  bookThumb.innerHTML = markupBook;
-  console.log(markupBook);
-}
-
-
+      .join('');
+  bookThumb.innerHTML = markup;
+  }
+  
 
 // export function renderTopBooks() { }
 
