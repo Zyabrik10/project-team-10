@@ -16,7 +16,7 @@ const supportUkraineMarkup = support_array
   })
   .join('');
 
-supportEl.insertAdjacentHTML('beforeend', supportUkraineMarkup);
+supportEl.insertAdjacentHTML('afterbegin', supportUkraineMarkup);
 
 function addNum(value) {
   return value.toString().padStart(2, '0');
