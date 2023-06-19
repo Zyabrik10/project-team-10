@@ -15,6 +15,14 @@ body {
   letter-spacing: -0.04em;
 }
 
+body.light-theme {
+  background: #f6f6f6;
+}
+
+body.dark-theme {
+  background: #202024;
+}
+
 .container {
   margin: 0 auto;
   padding: 0 20px;
@@ -80,11 +88,12 @@ body {
   gap: var(--flex-item-gap);
 }
 
-.flex-container-item {
+/* .flex-container-item {
   flex-basis: calc(
     (100% - (var(--flex-item) - 1) * var(--flex-item-gap)) / var(--flex-item)
   );
-}
+} */
+
 
 .main-block > .container {
   display: flex;
@@ -125,3 +134,4 @@ body {
     gap: 86px;
   }
 }
+

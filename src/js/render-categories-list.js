@@ -1,6 +1,9 @@
 // Логіка, яка рендерить список категорій
 // Визиваеться одразу в index.js
 import { fetchAllCategories } from './fetch-func';
+import { shopping_info } from './shopping-list';
+
+import { renderTheme } from './switch-theme';
 
 const categoryList = document.querySelector('.category-list');
 const loadCategory = document.querySelector('.load');
@@ -14,6 +17,9 @@ fetchAllCategories()
       })
       .join('');
     categoryList.insertAdjacentHTML('beforeend', markup);
+    shopping_info.theme === 'light'
+      ? renderTheme('light')
+      : renderTheme('dark');
     loadCategory.classList.add('unvisible');
   })
   .catch(error => {
