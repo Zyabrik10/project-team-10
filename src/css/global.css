@@ -1,5 +1,27 @@
 @import url('./variables.css');
 
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #e0e0e0;
+  border-radius: 12px;
+  transition: 0.3s ease-in-out;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b4b4b4;
+}
+
 *,
 *::before,
 *::after {
@@ -13,6 +35,14 @@ body {
   line-height: calc(18 / 14);
   color: var(--main-text-color);
   letter-spacing: -0.04em;
+}
+
+body.light-theme {
+  background: #f6f6f6;
+}
+
+body.dark-theme {
+  background: #202024;
 }
 
 .container {
@@ -80,8 +110,48 @@ body {
   gap: var(--flex-item-gap);
 }
 
-.flex-container-item {
+/* .flex-container-item {
   flex-basis: calc(
     (100% - (var(--flex-item) - 1) * var(--flex-item-gap)) / var(--flex-item)
   );
+} */
+
+.main-block > .container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .main-block > .container {
+    gap: 100px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .main-block > .container {
+    flex-direction: row;
+    gap: 40px;
+  }
+}
+
+.asides {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .asides {
+    flex-direction: row;
+    gap: 32px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .asides {
+    flex-direction: column;
+    flex: 1 1 auto;
+    gap: 86px;
+  }
 }
