@@ -1,25 +1,13 @@
 @import url('./variables.css');
 
-:root {
-  --instep_4: 4px;
-  --instep_8: 8px;
-  --instep_14: 14px;
-  --instep_card: 20px;
-  --instep_title: 40px;
-  --instep_shop_plug: 120px;
-
-  --font-size-title: 32px;
-  --font-size_desc: 12px;
-  --font-size_plug-title: 14px;
-  --font-size_card-title: 16px;
-
-  --button-size: 28px;
-}
+/* .container {
+  border: 1px solid red;
+} */
 
 .shop_title {
-  margin: var(--instep_title) 0;
+  margin: var(--sl-instep_title) 0;
   font-weight: bold;
-  font-size: var(--font-size-title);
+  font-size: var(--sl-font-size-title);
   line-height: 38px;
 }
 .shop_title--violet {
@@ -27,11 +15,12 @@
 }
 
 .shop_plug {
-  margin: var(--instep_shop_plug) auto auto auto;
+  margin: auto 55px;
 }
 .shop_plug-title {
-  font-size: var(--font-size_plug-title);
-  font-weight: normal;
+  font-size: var(--sl-font-size_plug-title);
+  /* font-weight: normal; */
+  font-weight: inherit;
   text-align: center;
   letter-spacing: -0.02em;
 
@@ -48,10 +37,10 @@
 
 /* розмітка картки з книжкою в shopingList */
 .shop_card {
-  margin-bottom: var(--instep_card);
+  margin-bottom: var(--sl-instep_card);
   height: 170px;
   display: flex;
-  padding: var(--instep_14);
+  padding: var(--sl-instep_14);
   border: 2px solid var(--extra-border-color-40);
   border-radius: 16px;
 }
@@ -62,22 +51,23 @@
 
 .shop_card-div_description {
   width: 100%;
-  margin-left: var(--instep_14);
+  margin-left: var(--sl-instep_14);
   display: flex;
   flex-direction: column;
 }
 
 .shop_card-title {
-  font-size: var(--font-size_card-title);
+  font-size: var(--sl-font-size_card-title);
   line-height: 18px;
 
   text-transform: uppercase;
 }
 
 .shop_card-category {
-  margin-top: var(--instep_4);
-  font-weight: normal;
-  font-size: var(--font-size_desc);
+  margin-top: var(--sl-instep_4);
+  /* font-weight: normal; */
+  font-weight: inherit;
+  font-size: var(--sl-font-size_desc);
   line-height: 14px;
   letter-spacing: 0.03em;
 
@@ -85,8 +75,8 @@
 }
 
 .shop_card button {
-  width: var(--button-size);
-  height: var(--button-size);
+  width: var(--sl-button-size);
+  height: var(--sl-button-size);
   background-size: contain;
   background-repeat: no-repeat;
   background-color: var(--light-text-color);
@@ -101,8 +91,8 @@
 }
 
 .shop_card-description {
-  margin-top: var(--instep_8);
-  margin-bottom: var(--instep_8);
+  margin-top: var(--sl-instep_8);
+  margin-bottom: var(--sl-instep_8);
   overflow: auto;
   text-overflow: ellipsis;
 }
@@ -119,12 +109,31 @@
 
 .shop_card-author {
   font-style: italic;
-  font-size: var(--font-size_desc);
+  font-size: var(--sl-font-size_desc);
   line-height: 14px;
 
   color: var(--sub-text-color);
 }
 
 .shop_card-link {
-  margin-left: var(--instep_8);
+  margin-left: var(--sl-instep_8);
 }
+
+/* tablet
+@media screen and (min-width: 768px) {
+  .shop_title {
+    font-size: 48px;
+    line-height: 52px;
+  }
+  .shop_plug-title {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+/* desktop */
+/* @media screen and (min-width: 1440px) {
+  .tb-container {
+    width: 996px;
+  }
+} */

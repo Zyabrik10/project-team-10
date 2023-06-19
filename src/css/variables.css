@@ -29,4 +29,19 @@
   --transition-property: color, background, box-shadow;
   --transition-duration: 0.3s;
   --transition-timing-function: ease-out;
+
+  /* Shopping List  */
+  --sl-instep_4: 4px;
+  --sl-instep_8: 8px;
+  --sl-instep_14: 14px;
+  --sl-instep_card: 20px;
+  --sl-instep_title: 40px;
+  --sl-instep_shop_plug: 120px;
+
+  --sl-font-size-title: 32px;
+  --sl-font-size_desc: 12px;
+  --sl-font-size_plug-title: 14px;
+  --sl-font-size_card-title: 16px;
+
+  --sl-button-size: 28px;
 }

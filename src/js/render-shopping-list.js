@@ -5,6 +5,7 @@ const div_card_container = document.querySelector('.js-shop_card');
 if (shopping_info.shopping_list) {
   markupBookCard(shopping_info.shopping_list);
   plug.style.display = 'none';
+  plug.style.display = 'block';
 } else {
   plug.style.display = 'block';
 }
@@ -60,7 +61,7 @@ function markupBookCard(data) {
           </a>
           <a class="global-link shop_card-link" href=${bookshop_link}>
             <img
-              src="./images/shoppin-list/icons/books_2.png"
+              src= required("./images/shoppin-list/icons/books_2.png")
               alt="books"
               height="16px"
             />
