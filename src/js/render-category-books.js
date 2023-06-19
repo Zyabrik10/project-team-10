@@ -79,6 +79,14 @@ export function renderTopBooks(bestsellersArray) {
       })
       .join('');
 
+    const headingMarkup = 'Best Sellers Books'
+    const startHeading = headingMarkup
+        .split(' ')
+        .splice(0, headingMarkup.split(' ').length - 1)
+        .join(' ');
+    const endHeading = headingMarkup
+      .split(' ')[headingMarkup.split(' ').length - 1];
+    headingEl.innerHTML = `${startHeading} <span class="colored-heading">${endHeading}</span>`
     bookThumb.insertAdjacentHTML('beforeend', markupCategory);
     shopping_info.theme === 'light'
       ? renderTheme('light')
