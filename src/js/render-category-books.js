@@ -40,7 +40,6 @@ function createMarkupBook({ data }) {
 
 // export function renderTopBooks() { }
 
-const containerTbEl = document.querySelector('.tb-container');
 const noBooksEl = document.querySelector('.no-books-card');
 
 fetchTopBooks().then(renderTopBooks);
@@ -80,7 +79,7 @@ export function renderTopBooks(bestsellersArray) {
       })
       .join('');
 
-    containerTbEl.insertAdjacentHTML('beforeend', markupCategory);
+    bookThumb.insertAdjacentHTML('beforeend', markupCategory);
     shopping_info.theme === 'light'
       ? renderTheme('light')
       : renderTheme('dark');
