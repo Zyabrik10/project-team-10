@@ -23,9 +23,10 @@
   overflow-y: scroll;
   scroll-behavior: smooth;
 }
-.support-list::-webkit-scrollbar {
-  display: block;
+.support-list::-webkit-scrollbar  {
+  display: none;
 }
+
 .support-img-01 {
   width: 131px;
 }

@@ -1,5 +1,56 @@
 <header>
-    <div class="container">
-        <include src="./partials/burger-menu.html"></include>
+  <include src="./partials/burger-menu.html"></include>
+  <div class="logo">
+    <nav>
+      <ul class="logo-list">
+        <li class="logo-link">
+          <a class="text-logo" href="#">
+            <img src="./images/header/logo.png" alt="Logo" class="logo-image">
+            Bookshelf
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <nav>
+    <ul class="header-links">
+      <li class="header-link home-link">
+        <a class="link-text" href="./">Home</a>
+      </li>
+      <li class="header-link shopping-link">
+        <a class="link-text" href="./shopping-list.html">
+          Shopping List
+          <svg class="sprite-image" width="20" height="20">
+            <use href="./images/header/icons/icons.svg#icon-shop"></use>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="switcher">
+    <div class="switcher-handle">
+      <svg class="switcher-circle">
+        <use href="./images/header/icons/icons.svg#icon-circle"></use>
+      </svg>
     </div>
+  </div>
+
+  <div class="user-profile">
+    <img src="/src/images/header/user-avatar.png" alt="User Photo" class="avatar">
+    <span class="username">John Doe</span>
+  </div>
+
+  <button class="menu-button global-button">
+    <svg class="menu-icon" width="24" height="24">
+      <use href="./images/header/icons/icons.svg#icon-menu"></use>
+    </svg>
+  </button>
+
+  <div class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>info
+    </div>
+  </div>
 </header>

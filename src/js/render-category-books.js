@@ -30,7 +30,7 @@ function createMarkupBook({ data }) {
     .map(({ author, title, book_image, _id }) => {
       return `
     <div class="flex-container-item"><a href=# class="global-link" data-id="${_id}">
-    <img class="book-img img" src="${book_image}" alt="${title}">
+    <img class="book-img img" src="${book_image}" alt="${title}" loading="lazy">
     <p class="book-title light-theme theme-switch global-p">${title}</p>
     <p class="tb-book-author global-p">${author}</p></a></div>`;
     })
@@ -40,7 +40,6 @@ function createMarkupBook({ data }) {
 
 // export function renderTopBooks() { }
 
-const containerTbEl = document.querySelector('.tb-container');
 const noBooksEl = document.querySelector('.no-books-card');
 
 fetchTopBooks().then(renderTopBooks);
@@ -57,7 +56,7 @@ export function renderTopBooks(bestsellersArray) {
           <li class="flex-container-item">
             <a href=# class="global-link" data-id="${_id}">
               <div class="tb-book-card">
-                <img class="tb-book-img img" src="${book_image}" alt="${title}">
+                <img class="tb-book-img img" src="${book_image}" alt="${title}" loading="lazy">
                 <p class="tb-book-title light-theme theme-switch global-p">${title}</p>
                 <p class="tb-book-author global-p">${author}</p>
               </div>
@@ -80,7 +79,7 @@ export function renderTopBooks(bestsellersArray) {
       })
       .join('');
 
-    containerTbEl.insertAdjacentHTML('beforeend', markupCategory);
+    bookThumb.insertAdjacentHTML('beforeend', markupCategory);
     shopping_info.theme === 'light'
       ? renderTheme('light')
       : renderTheme('dark');

@@ -6,6 +6,18 @@ export const shopping_info = JSON.parse(
   shopping_list: {},
 };
 
-export function saveShoppingList() {
+export function saveShoppingList(shopping_info) {
   localStorage.setItem('client-info', JSON.stringify(shopping_info));
+}
+
+export function removeShoppingListBoock(idBoock) {
+  let result = {};
+  for (const key in shopping_info.shopping_list) {
+    if (key !== idBoock) result[key] = shopping_info.shopping_list[key];
+  }
+  localStorage.clear();
+  saveShoppingList({
+    theme: 'light',
+    shopping_list: result,
+  });
 }
