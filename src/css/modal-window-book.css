@@ -32,11 +32,15 @@
     padding: 40px 22px;
     width: calc(100% - 20px * 2);
 
-    background: var(--empty);
+    
     border: 2px solid var(--main-text-color);
     border-radius: 18px;
-
-   
+}
+.modal.light-theme {
+    background: var(--empty);
+}
+.modal.dark-theme {
+    background: #202024;
 }
 modal.is-hidden {
     opacity: 0;
@@ -80,11 +84,13 @@ modal.is-hidden {
     height: 24px;
 
     background: inherit;
-    
+}
+.modal-close-btn.light-theme {
     color: var(--main-text-color);
 }
-    
-
+.modal-close-btn.dark-theme {
+    color: var(--empty);
+}
 .modal-close-btn:hover,
 .modal-close-btn:focus {
     color: var(--extra-border-color);
@@ -157,6 +163,12 @@ modal.is-hidden {
     font-size: 16px;
     line-height: calc(18 / 16);
 }
+.modal-title.light-theme {
+    color: var(--main-text-color);
+}
+.modal-title.dark-theme {
+    color: var(--empty);
+}
 @media screen and (min-width: 768px) {
     .modal-title {
         margin-bottom: 8px;
@@ -190,6 +202,12 @@ modal.is-hidden {
 
     font-size: 14px;
     line-height: calc(18 / 14);
+}
+.modal-description.light-theme {
+    color: var(--main-text-color);
+}
+.modal-description.dark-theme {
+    color: var(--empty);
 }
 @media screen and (min-width: 768px) {
     .modal-description {
@@ -233,8 +251,14 @@ modal.is-hidden {
     
     letter-spacing: -0.01em;
     text-transform: uppercase;
-   
-
+}
+.modal-add-btn.light-theme,
+.modal-remove-btn.light-theme {
+    color: var(--main-text-color);
+}
+.modal-add-btn.dark-theme,
+.modal-remove-btn.dark-theme {
+    color: var(--empty);
 }
 @media screen and (min-width: 768px) {
     .modal-add-btn,
