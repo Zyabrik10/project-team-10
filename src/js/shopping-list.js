@@ -7,7 +7,9 @@ export const shopping_info = JSON.parse(
 };
 
 export function saveShoppingList(shopping_info) {
-  localStorage.setItem('client-info', JSON.stringify(shopping_info));
+  if (shopping_info)
+    localStorage.setItem('client-info', JSON.stringify(shopping_info));
+  else alert('Error, data is not saved');
 }
 
 export function removeShoppingListBoock(idBoock) {
