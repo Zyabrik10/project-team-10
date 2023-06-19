@@ -15,6 +15,14 @@ body {
   letter-spacing: -0.04em;
 }
 
+body.light-theme {
+  background: #f6f6f6;
+}
+
+body.dark-theme {
+  background: #202024;
+}
+
 .container {
   margin: 0 auto;
   padding: 0 20px;
