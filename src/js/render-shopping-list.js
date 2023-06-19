@@ -1,7 +1,7 @@
 import { shopping_info } from './shopping-list';
 const plug = document.querySelector('.shop_plug');
 const div_card_container = document.querySelector('.js-shop_card');
-// const btnDelBook = document.querySelector('.js_btnDelBook');
+div_card_container.addEventListener('click', onClickDel);
 
 if (shopping_info.shopping_list) {
   markupBookCard(shopping_info.shopping_list);
@@ -36,7 +36,7 @@ function markupBookCard(data) {
               ${list_name}
             </h3>
           </div>
-          <button class="js_btnDelBook"></button>
+          <button data-id=${key}></button>
         </div>
         <p class="global-p shop_card-description theme-switch light-theme dark-theme">
           ${description}
@@ -71,3 +71,15 @@ function markupBookCard(data) {
 
   div_card_container.insertAdjacentHTML('beforeend', markup);
 }
+
+function onClickDel(event) {
+  if (event.target.nodeName !== 'BUTTON') {
+    return;
+  }
+  console.log(event.target.dataset.id);
+
+  // localStorage.removeItem('ui-theme');
+  // console.log(localStorage.getItem('ui-theme')); // null
+}
+
+console.log(shopping_info);
