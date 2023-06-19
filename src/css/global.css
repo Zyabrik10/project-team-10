@@ -1,5 +1,29 @@
 @import url('./variables.css');
 
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #e0e0e0;
+  border-radius: 12px;
+  transition-property: var(--transition-property);
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 *,
 *::before,
 *::after {
@@ -94,7 +118,6 @@ body.dark-theme {
   );
 } */
 
-
 .main-block > .container {
   display: flex;
   flex-direction: column;
@@ -134,4 +157,3 @@ body.dark-theme {
     gap: 86px;
   }
 }
-
