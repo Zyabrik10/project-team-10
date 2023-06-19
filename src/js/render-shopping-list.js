@@ -45,21 +45,21 @@ function markupBookCard(data) {
         <div class="shop_card-footer">
           <p class="global-p shop_card-author">${author}</p>
           <div class="shop_card-empty_place"></div>
-          <a class="global-link shop_card-link" href=${amazon_link}>
+          <a class="global-link shop_card-link" href=${amazon_link} target="_blank" rel="noopener noreferrer">
             <img
               src="./images/shoppin-list/icons/amazon.png"
               alt="amazon"
               height="11px"
             />
           </a>
-          <a class="global-link shop_card-link" href=${apple_books_link}>
+          <a class="global-link shop_card-link" href=${apple_books_link} target="_blank" rel="noopener noreferrer">
             <img
               src="./images/shoppin-list/icons/books_1.png"
               alt="books"
               height="16px"
             />
           </a>
-          <a class="global-link shop_card-link" href=${bookshop_link}>
+          <a class="global-link shop_card-link" href=${bookshop_link} target="_blank" rel="noopener noreferrer">
             <img
               src= required("./images/shoppin-list/icons/books_2.png")
               alt="books"
