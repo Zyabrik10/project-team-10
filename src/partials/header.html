@@ -1,26 +1,19 @@
-<header>
-  <include src="./partials/burger-menu.html"></include>
-  <div class="logo">
-    <nav>
-      <ul class="logo-list">
-        <li class="logo-link">
-          <a class="text-logo" href="#">
-            <img src="./images/header/logo.png" alt="Logo" class="logo-image">
-            Bookshelf
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </div>
+<header class="header">
+  <nav class="logo">
+    <a class="text-logo" href="#">
+      <img src="/src/images/header/logo-light.png" alt="Logo" class="logo-image">
+    </a>
+  </nav>
+  
 
   <nav>
     <ul class="header-links">
       <li class="header-link home-link">
-        <a class="link-text" href="./">Home</a>
+        <a class="link-text" href="./">Home</a> <!-- добавити в боді сторінки класс current-page -->
       </li>
       <li class="header-link shopping-link">
         <a class="link-text" href="./shopping-list.html">
-          Shopping List
+          SHOPPING LIST
           <svg class="sprite-image" width="20" height="20">
             <use href="./images/header/icons/icons.svg#icon-shop"></use>
           </svg>
@@ -38,19 +31,16 @@
   </div>
 
   <div class="user-profile">
-    <img src="/src/images/header/user-avatar.png" alt="User Photo" class="avatar">
-    <span class="username">John Doe</span>
+    <svg class="avatar"  width="37" height="37">
+      <use href="./images/header/icons/icons.svg#icon-user-non"></use>
+    </svg>
   </div>
 
   <button class="menu-button global-button">
-    <svg class="menu-icon" width="24" height="24">
+    <svg class="menu-icon" width="40" height="40">
       <use href="./images/header/icons/icons.svg#icon-menu"></use>
     </svg>
   </button>
 
-  <div class="modal">
-    <div class="modal-content">
-      <span class="modal-close">&times;</span>info
-    </div>
   </div>
 </header>
