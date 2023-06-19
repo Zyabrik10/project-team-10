@@ -1,6 +1,7 @@
 import { shopping_info } from './shopping-list';
 const plug = document.querySelector('.shop_plug');
 const div_card_container = document.querySelector('.js-shop_card');
+// const btnDelBook = document.querySelector('.js_btnDelBook');
 
 if (shopping_info.shopping_list) {
   markupBookCard(shopping_info.shopping_list);
@@ -25,19 +26,19 @@ function markupBookCard(data) {
     } = data[key];
 
     markup += `
-      <div class="shop_card">
+      <div class="shop_card theme-switch light-theme dark-theme">
       <img src=${book_image} alt=${title} />
       <div class="shop_card-div_description">
         <div class="shop_card-div_title">
           <div>
-            <h2 class="global-title shop_card-title">${title}</h2>
+            <h2 class="global-title shop_card-title theme-switch light-theme dark-theme">${title}</h2>
             <h3 class="global-title shop_card-category">
               ${list_name}
             </h3>
           </div>
-          <button></button>
+          <button class="js_btnDelBook"></button>
         </div>
-        <p class="global-p shop_card-description">
+        <p class="global-p shop_card-description theme-switch light-theme dark-theme">
           ${description}
         </p>
         <div class="shop_card-empty_place"></div>

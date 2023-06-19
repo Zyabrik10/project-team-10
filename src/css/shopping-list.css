@@ -4,11 +4,17 @@
   border: 1px solid red;
 } */
 
-.shop_title {
-  margin: var(--sl-instep_title) 0;
+h1.shop_title {
+  margin: 40px 0;
   font-weight: bold;
-  font-size: var(--sl-font-size-title);
+  font-size: 32px;
   line-height: 38px;
+}
+.shop_title.light-theme {
+  color: var(--light-text-color);
+}
+.shop_title.dark-theme {
+  color: var(--main-text-color);
 }
 .shop_title--violet {
   color: var(--extra-bg-color);
@@ -19,12 +25,16 @@
   width: 265px;
 }
 .shop_plug-title {
-  font-size: var(--sl-font-size_plug-title);
+  font-size: 14px;
   /* font-weight: normal; */
   font-weight: inherit;
   text-align: center;
   letter-spacing: -0.02em;
-
+}
+.shop_plug-title.light-theme {
+  color: var(--light-text-color-60);
+}
+.shop_plug-title.dark-theme {
   color: var(--dark-text-color-60);
 }
 
@@ -38,12 +48,18 @@
 
 /* розмітка картки з книжкою в shopingList */
 .shop_card {
-  margin-bottom: var(--sl-instep_card);
+  margin-bottom: 20px;
   height: 175px;
   display: flex;
-  padding: var(--sl-instep_14);
+  padding: 14px;
   border: 2px solid var(--extra-border-color-40);
   border-radius: 16px;
+}
+.shop_card.dark-theme {
+  background-color: var(--main-bg-color);
+}
+.shop_card.light-theme {
+  background-color: #ffffff;
 }
 
 .shop_card img {
@@ -52,23 +68,34 @@
 
 .shop_card-div_description {
   width: 100%;
-  margin-left: var(--sl-instep_14);
+  margin-left: 14px;
   display: flex;
   flex-direction: column;
 }
+.shop_card-div_description.dark-theme {
+  background-color: var(--main-bg-color);
+}
+.shop_card-div_description.light-theme {
+  background-color: #ffffff;
+}
 
 .shop_card-title {
-  font-size: var(--sl-font-size_card-title);
+  font-size: 16px;
   line-height: 18px;
-
   text-transform: uppercase;
+}
+.shop_card-title.light-theme {
+  color: var(--light-text-color);
+}
+.shop_card-title.dark-theme {
+  color: var(--main-text-color);
 }
 
 .shop_card-category {
-  margin-top: var(--sl-instep_4);
+  margin-top: 4px;
   /* font-weight: normal; */
   font-weight: inherit;
-  font-size: var(--sl-font-size_desc);
+  font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.03em;
 
@@ -76,12 +103,12 @@
 }
 
 .shop_card button {
-  width: var(--sl-button-size);
-  height: var(--sl-button-size);
+  width: 28px;
+  height: 28px;
   background-size: contain;
   background-repeat: no-repeat;
-  background-color: var(--light-text-color);
   background-image: url('../images/shoppin-list/icons/del.png');
+  /* background-color: #0000; */
   border: none;
   cursor: pointer;
 }
@@ -92,8 +119,8 @@
 }
 
 .shop_card-description {
-  margin-top: var(--sl-instep_8);
-  margin-bottom: var(--sl-instep_8);
+  margin-top: 8px;
+  margin-bottom: 8px;
   overflow: auto;
   text-overflow: ellipsis;
 }
@@ -117,7 +144,7 @@
 }
 
 .shop_card-link {
-  margin-left: var(--sl-instep_8);
+  margin-left: 8px;
 }
 .shop_card-link img {
   height: 16px;
@@ -145,30 +172,26 @@
     line-height: 24px;
   }
   .shop_card-div_description {
-    margin-left: var(--sl-instep_24);
+    margin-left: 24px;
   }
   .shop_card {
     height: 220px;
-    padding: var(--sl-instep_24);
+    padding: 24px;
   }
   .shop_card button {
-    width: var(--size_button);
-    height: var(--size_button);
+    width: 34px;
+    height: 34px;
   }
   .shop_card-description {
-    margin-top: var(--sl-instep_14);
+    margin-top: 14px;
   }
   .shop_card-link {
-    margin-left: var(--sl-instep_16);
+    margin-left: 16px;
   }
   .shop_card-link img {
-    height: var(--sl-instep_28);
+    height: 28px;
   }
   .shop_card-link .shop_amazon {
-    height: var(--sl-instep_16);
+    height: 16px;
   }
-}
-
-/* desktop */
-@media screen and (min-width: 1440px) {
 }
