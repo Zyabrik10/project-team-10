@@ -107,8 +107,8 @@ h1.shop_title {
   height: 28px;
   background-size: contain;
   background-repeat: no-repeat;
+  background-color: #ffffff;
   background-image: url('../images/shoppin-list/icons/del.png');
-  /* background-color: #0000; */
   border: none;
   cursor: pointer;
 }
