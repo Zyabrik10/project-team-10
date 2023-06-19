@@ -50,6 +50,7 @@ export function renderTopBooks(bestsellersArray) {
   } else {
     const markupCategory = bestsellersArray.data
       .map(({ list_name, books }) => {
+        const idCategory = list_name.toLowerCase().replace(/\s/g, "");
         const markup = books
           .map(({ author, title, book_image, _id }) => {
             return `
@@ -67,13 +68,13 @@ export function renderTopBooks(bestsellersArray) {
           .join('');
         return `
       <div class="tb-category-container">
-        <h2 class='tb-category global-title'>${list_name}</h2>
+        <h2 class='tb-category global-title' id="${idCategory}">${list_name}</h2>
         <div class='tb-books-container'>
           <ul class="global-list flex-container">
             ${markup}
           </ul>
         </div>
-        <button class="tb-button global-button light-theme theme-switch">See more</button>
+        <button class="tb-button global-button light-theme theme-switch" id="${idCategory}">See more</button>
       </div>
       `;
       })
