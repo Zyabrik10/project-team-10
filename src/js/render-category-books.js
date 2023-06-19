@@ -29,10 +29,15 @@ function createMarkupBook({ data }) {
 
     .map(({ author, title, book_image, _id }) => {
       return `
-    <div class="flex-container-item"><a href=# class="global-link" data-id="${_id}">
-    <img class="book-img img" src="${book_image}" alt="${title}" loading="lazy">
-    <p class="book-title light-theme theme-switch global-p">${title}</p>
-    <p class="tb-book-author global-p">${author}</p></a></div>`;
+          <li class="flex-container-item">
+            <a href=# class="global-link" data-id="${_id}">
+              <div class="tb-book-card">
+                <img class="tb-book-img img" src="${book_image}" alt="${title}" loading="lazy">
+                <p class="tb-book-title light-theme theme-switch global-p">${title}</p>
+                <p class="tb-book-author global-p">${author}</p>
+              </div>
+            </a>
+          </li>`;
     })
     .join('');
   bookThumb.innerHTML = markup;
@@ -66,7 +71,7 @@ export function renderTopBooks(bestsellersArray) {
           })
           .join('');
         return `
-      <div class="tb-category-container">
+      <li class="tb-category-container">
         <h2 class='tb-category global-title'>${list_name}</h2>
         <div class='tb-books-container'>
           <ul class="global-list flex-container">
@@ -74,7 +79,7 @@ export function renderTopBooks(bestsellersArray) {
           </ul>
         </div>
         <button class="tb-button global-button light-theme theme-switch">See more</button>
-      </div>
+      </li>
       `;
       })
       .join('');

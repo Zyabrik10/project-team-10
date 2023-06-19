@@ -110,11 +110,11 @@ body.dark-theme {
   gap: var(--flex-item-gap);
 }
 
-/* .flex-container-item {
+.flex-container-item {
   flex-basis: calc(
     (100% - (var(--flex-item) - 1) * var(--flex-item-gap)) / var(--flex-item)
   );
-} */
+}
 
 .main-block > .container {
   display: flex;
