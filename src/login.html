@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home | Book a book</title>
+    <title>Login</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,23 +22,21 @@
     <!-- Own Styles -->
     <link rel="stylesheet" href="./style.css" />
   </head>
-
+  <h2>LOGIN</h2>
   <body>
-    <button type="button" class="log-out global-button">Log Out</button>
+    <form class="login-form" autocomplete="off">
+      <label>
+        Email
+        <input type="email" name="email" autofocus required />
+      </label>
+      <label>
+        Password
+        <input type="password" name="password" autofocus required />
+      </label>
 
-    <include src="./partials/modal-window-book.html"></include>
-
-    <include src="./partials/header.html"></include>
-    <div class="main-block">
-      <div class="container">
-        <div class="asides">
-          <include src="./partials/catalog-list.html"></include>
-          <include src="./partials/extra-block.html"></include>
-        </div>
-        <include src="./partials/book-catalog.html"></include>
-      </div>
-    </div>
-    <script type="module" src="../src/js/firebase-app.js"></script>
-    <script type="module" src="./index.js"></script>
+      <button class="login" type="submit">Submit</button>
+    </form>
+    <p>If you are not signed up yet, <a href="./sign-up.html">CLICK HERE</a></p>
+    <script type="module" src="./js/login.js"></script>
   </body>
 </html>

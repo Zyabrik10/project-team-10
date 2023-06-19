@@ -7,7 +7,7 @@ const loadCategory = document.querySelector('.load');
 
 fetchAllCategories()
   .then(data => {
-    console.log(data);
+    // console.log(data);
     const markup = data
       .map(({ list_name }) => {
         return `<li class="category-list-item global-list light-theme theme-switch">${list_name}</li>`;

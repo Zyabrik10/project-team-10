@@ -24,21 +24,24 @@
   </head>
 
   <body>
-    <button type="button" class="log-out global-button">Log Out</button>
+    <h1>Sign Up</h1>
+    <form class="sign-up-form" autocomplete="off">
+      <label>
+        Email
+        <input type="email" name="email" autofocus required />
+      </label>
+      <label>
+        Password
+        <input type="password" name="password" autofocus required />
+      </label>
+      <label>
+        Username
+        <input type="text" name="username" autofocus required />
+      </label>
+      <button type="submit">Submit</button>
+    </form>
+    <p>To login in, <a href="./login.html">CLICK HERE</a></p>
 
-    <include src="./partials/modal-window-book.html"></include>
-
-    <include src="./partials/header.html"></include>
-    <div class="main-block">
-      <div class="container">
-        <div class="asides">
-          <include src="./partials/catalog-list.html"></include>
-          <include src="./partials/extra-block.html"></include>
-        </div>
-        <include src="./partials/book-catalog.html"></include>
-      </div>
-    </div>
-    <script type="module" src="../src/js/firebase-app.js"></script>
-    <script type="module" src="./index.js"></script>
+    <script type="module" src="./js/sign-up.js"></script>
   </body>
 </html>

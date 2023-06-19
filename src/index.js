@@ -1,3 +1,5 @@
+import './js/firebase-app';
+import './js/sign-up';
 import './js/switch-theme';
 import './js/extra-block-slider';
 import './js/modal-window';
