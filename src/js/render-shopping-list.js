@@ -1,17 +1,26 @@
-import { shopping_info } from './shopping-list';
+import {
+  shopping_info,
+  removeShoppingListBoock,
+  saveShoppingList,
+} from './shopping-list';
 const plug = document.querySelector('.shop_plug');
 const div_card_container = document.querySelector('.js-shop_card');
 div_card_container.addEventListener('click', onClickDel);
 
-if (shopping_info.shopping_list) {
-  markupBookCard(shopping_info.shopping_list);
-  plug.style.display = 'none';
-} else {
-  plug.style.display = 'block';
+ofShoppingList();
+
+function ofShoppingList() {
+  if (shopping_info.shopping_list) {
+    markupBookCard(shopping_info.shopping_list);
+    plug.style.display = 'none';
+  } else {
+    plug.style.display = 'block';
+  }
 }
 
 function markupBookCard(data) {
   let markup = '';
+  div_card_container.innerHTML = markup;
   const keys = Object.keys(data);
   keys.forEach(key => {
     const {
@@ -26,7 +35,7 @@ function markupBookCard(data) {
     } = data[key];
 
     markup += `
-      <div class="shop_card theme-switch light-theme dark-theme">
+      <div class="shop_card theme-switch light-theme dark-theme" id="${key}">
       <img src=${book_image} alt=${title} />
       <div class="shop_card-div_description">
         <div class="shop_card-div_title">
@@ -76,10 +85,7 @@ function onClickDel(event) {
   if (event.target.nodeName !== 'BUTTON') {
     return;
   }
-  console.log(event.target.dataset.id);
-
-  // localStorage.removeItem('ui-theme');
-  // console.log(localStorage.getItem('ui-theme')); // null
+  removeShoppingListBoock(event.target.dataset.id);
+  const cardDel = document.getElementById(`${event.target.dataset.id}`);
+  cardDel.remove();
 }
-
-console.log(shopping_info);

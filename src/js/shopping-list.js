@@ -11,5 +11,13 @@ export function saveShoppingList(shopping_info) {
 }
 
 export function removeShoppingListBoock(idBoock) {
-  localStorage.setItem('client-info', JSON.stringify(shopping_info));
+  let result = {};
+  for (const key in shopping_info.shopping_list) {
+    if (key !== idBoock) result[key] = shopping_info.shopping_list[key];
+  }
+  localStorage.clear();
+  saveShoppingList({
+    theme: 'light',
+    shopping_list: result,
+  });
 }
