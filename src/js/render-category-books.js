@@ -72,18 +72,14 @@ export function renderTopBooks(bestsellersArray) {
           })
           .join('');
         return `
-      <div class="tb-category-container">
-        <h2 class='tb-category global-title' id="${idCategory}">${list_name}</h2>
       <li class="tb-category-container">
-        <h2 class='tb-category global-title'>${list_name}</h2>
+        <h2 class='tb-category global-title' id="${idCategory}">${list_name}</h2>
         <div class='tb-books-container'>
-          <ul class="global-list flex-container">
+          <ul class="global-list flex-container tb-books-container">
             ${markup}
           </ul>
         </div>
         <button class="tb-button global-button light-theme theme-switch" id="${idCategory}">See more</button>
-      </div>
-        <button class="tb-button global-button light-theme theme-switch">See more</button>
       </li>
       `;
       })
@@ -104,3 +100,23 @@ export function renderTopBooks(bestsellersArray) {
     modalWindow();
   }
 }
+
+bookThumb.addEventListener('click', onSeeMoreClick)
+
+ function onSeeMoreClick(event) {
+   if (event.target.matches('button')) {
+    console.log('button');
+     const categories = document.querySelectorAll('.tb-category')
+    categories.forEach(async function (el) {
+      if (el.id == event.target.id) {
+        const item = el.innerHTML;
+        headingEl.textContent = item;
+        bookThumb.classList.add('flex-container');
+        const data = await fetchBooksByExactCategory(item);
+        createMarkupBook(data);
+      }
+    })
+  }
+}
+
+
