@@ -208,8 +208,7 @@
   margin-top: 40px;
 }
 
-
-.no-books-card{
+.no-books-card {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -218,15 +217,15 @@
   margin: 40px auto;
 }
 
-.no-books-paragraph{
+.no-books-paragraph {
   margin: 0;
   font-size: 18px;
-  line-height: calc(24/18);
+  line-height: calc(24 / 18);
   text-align: center;
   letter-spacing: -0.02em;
   color: var(--dark-text-color-60);
 }
 
 .is-hidden {
-  display: none
+  display: none;
 }
