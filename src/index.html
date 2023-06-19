@@ -24,7 +24,8 @@
   </head>
 
   <body class="light-theme theme-switch">
-  <button class="switch-theme-button">switch</button>    <button type="button" class="login-section global-button">Text</button>
+    <button class="switch-theme-button">switch</button>
+    <button type="button" class="login-section global-button">Text</button>
     <include src="./partials/modal-window-book.html"></include>
 
     <include src="./partials/header.html"></include>
@@ -36,6 +37,13 @@
         </div>
         <include src="./partials/book-catalog.html"></include>
       </div>
+      <button type="button" class="scroll-up-button global-button js-sup-btn">
+        <svg class="scroll-up-svg">
+          <use
+            href="./images/extra-block/icons/scrollUp.svg#icon-scroll-up"
+          ></use>
+        </svg>
+      </button>
     </div>
     <script type="module" src="../src/js/firebase-app.js"></script>
     <script type="module" src="./index.js"></script>
