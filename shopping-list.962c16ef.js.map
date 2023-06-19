@@ -1,1 +1,0 @@
-{"mappings":"oeAAAA,EAAA,S","sources":["src/shopping-list.js"],"sourcesContent":["import './js/switch-theme';\nimport './js/extra-block-slider';\nimport './js/modal-window';\nimport './js/burger-menu';\nimport './js/shopping-list';\nimport './js/color-swithcer';\n"],"names":["parcelRequire"],"version":3,"file":"shopping-list.962c16ef.js.map"}
