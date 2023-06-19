@@ -14,14 +14,12 @@
 ::-webkit-scrollbar-thumb {
   background: #e0e0e0;
   border-radius: 12px;
-  transition-property: var(--transition-property);
-  transition-duration: var(--transition-duration);
-  transition-timing-function: var(--transition-timing-function);
+  transition: 0.3s ease-in-out;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #b4b4b4;
 }
 
 *,
