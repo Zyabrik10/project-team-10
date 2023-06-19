@@ -32,15 +32,6 @@ const emailInputEl = document.querySelector("input[name='email']");
 const passwordInputEl = document.querySelector("input[name='password']");
 const gettingFormData = JSON.parse(localStorage.getItem('login-form'));
 
-//need to be deleted later
-onAuthStateChanged(auth, user => {
-  if (user !== null) {
-    console.log('User logged in!');
-  } else {
-    console.log('No user.');
-  }
-});
-
 const updateFormData = () => {
   if (gettingFormData !== null) {
     emailInputEl.value =

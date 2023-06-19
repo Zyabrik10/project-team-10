@@ -26,14 +26,6 @@ const auth = getAuth(app);
 const database = getDatabase(app);
 const user = auth.currentUser;
 
-onAuthStateChanged(auth, user => {
-  if (user !== null) {
-    console.log('User logged in!');
-  } else {
-    console.log('No user.');
-  }
-});
-
 // Inforamtion for the sign-up
 const formData = {};
 const formEl = document.querySelector('.sign-up-form');
