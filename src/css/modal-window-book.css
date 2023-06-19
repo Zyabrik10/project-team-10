@@ -1,5 +1,5 @@
 @import url('./variables.css');
-@import url('./global.css');
+
 
 
 .backdrop {
@@ -14,11 +14,11 @@
 
     transition: var(--transition-property), var(--transition-duration), var(--transition-timing-function);
 }
-/* .backdrop.is-hidden {
+.backdrop.is-hidden {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-} */
+}
 
 
 .modal {
@@ -38,11 +38,11 @@
 
    
 }
-/* modal.is-hidden {
+modal.is-hidden {
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.4);
     visibility: 0;
-} */
+}
 
 @media screen and (min-width: 375px) and (max-width: 767px) {
     .modal {
@@ -229,11 +229,11 @@
 
     text-align: center;
     font-weight: 700;
-    font-size: 14px;
-    line-height: calc(18 / 14);
+    
+    
     letter-spacing: -0.01em;
     text-transform: uppercase;
-    color: inherit;
+   
 
 }
 @media screen and (min-width: 768px) {
@@ -264,7 +264,7 @@
     padding-right: 23px;
 }
 
-/* .modal-add-btn.is-hidden, */
+.modal-add-btn.is-hidden,
 .modal-remove-btn-wrapper.is-hidden {
     position: absolute;
     opacity: 0;
