@@ -55,8 +55,8 @@ function markupBookCard(data) {
             <img
               src= ${require('../images/shoppin-list/icons/book_1.png')}
               alt="books"
-            />
-          </a>
+              />
+           </a>
           <a class="global-link shop_card-link" href=${bookshop_link} target="_blank" rel="noopener noreferrer">
             <img
               src= ${require('../images/shoppin-list/icons/book_2.png')}
