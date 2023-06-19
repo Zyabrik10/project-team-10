@@ -15,7 +15,8 @@
 }
 
 .shop_plug {
-  margin: auto 55px;
+  margin: 120px auto;
+  width: 265px;
 }
 .shop_plug-title {
   font-size: var(--sl-font-size_plug-title);
@@ -80,7 +81,7 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-color: var(--light-text-color);
-  background-image: url('../images/shoppin-list/icons/del.svg');
+  background-image: url('../images/shoppin-list/icons/del.png');
   border: none;
   cursor: pointer;
 }
@@ -118,22 +119,56 @@
 .shop_card-link {
   margin-left: var(--sl-instep_8);
 }
+.shop_card-link img {
+  height: 16px;
+}
+.shop_card-link img:hover {
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
+}
 
-/* tablet */
+.shop_card-link .shop_amazon {
+  height: 11px;
+}
+
+/* tablet  & PC */
 @media screen and (min-width: 768px) {
+  .shop_plug {
+    margin: 140px auto;
+    width: 322px;
+  }
   .shop_title {
-    font-size: 48px;
+    font-size: var(--font-size_tablet_PC-title);
     line-height: 52px;
   }
   .shop_plug-title {
-    font-size: 18px;
+    font-size: var(--font-size_tablet_PC-plug-title);
     line-height: 24px;
+  }
+  .shop_card-div_description {
+    margin-left: var(--sl-instep_24);
+  }
+  .shop_card {
+    height: 220px;
+    padding: var(--sl-instep_24);
+  }
+  .shop_card button {
+    width: var(--size_button);
+    height: var(--size_button);
+  }
+  .shop_card-description {
+    margin-top: var(--sl-instep_14);
+  }
+  .shop_card-link {
+    margin-left: var(--sl-instep_16);
+  }
+  .shop_card-link img {
+    height: var(--sl-instep_28);
+  }
+  .shop_card-link .shop_amazon {
+    height: var(--sl-instep_16);
   }
 }
 
 /* desktop */
 @media screen and (min-width: 1440px) {
-  .tb-container {
-    width: 996px;
-  }
 }
