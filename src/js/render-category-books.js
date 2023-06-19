@@ -1,12 +1,12 @@
 // Рендер однієї секції категорії з книгами
 import { fetchBooksByExactCategory, fetchTopBooks } from './fetch-func';
 
+export function renderCategoryBooks() {}
 
-export function renderCategoryBooks() { }
-
-import { modalWindow } from './modal-window'
+import { modalWindow } from './modal-window';
+import { shopping_info } from './shopping-list';
+import { renderTheme } from './switch-theme';
 // export function renderCategoryBooks() { }
-
 
 const categoryList = document.querySelector('.category-list');
 const bookThumb = document.querySelector('.tb-container');
@@ -33,7 +33,6 @@ function createMarkupBook({ data }) {
     <img class="book-img img" src="${book_image}" alt="${title}">
     <p class="book-title light-theme theme-switch global-p">${title}</p>
     <p class="tb-book-author global-p">${author}</p></a></div>`;
-
     })
     .join('');
   bookThumb.innerHTML = markup;
@@ -82,6 +81,9 @@ export function renderTopBooks(bestsellersArray) {
       .join('');
 
     containerTbEl.insertAdjacentHTML('beforeend', markupCategory);
-    modalWindow()
+    shopping_info.theme === 'light'
+      ? renderTheme('light')
+      : renderTheme('dark');
+    modalWindow();
   }
 }

@@ -34,5 +34,3 @@ function switchTheme() {
 }
 
 buttonSwitchTheme.addEventListener('click', switchTheme);
-
-shopping_info.theme === 'light' ? renderTheme('light') : renderTheme('dark');
