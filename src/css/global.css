@@ -151,7 +151,7 @@ body.dark-theme {
 @media screen and (min-width: 1440px) {
   .main-block > .container {
     flex-direction: row;
-    gap: 40px;
+    gap: 35px;
   }
 }
 
