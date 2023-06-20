@@ -11,16 +11,39 @@ import { renderTheme } from './switch-theme';
 const categoryList = document.querySelector('.category-list');
 const bookThumb = document.querySelector('.tb-container');
 const headingEl = document.querySelector('.heading-primary');
+const allCtgrEl = document.querySelector('#allctgr');
 
 categoryList.addEventListener('click', renderCategoryBooks);
 async function renderCategoryBooks(event) {
   const item = event.target.textContent;
-  headingEl.textContent = item;
-  headingEl.classList.add('ctg-maintitle');
-  bookThumb.classList.add('flex-container');
+  const itemFirst = allCtgrEl.textContent;
 
-  const data = await fetchBooksByExactCategory(item);
-  createMarkupBook(data);
+  if (item === itemFirst) {
+    bookThumb.innerHTML = '';
+    fetchTopBooks().then
+      (renderTopBooks);
+    const headingMarkup = 'Best Sellers Books';
+    const startHeading = headingMarkup
+        .split(' ')
+        .splice(0, headingMarkup.split(' ').length - 1)
+        .join(' ');
+    const endHeading = headingMarkup
+      .split(' ')[headingMarkup.split(' ').length - 1];
+    headingEl.innerHTML = `${startHeading} <span class="colored-heading">${endHeading}</span>`;
+  } else {
+    const startHeading = item
+        .split(' ')
+        .splice(0, item.split(' ').length - 1)
+        .join(' ');
+    const endHeading = item
+      .split(' ')[item.split(' ').length - 1];
+    headingEl.innerHTML = `${startHeading} <span class="colored-heading">${endHeading}</span>`;
+    headingEl.classList.add('ctg-maintitle');
+    bookThumb.classList.add('flex-container');
+
+    const data = await fetchBooksByExactCategory(item);
+    createMarkupBook(data);
+  }
 }
 
 function createMarkupBook({ data }) {
