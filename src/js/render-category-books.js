@@ -19,6 +19,7 @@ setTimeout(e => {
   loader.classList.add('is-hidden');
 }, 2500);
 async function renderCategoryBooks(event) {
+  bookThumb.innerHTML = '';
   loader.classList.remove('is-hidden');
   const item = event.target.textContent;
   const itemFirst = allCtgrEl.textContent;
