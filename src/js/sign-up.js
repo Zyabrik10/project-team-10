@@ -28,7 +28,7 @@ const user = auth.currentUser;
 
 // Inforamtion for the sign-up
 const formData = {};
-const formEl = document.querySelector('.sign-up-form');
+const formEl = document.querySelector('.login-form');
 const emailInputEl = document.querySelector("input[name='email']");
 const passwordInputEl = document.querySelector("input[name='password']");
 const usernameInputEl = document.querySelector("input[name='username']");
