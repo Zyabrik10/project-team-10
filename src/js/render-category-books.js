@@ -17,7 +17,7 @@ const loader = document.querySelector('.loader');
 categoryList.addEventListener('click', renderCategoryBooks);
 setTimeout(e => {
   loader.classList.add('is-hidden');
-}, 2000);
+}, 2500);
 async function renderCategoryBooks(event) {
   loader.classList.remove('is-hidden');
   const item = event.target.textContent;
@@ -48,7 +48,7 @@ async function renderCategoryBooks(event) {
     const data = await fetchBooksByExactCategory(item);
     loader.classList.add('is-hidden');
 
-  createMarkupBook(data);
+    createMarkupBook(data);
   }
 }
 
@@ -112,6 +112,7 @@ export function renderTopBooks(bestsellersArray) {
       `;
       })
       .join('');
+    loader.classList.add('is-hidden');
 
     bookThumb.insertAdjacentHTML('beforeend', markupCategory);
     shopping_info.theme === 'light'
@@ -121,21 +122,21 @@ export function renderTopBooks(bestsellersArray) {
   }
 }
 
+bookThumb.addEventListener('click', onSeeMoreClick);
 
-
-bookThumb.addEventListener('click', onSeeMoreClick)
-
- async function onSeeMoreClick(event) {
-   if (event.target.matches('button')) {
-     let bookTitle = event.target.closest('.tb-category-container').firstChild.nextSibling.textContent
-     let categoryContainer = event.target.closest('.tb-category-container').firstChild.nextSibling.nextSibling.nextSibling
+async function onSeeMoreClick(event) {
+  if (event.target.matches('button')) {
+    let bookTitle = event.target.closest('.tb-category-container').firstChild
+      .nextSibling.textContent;
+    let categoryContainer = event.target.closest('.tb-category-container')
+      .firstChild.nextSibling.nextSibling.nextSibling;
     const data = await fetchBooksByExactCategory(bookTitle);
-     createMarkupSeeMore(data, categoryContainer);
-     event.target.classList.add('is-hidden')
-   }
+    createMarkupSeeMore(data, categoryContainer);
+    event.target.classList.add('is-hidden');
+  }
 }
 
-function createMarkupSeeMore({ data },categoryContainer) {
+function createMarkupSeeMore({ data }, categoryContainer) {
   const markup = data
     .map(({ author, title, book_image, _id }) => {
       return `
@@ -152,6 +153,6 @@ function createMarkupSeeMore({ data },categoryContainer) {
     .join('');
   const seeMoreMarkup = `<ul class="global-list flex-container">
             ${markup}
-          </ul>`
+          </ul>`;
   categoryContainer.innerHTML = seeMoreMarkup;
 }
