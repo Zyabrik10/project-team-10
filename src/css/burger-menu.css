@@ -1,20 +1,11 @@
-:root {
-  --place-bg-color: #4f2ee8;
-  --light-text-color: #ffffff;
-  --main-text-color: #111111;
-}
-
-body {
-  position: relative;
-}
+@import './css/variables.css';
 
 .container {
-  position: relative;
   width: 375px;
   height: 812px;
   background: radial-gradient(
     183.6% 183.01% at 59.76% -23.42%,
-    var(--place-bg-color) 18.03%,
+    #4f2ee8 18.03%,
     #ffffff 100%
   );
 }
@@ -33,12 +24,11 @@ body {
 }
 
 .preson-name {
-  font-family: 'DM Sans';
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   font-size: 22px;
   line-height: 29px;
-  letter-spacing: -0.02em;
-  color: var(--light-text-color);
+  color: #ffffff;
 }
 
 .menu {
@@ -61,11 +51,10 @@ body {
   order: 0;
   flex-grow: 0;
   justify-content: center;
-  color: var(--light-text-color);
 }
 
 .shopping {
-  font-family: 'DM Sans';
+  font-family: 'DM Sans', sans-serif;
   font-weight: 500;
   font-size: 14px;
   line-height: 18px;
@@ -94,10 +83,10 @@ body {
   box-sizing: border-box;
   width: 118px;
   height: 48px;
-  background: #ffffff;
+  background: var(--main-bg-color);
   border: 1.5px solid var(--main-text-color);
   border-radius: 18px;
-  font-family: 'DM Sans';
+  font-family: 'DM Sans', sans-serif;
   font-weight: 500;
   font-size: 14px;
   line-height: 18px;
