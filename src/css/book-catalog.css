@@ -50,7 +50,7 @@
 
 .tb-category {
   overflow: hidden;
-  /* white-space: nowrap; */
+  white-space: nowrap;
   text-overflow: ellipsis;
   font-weight: 400;
   text-align: left;
@@ -188,7 +188,7 @@
 .tb-books-container > ul {
   display: flex;
   --flex-item: 1;
-  --flex-item-gap: 0px;
+  --flex-item-gap: 10px;
 }
 
 .tb-books-container > ul > img {
@@ -212,14 +212,14 @@
 
 /* tablet */
 @media screen and (max-width: 1438px) {
-  .tb-books-container > ul > li:nth-child(n + 4) {
+  .hidden-books > li:nth-child(n + 4) {
     display: none;
   }
 }
 
 /* mobile */
 @media screen and (max-width: 768px) {
-  .tb-books-container > ul > li:nth-child(n + 2) {
+  .hidden-books > li:nth-child(n + 2) {
     display: none;
   }
 }
