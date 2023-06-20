@@ -78,11 +78,11 @@ const noBooksEl = document.querySelector('.no-books-card');
 
 fetchTopBooks().then(renderTopBooks);
 
-export function renderTopBooks(bestsellersArray) {
-  if (bestsellersArray.data.length == 0) {
+export function renderTopBooks({ data }) {
+  if (data.length == 0) {
     noBooksEl.classList.remove('is-hidden');
   } else {
-    const markupCategory = bestsellersArray.data
+    const markupCategory = data
       .map(({ list_name, books }) => {
         const markup = books
           .map(({ author, title, book_image, _id }) => {
