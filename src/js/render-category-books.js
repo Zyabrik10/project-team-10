@@ -56,7 +56,12 @@ async function renderCategoryBooks(event) {
 function createMarkupBook({ data }) {
   bookThumb.innerHTML = '';
   const markup = data
-    .map(({ author, title, book_image, _id }) => {
+    .map(({ list_name,
+          book_image = "https://bookcart.azurewebsites.net/Upload/Default_image.jpg",
+          title = "title not available",
+          author = "anonymous",
+          description,
+          _id, }) => {
       return `
           <li class="flex-container-item">
             <a href=# class="global-link" data-id="${_id}">
@@ -86,7 +91,12 @@ export function renderTopBooks({ data }) {
     const markupCategory = data
       .map(({ list_name, books }) => {
         const markup = books
-          .map(({ author, title, book_image, _id }) => {
+          .map(({ list_name,
+          book_image = "https://bookcart.azurewebsites.net/Upload/Default_image.jpg",
+          title = "title not available",
+          author = "anonymous",
+          description,
+          _id, }) => {
             return `
           <li class="flex-container-item">
             <a href=# class="global-link" data-id="${_id}">
@@ -139,7 +149,12 @@ async function onSeeMoreClick(event) {
 
 function createMarkupSeeMore({ data }, categoryContainer) {
   const markup = data
-    .map(({ author, title, book_image, _id }) => {
+    .map(({ list_name,
+          book_image = "https://bookcart.azurewebsites.net/Upload/Default_image.jpg",
+          title = "title not available",
+          author = "anonymous",
+          description,
+          _id, }) => {
       return `
           <li class="flex-container-item">
             <a href=# class="global-link" data-id="${_id}">
