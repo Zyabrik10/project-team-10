@@ -144,6 +144,7 @@ async function onSeeMoreClick(event) {
     const data = await fetchBooksByExactCategory(bookTitle);
     createMarkupSeeMore(data, categoryContainer);
     event.target.classList.add('is-hidden');
+    loader.classList.add('is-hidden');
   }
 }
 
