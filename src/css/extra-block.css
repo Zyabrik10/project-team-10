@@ -2,7 +2,8 @@
 
 .support-aside {
   position: relative;
-  width: 335px;
+  width: 100%;
+  max-width: 335px;
   height: 352px;
   box-shadow: 0px 10px 10px 0px #f5f5f71a;
   border-radius: 10px;
@@ -26,6 +27,7 @@
 .support-list::-webkit-scrollbar {
   display: block;
 }
+
 .support-img-01 {
   width: 131px;
 }
