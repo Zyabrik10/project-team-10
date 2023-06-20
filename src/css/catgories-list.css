@@ -72,17 +72,20 @@
 }
 
 .category-list-item:hover,
-.category-list-item:focus {
+.category-list-item:focus,
+.category-list-item.active {
   font-weight: 500;
   text-transform: uppercase;
 }
 
 .category-list-item.light-theme:hover,
-.category-list-item.light-theme:focus {
+.category-list-item.light-theme:focus,
+.category-list-item.light-theme.active {
   color: var(--extra-text-color);
 }
 .category-list-item.dark-theme:hover,
-.category-list-item.dark-theme:focus {
+.category-list-item.dark-theme:focus,
+.category-list-item.dark-theme.active {
   color: var(--place-text-color);
 }
 
