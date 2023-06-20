@@ -121,13 +121,6 @@ bookThumb.addEventListener('click', onSeeMoreClick)
    if (event.target.matches('button')) {
      let bookTitle = event.target.closest('.tb-category-container').firstChild.nextSibling.textContent
      let categoryContainer = event.target.closest('.tb-category-container').firstChild.nextSibling.nextSibling.nextSibling
-     const startHeading = bookTitle
-      .split(' ')
-      .splice(0, bookTitle.split(' ').length - 1)
-      .join(' ');
-    const endHeading = bookTitle.split(' ')[bookTitle.split(' ').length - 1];
-    headingEl.innerHTML = `${startHeading} <span class="colored-heading">${endHeading}</span>`;
-    bookThumb.classList.add('flex-container');
     const data = await fetchBooksByExactCategory(bookTitle);
      createMarkupSeeMore(data, categoryContainer);
      event.target.classList.add('is-hidden')
