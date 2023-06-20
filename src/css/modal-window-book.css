@@ -60,11 +60,9 @@
 .book-title {
   margin-bottom: 4px;
 
-  font-style: normal;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.2;
-  letter-spacing: -0.04em;
   color: var(--main-text-color);
 }
 
@@ -75,18 +73,16 @@
   font-weight: 400;
   font-size: 12px;
   line-height: 1.3;
-  letter-spacing: -0.04em;
   color: var(--sub-text-color);
 }
 
 .book-descr {
   margin-bottom: 14px;
 
-  font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.3;
-  letter-spacing: -0.04em;
+
   color: var(--main-text-color);
 }
 
@@ -116,10 +112,9 @@
 }
 
 .congratulations {
+  margin-left: 23px; /*47px - 24px padding*/
   width: 242px;
 
-  font-style: normal;
-  font-weight: 400;
   font-size: 10px;
   line-height: 1.2;
   text-align: center;
