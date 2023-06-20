@@ -145,11 +145,68 @@
   height: 32px;
   display: none;
   align-items: center;
-  /* background-color: var(--light-text-color);
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); */
   border-radius: 50%;
   margin-left: 24px;
-  padding: 5;
+  padding: 5px;
+  cursor: pointer;
+  border: 0;
+  transition: all 250ms;
+  user-select: none;
+  touch-action: manipulation;
+  position: relative;
+}
+
+.user-profile::before {
+  content: "";
+  position: absolute; 
+  left: 190%;
+  font-weight: bolder;
+  transform: translateX(-50%);
+  border-radius: 1;
+  padding: 5px 10px 5px 10px;
+  background-color: inherit;
+  border-radius: 50%;
+  font-size: 14px;
+  pointer-events: none; 
+  opacity: 0; 
+  transition: opacity 0.3s ease; 
+}
+
+.user-profile:hover::before {
+  content: "LogIn ☼";
+  font-size:x-small;
+  
+  opacity: 1; 
+}
+.user-profile.light-theme:hover::before{
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.519);
+  color:  rgba(1, 1, 1, 0.821) ;
+}
+.user-profile.dark-theme:hover::before{
+  text-shadow: 2px 2px 2px rgba(234, 13, 220, 0.519);
+  color:  rgba(247, 242, 242, 0.821) ;
+}
+
+.user-profile .avatar {
+  display: flex;
+}
+
+.user-profile .text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none; 
+  opacity: 1; 
+  transition: opacity 0.3s ease; 
+}
+
+.user-profile:hover .text {
+  opacity: 0;
+}
+
+.user-profile:active {
+  transform:  translateY(-5px) ;
 }
 
 .user-profile.light-theme{
