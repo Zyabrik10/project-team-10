@@ -28,7 +28,7 @@ const logOut = e => {
   signOut(auth)
     .then(() => {
       // Sign-out successful.
-      Notiflix.Notify.success(`User is signing out...`);
+      Notiflix.Notify.success(`You are signing out...`);
       setTimeout(
         () => (window.location = 'http://localhost:1234/login.html'),
         3000
@@ -46,7 +46,7 @@ const signUp = () => {
     .then(() => {
       // Sign-out successful.
 
-      Notiflix.Notify.success(`User is redirected to sign up...`);
+      Notiflix.Notify.info(`You are redirected to sign up...`);
       setTimeout(
         () => (window.location = 'http://localhost:1234/sign-up.html'),
         3000

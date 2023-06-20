@@ -13,6 +13,7 @@ const bookThumb = document.querySelector('.tb-container');
 const headingEl = document.querySelector('.heading-primary');
 const allCtgrEl = document.querySelector('#allctgr');
 const loader = document.querySelector('.loader');
+console.log(loader);
 
 categoryList.addEventListener('click', renderCategoryBooks);
 setTimeout(e => {

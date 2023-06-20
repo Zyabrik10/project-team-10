@@ -61,7 +61,7 @@ const onLogin = e => {
   loginEl.reset();
   const { password, email } = formData;
   if (auth.currentUser) {
-    Notiflix.Notify.warning(`User already signed in!`);
+    Notiflix.Notify.warning(`You are already signed in!`);
     return;
   }
   signInWithEmailAndPassword(auth, email, password)
@@ -73,7 +73,7 @@ const onLogin = e => {
       update(ref(database, 'users/' + user.uid), {
         last_login: dt,
       });
-      Notiflix.Notify.success(`User logging in...`);
+      Notiflix.Notify.success(`You are logging in now...`);
       setTimeout(
         () => (window.location = 'http://localhost:1234/index.html'),
         3000

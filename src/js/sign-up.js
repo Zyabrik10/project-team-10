@@ -74,7 +74,9 @@ const onSubmit = e => {
         username,
         email,
       });
-      Notiflix.Notify.success(`User created successfully and loginnig in...`);
+      Notiflix.Notify.success(
+        `${username}, you  successfully signed up and loginnig in now...!`
+      );
       setTimeout(
         () => (window.location = 'http://localhost:1234/index.html'),
         3000
