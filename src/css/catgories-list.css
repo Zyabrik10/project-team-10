@@ -62,6 +62,7 @@
 .category-list-item {
   padding: 12px 0;
   height: 40px;
+  cursor: pointer;
 }
 
 @media (min-width: 768px) {
