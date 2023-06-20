@@ -46,10 +46,24 @@ async function renderCategoryBooks(event) {
 
 function createMarkupBook({ data }) {
   bookThumb.innerHTML = '';
-  const markup = data
+  // verification when category has no one book
+  // data = [];
+  if (data.length === 0) {
+    const emptyMarkup = `<ul class="tb-container global-list">
+    <li class="no-books-card">
+      <p class="no-books-paragraph">No books found at that category</br>Please return later</p>
+      <img src="./images/book-catalog/no-books.jpg" alt="app" width="360" height="300" class="no-books-img"
+        loading="lazy" />
+    </li>
+  </ul>`
+    bookThumb.innerHTML = emptyMarkup;
+    console.log(emptyMarkup);
+   
+  } else {
+    const markup = data
 
-    .map(({ author, title, book_image, _id }) => {
-      return `
+      .map(({ author, title, book_image, _id }) => {
+        return `
           <li class="flex-container-item">
             <a href=# class="global-link" data-id="${_id}">
               <div class="tb-book-card">
@@ -59,9 +73,10 @@ function createMarkupBook({ data }) {
               </div>
             </a>
           </li>`;
-    })
-    .join('');
-  bookThumb.innerHTML = markup;
+      })
+      .join('');
+    bookThumb.innerHTML = markup;
+  }
 }
 
 // export function renderTopBooks() { }
