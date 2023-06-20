@@ -127,7 +127,7 @@
   line-height: 1.29;
 }
 
-@media screen and (min-width: 376px) and (max-width: 767px) {
+@media screen and (min-width: 377px) and (max-width: 767px) {
   .support-aside {
     height: 472px;
   }
@@ -142,7 +142,7 @@
     height: 490px;
   }
 }
-@media screen and (min-width: 376px) {
+@media screen and (min-width: 377px) {
   .support-list {
     height: 300px;
   }
@@ -158,3 +158,5 @@
     padding-left: 12.58px;
   }
 }
+
+
