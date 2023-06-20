@@ -57,7 +57,6 @@ function createMarkupBook({ data }) {
     </li>
   </ul>`
     bookThumb.innerHTML = emptyMarkup;
-    console.log(emptyMarkup);
    
   } else {
     const markup = data
