@@ -14,8 +14,7 @@ export function modalWindow() {
 
 
     
-                // openModal.addEventListener("click", toggleModal);
-                
+                             
                 
     
          cardList.addEventListener("click", (e) => {
@@ -71,7 +70,7 @@ export function modalWindow() {
                     <p class="congratulations global-p no-content">Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.</p>
                 </div>`;
                 
-                // <img class="shop-icon" src=${require("../images/modal-window-book/icons/x-close.png")} alt="X" width="18" height="18"/>
+                
             }
                             
             function funcBtn(id, book) {
@@ -80,7 +79,7 @@ export function modalWindow() {
                 addRemBtn.textContent = "ADD TO SHOPING LIST";        
                 addRemBtn.addEventListener("click", function () { 
                     console.log("Object id", id)
-                    console.log("Object", data)
+                    console.log("Object", book)
                       if (localStorage.getItem(id) === null) {
                           addBook(id, book);
                           addRemBtn.textContent = "REMOVE FROM THE SHOPING LIST";

@@ -20,26 +20,24 @@
     <link rel="stylesheet" href="./shopping-list.css" />
 </head>
 
-<body class="light-theme theme-switch">
-
-    <header class="header">
+<body class="light-theme theme-switch shopp-pages">
+    <header class="header light-theme theme-switch">
         <div class="container">
             <nav class="logo">
-                <a class="text-logo" href="#">
-                    <img src="/src/images/header/logo-light.png" alt="Logo" class="logo-image">
-                </a>
+        <a class="text-logo global-link" href="#">
+          <img id="logo-images" src="/src/images/header/logo-light.png" alt="Logo" class="logo-image theme-switch light-theme dark-theme">
+        </a>
             </nav>
-
 
             <nav>
                 <ul class="header-links">
                     <li class="header-link home-link">
-                        <a class="link-text" href="./">Home</a> <!-- добавити в боді сторінки класс current-page -->
+                        <a class="link-text global-link current-page theme-switch light-theme dark-theme" href="./">Home</a>
                     </li>
                     <li class="header-link shopping-link">
-                        <a class="link-text" href="./shopping-list.html">
+                        <a class="link-text global-link theme-switch light-theme dark-theme" href="./shopping-list.html">
                             SHOPPING LIST
-                            <svg class="sprite-image" width="20" height="20">
+                            <svg class="sprite-image theme-switch light-theme dark-theme" width="20" height="20">
                                 <use href="./images/header/icons/icons.svg#icon-shop"></use>
                             </svg>
                         </a>
@@ -55,7 +53,7 @@
                 </div>
             </div>
 
-            <div class="user-profile">
+            <div class="user-profile theme-switch light-theme dark-theme">
                 <svg class="avatar" width="37" height="37">
                     <use href="./images/header/icons/icons.svg#icon-user-non"></use>
                 </svg>

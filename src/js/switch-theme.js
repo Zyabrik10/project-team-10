@@ -43,9 +43,11 @@ function loadSwitchButton() {
   if (shopping_info.theme === 'light') {
     buttonSwitchTheme.classList.remove('active');
     buttonSwitchTheme.setAttribute('data-checked', false);
+    renderTheme('light');
   } else {
     buttonSwitchTheme.classList.add('active');
     buttonSwitchTheme.setAttribute('data-checked', true);
+    renderTheme('dark');
   }
 }
 
