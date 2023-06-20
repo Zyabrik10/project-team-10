@@ -1,6 +1,7 @@
 // Треба описати функції
 // Потім їх можна буде використовувати при імпорті в нших файлах
 import axios from 'axios';
+import Notiflix from 'notiflix';
 
 //REST API: books-backend.p.goit.global/books/category-list
 const BASE_URL = 'https://books-backend.p.goit.global';
@@ -9,7 +10,6 @@ export function fetchAllCategories() {
     if (!response.ok) {
       throw new Error(response.status);
     }
-    // console.log(response);
     return response.json();
   });
 }
@@ -20,6 +20,7 @@ export async function fetchTopBooks() {
       baseURL: 'https://books-backend.p.goit.global/books/top-books',
     });
   } catch (error) {
+    Notiflix.Notify.failure('Sorry, something is wrong. Please try later.');
     console.error(error);
   }
 }
@@ -32,10 +33,9 @@ export function fetchExactBook() {}
 export async function fetchBooksByExactCategory(item) {
   try {
     const response = await axios(`${BASE_URL}/books/category?category=${item}`);
-    // console.log(response);
     return response;
   } catch (error) {
-    console.log(error);
+    Notiflix.Notify.failure('Sorry, something is wrong. Please try later.');
   }
 }
 
@@ -46,6 +46,7 @@ export async function fetchBook(dataId) {
     const response = await axios.get(`${BASE_URL}/books/${dataId}`);
     return response.data;
   } catch (error) {
+    Notiflix.Notify.failure('Sorry, something is wrong. Please try later.');
     console.error(error);
     throw error;
   }
