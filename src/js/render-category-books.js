@@ -95,7 +95,7 @@ export function renderTopBooks(bestsellersArray) {
       <li class="tb-category-container">
         <h2 class='tb-category global-title'>${list_name}</h2>
         <div class='tb-books-container'>
-          <ul class="global-list flex-container">
+          <ul class="global-list flex-container hidden-books">
             ${markup}
           </ul>
         </div>
