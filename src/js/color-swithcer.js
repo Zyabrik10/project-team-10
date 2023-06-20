@@ -9,3 +9,22 @@ switcher.addEventListener('click', function () {
     this.setAttribute('data-checked', true);
   }
 });
+
+// for_THEME DarkandWhite
+var logoImage = document.querySelector('.logo-image');
+
+function changeLogoImage(theme) {
+  if (theme === '.light') {
+    logoImage.src = './images/header/logo-light.png';
+  } else if (theme === '.dark') {
+    logoImage.src = './images/header/logo-dark.png';
+  }
+}
+    changeLogoImage('.dark');
+
+
+
+
+
+
+
