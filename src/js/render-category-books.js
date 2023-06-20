@@ -112,3 +112,45 @@ export function renderTopBooks(bestsellersArray) {
     modalWindow();
   }
 }
+
+
+
+bookThumb.addEventListener('click', onSeeMoreClick)
+
+ async function onSeeMoreClick(event) {
+   if (event.target.matches('button')) {
+     let bookTitle = event.target.closest('.tb-category-container').firstChild.nextSibling.textContent
+     let categoryContainer = event.target.closest('.tb-category-container').firstChild.nextSibling.nextSibling.nextSibling
+     const startHeading = bookTitle
+      .split(' ')
+      .splice(0, bookTitle.split(' ').length - 1)
+      .join(' ');
+    const endHeading = bookTitle.split(' ')[bookTitle.split(' ').length - 1];
+    headingEl.innerHTML = `${startHeading} <span class="colored-heading">${endHeading}</span>`;
+    bookThumb.classList.add('flex-container');
+    const data = await fetchBooksByExactCategory(bookTitle);
+     createMarkupSeeMore(data, categoryContainer);
+     event.target.classList.add('is-hidden')
+   }
+}
+
+function createMarkupSeeMore({ data },categoryContainer) {
+  const markup = data
+    .map(({ author, title, book_image, _id }) => {
+      return `
+          <li class="flex-container-item">
+            <a href=# class="global-link" data-id="${_id}">
+              <div class="tb-book-card">
+                <img class="tb-book-img img" src="${book_image}" alt="${title}" loading="lazy">
+                <p class="tb-book-title light-theme theme-switch global-p">${title}</p>
+                <p class="tb-book-author global-p">${author}</p>
+              </div>
+            </a>
+          </li>`;
+    })
+    .join('');
+  const seeMoreMarkup = `<ul class="global-list flex-container">
+            ${markup}
+          </ul>`
+  categoryContainer.innerHTML = seeMoreMarkup;
+}
