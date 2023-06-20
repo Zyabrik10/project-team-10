@@ -4,6 +4,7 @@ import { fetchAllCategories } from './fetch-func';
 import { shopping_info } from './shopping-list';
 
 import { renderTheme } from './switch-theme';
+import Notiflix from 'notiflix';
 
 const categoryList = document.querySelector('.category-list');
 const loadCategory = document.querySelector('.load');
