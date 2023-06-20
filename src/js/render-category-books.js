@@ -12,12 +12,13 @@ const categoryList = document.querySelector('.category-list');
 const bookThumb = document.querySelector('.tb-container');
 const headingEl = document.querySelector('.heading-primary');
 const loader = document.querySelector('.loader');
+
 categoryList.addEventListener('click', renderCategoryBooks);
 setTimeout(e => {
-  loader.classList.add('spinner');
+  loader.classList.add('is-hidden');
 }, 2000);
 async function renderCategoryBooks(event) {
-  loader.classList.remove('spinner');
+  loader.classList.remove('is-hidden');
   const item = event.target.textContent;
   console.log(item);
   headingEl.textContent = item;
@@ -25,7 +26,7 @@ async function renderCategoryBooks(event) {
   bookThumb.classList.add('flex-container');
 
   const data = await fetchBooksByExactCategory(item);
-  loader.classList.add('spinner');
+  loader.classList.add('is-hidden');
 
   createMarkupBook(data);
 }
