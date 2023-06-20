@@ -11,6 +11,7 @@ import { renderTheme } from './switch-theme';
 const categoryList = document.querySelector('.category-list');
 const bookThumb = document.querySelector('.tb-container');
 const headingEl = document.querySelector('.heading-primary');
+const allCtgrEl = document.querySelector('#allctgr');
 const loader = document.querySelector('.loader');
 
 categoryList.addEventListener('click', renderCategoryBooks);
@@ -21,14 +22,34 @@ async function renderCategoryBooks(event) {
   loader.classList.remove('is-hidden');
   const item = event.target.textContent;
   console.log(item);
-  headingEl.textContent = item;
-  headingEl.classList.add('ctg-maintitle');
-  bookThumb.classList.add('flex-container');
+  const itemFirst = allCtgrEl.textContent;
 
-  const data = await fetchBooksByExactCategory(item);
-  loader.classList.add('is-hidden');
+  if (item === itemFirst) {
+    bookThumb.innerHTML = '';
+    fetchTopBooks().then(renderTopBooks);
+    const headingMarkup = 'Best Sellers Books';
+    const startHeading = headingMarkup
+      .split(' ')
+      .splice(0, headingMarkup.split(' ').length - 1)
+      .join(' ');
+    const endHeading =
+      headingMarkup.split(' ')[headingMarkup.split(' ').length - 1];
+    headingEl.innerHTML = `${startHeading} <span class="colored-heading">${endHeading}</span>`;
+  } else {
+    const startHeading = item
+      .split(' ')
+      .splice(0, item.split(' ').length - 1)
+      .join(' ');
+    const endHeading = item.split(' ')[item.split(' ').length - 1];
+    headingEl.innerHTML = `${startHeading} <span class="colored-heading">${endHeading}</span>`;
+    headingEl.classList.add('ctg-maintitle');
+    bookThumb.classList.add('flex-container');
+
+    const data = await fetchBooksByExactCategory(item);
+    loader.classList.add('is-hidden');
 
   createMarkupBook(data);
+  }
 }
 
 function createMarkupBook({ data }) {
@@ -98,4 +119,39 @@ export function renderTopBooks(bestsellersArray) {
       : renderTheme('dark');
     modalWindow();
   }
+}
+
+
+
+bookThumb.addEventListener('click', onSeeMoreClick)
+
+ async function onSeeMoreClick(event) {
+   if (event.target.matches('button')) {
+     let bookTitle = event.target.closest('.tb-category-container').firstChild.nextSibling.textContent
+     let categoryContainer = event.target.closest('.tb-category-container').firstChild.nextSibling.nextSibling.nextSibling
+    const data = await fetchBooksByExactCategory(bookTitle);
+     createMarkupSeeMore(data, categoryContainer);
+     event.target.classList.add('is-hidden')
+   }
+}
+
+function createMarkupSeeMore({ data },categoryContainer) {
+  const markup = data
+    .map(({ author, title, book_image, _id }) => {
+      return `
+          <li class="flex-container-item">
+            <a href=# class="global-link" data-id="${_id}">
+              <div class="tb-book-card">
+                <img class="tb-book-img img" src="${book_image}" alt="${title}" loading="lazy">
+                <p class="tb-book-title light-theme theme-switch global-p">${title}</p>
+                <p class="tb-book-author global-p">${author}</p>
+              </div>
+            </a>
+          </li>`;
+    })
+    .join('');
+  const seeMoreMarkup = `<ul class="global-list flex-container">
+            ${markup}
+          </ul>`
+  categoryContainer.innerHTML = seeMoreMarkup;
 }

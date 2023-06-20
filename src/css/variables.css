@@ -14,15 +14,18 @@
   --dark-text-color-60: rgba(0, 0, 0, 0.6);
 
   /* background */
+  --dark-bg-color-60: rgba(17, 17, 17, 0.6);
   --main-bg-color: #111111;
   --extra-bg-color: #4f2ee8;
   --place-bg-color: #eac645;
   --bg-color: #f6f6f6;
+  --modal-bakdrop: rgba(17, 17, 17, 0.4);
+  --modal-bg: #ffffff;
 
   /* border */
   --extra-border-color: #4f2ee8;
   --extra-border-color-40: rgba(79, 46, 232, 0.4);
-
+  --modal-border-wrap-color: #111111;
   --empty: #fff;
 
   /* transition */

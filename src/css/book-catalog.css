@@ -160,6 +160,10 @@
   margin-top: 8px;
 }
 
+.tb-button.dark-theme{
+  color: var(--light-text-color);
+}
+
 /* tablet */
 @media screen and (min-width: 768px) {
   .tb-button {
