@@ -38,7 +38,7 @@ async function renderCategoryBooks(event) {
     headingEl.innerHTML = `${startHeading} <span class="colored-heading">${endHeading}</span>`;
     headingEl.classList.add('ctg-maintitle');
     bookThumb.classList.add('flex-container');
-
+    
     const data = await fetchBooksByExactCategory(item);
     createMarkupBook(data);
   }
