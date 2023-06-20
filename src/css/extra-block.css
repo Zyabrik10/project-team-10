@@ -136,3 +136,45 @@
     padding-left: 12.58px;
   }
 }
+
+/* spinner css */
+.loader {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 5px solid var(--place-text-color);
+  border-right: 5px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 2;
+}
+.spinner {
+  display: none;
+}
+
+.loader::after {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border-bottom: 5px solid var(--extra-text-color);
+  border-left: 5px solid transparent;
+  z-index: 2;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

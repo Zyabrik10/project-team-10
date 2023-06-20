@@ -11,22 +11,28 @@ import { renderTheme } from './switch-theme';
 const categoryList = document.querySelector('.category-list');
 const bookThumb = document.querySelector('.tb-container');
 const headingEl = document.querySelector('.heading-primary');
-
+const loader = document.querySelector('.loader');
 categoryList.addEventListener('click', renderCategoryBooks);
+setTimeout(e => {
+  loader.classList.add('spinner');
+}, 2000);
 async function renderCategoryBooks(event) {
+  loader.classList.remove('spinner');
   const item = event.target.textContent;
+  console.log(item);
   headingEl.textContent = item;
   headingEl.classList.add('ctg-maintitle');
   bookThumb.classList.add('flex-container');
 
   const data = await fetchBooksByExactCategory(item);
+  loader.classList.add('spinner');
+
   createMarkupBook(data);
 }
 
 function createMarkupBook({ data }) {
   bookThumb.innerHTML = '';
   const markup = data
-
     .map(({ author, title, book_image, _id }) => {
       return `
           <li class="flex-container-item">
@@ -40,6 +46,7 @@ function createMarkupBook({ data }) {
           </li>`;
     })
     .join('');
+
   bookThumb.innerHTML = markup;
 }
 
