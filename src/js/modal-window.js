@@ -6,6 +6,7 @@ import { fetchBook } from './fetch-func';
 
 export function modalWindow() {
     
+    const body = document.querySelector('body');
     const cardList = document.querySelector(".tb-container");
     const backdropModal = document.querySelector(".backdrop");
     
@@ -28,11 +29,17 @@ export function modalWindow() {
                          
                         console.log(data);
                         
-                        toggleModal()
+                        modal.classList.remove("is-hidden")
+                        body.classList.add('modal-open');
                         markupModal(data)
+                         
+                        funcBtn(data._id, data);
 
                         const closeModalBtn = document.querySelector(".close-btn");
-                        closeModalBtn.addEventListener("click", toggleModal);
+                         closeModalBtn.addEventListener("click", () => {
+                             modal.classList.add("is-hidden")
+                             body.classList.remove('modal-open');
+                        });
 
                     })
                     .catch((error) => {
@@ -63,30 +70,23 @@ export function modalWindow() {
                     <button class="close-btn global-button" type="button">&times;</button>
                     <p class="congratulations global-p no-content">Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.</p>
                 </div>`;
-                funcBtn();
+                
                 // <img class="shop-icon" src=${require("../images/modal-window-book/icons/x-close.png")} alt="X" width="18" height="18"/>
             }
-
-            function toggleModal() {
-                modal.classList.toggle("is-hidden");
-            }
-            
-                // const openModal = document.querySelector(".global-link");
-                
-
-                // markupModal(data)
-            
-            function funcBtn() {
+                            
+            function funcBtn(id, book) {
                 const addRemBtn = document.querySelector(".add-rem-btn")
                 const congratulations = document.querySelector(".congratulations")
                 addRemBtn.textContent = "ADD TO SHOPING LIST";        
-                addRemBtn.addEventListener("click", function () {                        
-                      if (0 === 0) {
-                          addBook();
+                addRemBtn.addEventListener("click", function () { 
+                    console.log("Object id", id)
+                    console.log("Object", data)
+                      if (localStorage.getItem(id) === null) {
+                          addBook(id, book);
                           addRemBtn.textContent = "REMOVE FROM THE SHOPING LIST";
                           congratulations.classList.remove("no-content")
                       } else {
-                          removeBook();
+                          removeBook(id);
                           addRemBtn.textContent = "ADD TO SHOPING LIST";
                           congratulations.classList.add("no-content")
                       }
