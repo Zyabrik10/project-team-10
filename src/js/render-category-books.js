@@ -20,23 +20,21 @@ async function renderCategoryBooks(event) {
 
   if (item === itemFirst) {
     bookThumb.innerHTML = '';
-    fetchTopBooks().then
-      (renderTopBooks);
+    fetchTopBooks().then(renderTopBooks);
     const headingMarkup = 'Best Sellers Books';
     const startHeading = headingMarkup
-        .split(' ')
-        .splice(0, headingMarkup.split(' ').length - 1)
-        .join(' ');
-    const endHeading = headingMarkup
-      .split(' ')[headingMarkup.split(' ').length - 1];
+      .split(' ')
+      .splice(0, headingMarkup.split(' ').length - 1)
+      .join(' ');
+    const endHeading =
+      headingMarkup.split(' ')[headingMarkup.split(' ').length - 1];
     headingEl.innerHTML = `${startHeading} <span class="colored-heading">${endHeading}</span>`;
   } else {
     const startHeading = item
-        .split(' ')
-        .splice(0, item.split(' ').length - 1)
-        .join(' ');
-    const endHeading = item
-      .split(' ')[item.split(' ').length - 1];
+      .split(' ')
+      .splice(0, item.split(' ').length - 1)
+      .join(' ');
+    const endHeading = item.split(' ')[item.split(' ').length - 1];
     headingEl.innerHTML = `${startHeading} <span class="colored-heading">${endHeading}</span>`;
     headingEl.classList.add('ctg-maintitle');
     bookThumb.classList.add('flex-container');
