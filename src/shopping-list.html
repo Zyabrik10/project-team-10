@@ -20,9 +20,55 @@
     <link rel="stylesheet" href="./shopping-list.css" />
 </head>
 
-<body>
+<body class="light-theme theme-switch">
 
-    <include src="./partials/header.html"></include>
+    <header class="header">
+        <div class="container">
+            <nav class="logo">
+                <a class="text-logo" href="#">
+                    <img src="/src/images/header/logo-light.png" alt="Logo" class="logo-image">
+                </a>
+            </nav>
+
+
+            <nav>
+                <ul class="header-links">
+                    <li class="header-link home-link">
+                        <a class="link-text" href="./">Home</a> <!-- добавити в боді сторінки класс current-page -->
+                    </li>
+                    <li class="header-link shopping-link">
+                        <a class="link-text" href="./shopping-list.html">
+                            SHOPPING LIST
+                            <svg class="sprite-image" width="20" height="20">
+                                <use href="./images/header/icons/icons.svg#icon-shop"></use>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="switcher" data-checked="false">
+                <div class="switcher-handle">
+                    <svg class="switcher-circle">
+                        <use href="./images/header/icons/icons.svg#icon-circle"></use>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="user-profile">
+                <svg class="avatar" width="37" height="37">
+                    <use href="./images/header/icons/icons.svg#icon-user-non"></use>
+                </svg>
+            </div>
+
+            <button class="menu-button global-button">
+                <svg class="menu-icon" width="40" height="40">
+                    <use href="./images/header/icons/icons.svg#icon-menu"></use>
+                </svg>
+            </button>
+
+        </div>
+    </header>
     <div class="main-block">
         <div class="container">
             <div class="asides">

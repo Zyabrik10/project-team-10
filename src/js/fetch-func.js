@@ -41,14 +41,10 @@ export async function fetchBooksByExactCategory(item) {
 
 //REST API: https://books-backend.p.goit.global/books/top-books
 
-
-
-
-
 export async function fetchBook(dataId) {
   try {
     const response = await axios.get(`${BASE_URL}/books/${dataId}`);
-     return response.data;
+    return response.data;
   } catch (error) {
     console.error(error);
     throw error;

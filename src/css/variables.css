@@ -28,7 +28,7 @@
   --empty: #fff;
 
   /* transition */
-  --transition-property: color, background, box-shadow;
+  --transition-property: color, background, box-shadow, transform;
   --transition-duration: 0.3s;
   --transition-timing-function: ease-out;
 }

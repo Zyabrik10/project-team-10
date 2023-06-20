@@ -2,7 +2,8 @@
 
 .support-aside {
   position: relative;
-  width: 335px;
+  width: 100%;
+  max-width: 335px;
   height: 352px;
   box-shadow: 0px 10px 10px 0px #f5f5f71a;
   border-radius: 10px;
@@ -17,15 +18,16 @@
 .support-item a {
   color: var(--light-text-color);
 }
-.support-list{
+.support-list {
   padding-left: 0px;
   height: 200px;
   overflow-y: scroll;
   scroll-behavior: smooth;
 }
-.support-list::-webkit-scrollbar{
-  display: block;
+.support-list::-webkit-scrollbar {
+  display: none;
 }
+
 .support-img-01 {
   width: 131px;
 }
@@ -87,7 +89,7 @@
   background: var(--light-text-color);
   transition: transform 0.3s ease;
 }
-.support-button.support-button-rotate{
+.support-button.support-button-rotate {
   transform: translate(-50%, -50%) scale(1) rotate(180deg);
 }
 
