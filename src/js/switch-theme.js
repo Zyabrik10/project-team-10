@@ -1,6 +1,6 @@
 import { shopping_info, saveShoppingList } from './shopping-list';
 
-const buttonSwitchTheme = document.querySelector('.switch-theme-button');
+const buttonSwitchTheme = document.querySelector('.switcher');
 
 export function renderTheme(theme) {
   const elements = document.querySelectorAll('.theme-switch');
@@ -23,14 +23,31 @@ export function renderTheme(theme) {
 
 function switchTheme() {
   if (shopping_info.theme === 'light') {
-    shopping_info.theme = 'dark';
-    renderTheme('dark');
-  } else {
-    shopping_info.theme = 'light';
     renderTheme('light');
+  } else {
+    renderTheme('dark');
   }
-
-  saveShoppingList();
 }
 
-buttonSwitchTheme.addEventListener('click', switchTheme);
+function switchCheck() {
+  if (this.getAttribute('data-checked') === 'true') {
+    shopping_info.theme = 'light';
+  } else {
+    shopping_info.theme = 'dark';
+  }
+  saveShoppingList();
+  switchTheme();
+}
+
+function loadSwitchButton() {
+  if (shopping_info.theme === 'light') {
+    buttonSwitchTheme.classList.remove('active');
+    buttonSwitchTheme.setAttribute('data-checked', false);
+  } else {
+    buttonSwitchTheme.classList.add('active');
+    buttonSwitchTheme.setAttribute('data-checked', true);
+  }
+}
+
+buttonSwitchTheme.addEventListener('click', switchCheck);
+window.addEventListener('load', loadSwitchButton);

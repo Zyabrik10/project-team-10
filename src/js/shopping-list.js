@@ -6,7 +6,7 @@ export const shopping_info = JSON.parse(
   shopping_list: {},
 };
 
-export function saveShoppingList(shopping_info) {
+export function saveShoppingList() {
   localStorage.setItem('client-info', JSON.stringify(shopping_info));
 }
 

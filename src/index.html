@@ -23,27 +23,66 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
 
-  <body class="light-theme theme-switch">
-    <button class="switch-theme-button">switch</button>
-    <button type="button" class="login-section global-button">Text</button>
-    <include src="./partials/modal-window-book.html"></include>
+<body class="light-theme theme-switch">
+      <button type="button" class="login-section global-button">Text</button>
 
-    <include src="./partials/header.html"></include>
-    <div class="main-block">
-      <div class="container">
-        <div class="asides">
-          <include src="./partials/catalog-list.html"></include>
-          <include src="./partials/extra-block.html"></include>
+  <include src="./partials/modal-window-book.html"></include>
+
+  <header class="header">
+    <div class="container">
+      <nav class="logo">
+        <a class="text-logo" href="#">
+          <img src="/src/images/header/logo-light.png" alt="Logo" class="logo-image">
+        </a>
+      </nav>
+
+
+      <nav>
+        <ul class="header-links">
+          <li class="header-link home-link">
+            <a class="link-text" href="./">Home</a> <!-- добавити в боді сторінки класс current-page -->
+          </li>
+          <li class="header-link shopping-link">
+            <a class="link-text" href="./shopping-list.html">
+              SHOPPING LIST
+              <svg class="sprite-image" width="20" height="20">
+                <use href="./images/header/icons/icons.svg#icon-shop"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="switcher" data-checked="false">
+        <div class="switcher-handle">
+          <svg class="switcher-circle">
+            <use href="./images/header/icons/icons.svg#icon-circle"></use>
+          </svg>
         </div>
-        <include src="./partials/book-catalog.html"></include>
       </div>
-      <button type="button" class="scroll-up-button global-button js-sup-btn">
-        <svg class="scroll-up-svg">
-          <use
-            href="./images/extra-block/icons/scrollUp.svg#icon-scroll-up"
-          ></use>
+
+      <div class="user-profile">
+        <svg class="avatar" width="37" height="37">
+          <use href="./images/header/icons/icons.svg#icon-user-non"></use>
+        </svg>
+      </div>
+
+      <button class="menu-button global-button">
+        <svg class="menu-icon" width="40" height="40">
+          <use href="./images/header/icons/icons.svg#icon-menu"></use>
         </svg>
       </button>
+
+    </div>
+  </header>
+
+  <div class="main-block">
+    <div class="container">
+      <div class="asides">
+        <include src="./partials/catalog-list.html"></include>
+        <include src="./partials/extra-block.html"></include>
+      </div>
+      <include src="./partials/book-catalog.html"></include>
     </div>
     <script type="module" src="../src/js/firebase-app.js"></script>
     <script type="module" src="./index.js"></script>

@@ -32,9 +32,25 @@
   color: var(--extra-text-color);
 }
 
+.tb-container {
+  --flex-item: 1;
+}
+
+@media screen and (min-width: 768px) {
+  .tb-container {
+    --flex-item: 3;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .tb-container {
+    --flex-item: 5;
+  }
+}
+
 .tb-category {
   overflow: hidden;
-  white-space: nowrap;
+  /* white-space: nowrap; */
   text-overflow: ellipsis;
   font-weight: 400;
   text-align: left;
@@ -208,8 +224,7 @@
   margin-top: 40px;
 }
 
-
-.no-books-card{
+.no-books-card {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -218,15 +233,15 @@
   margin: 40px auto;
 }
 
-.no-books-paragraph{
+.no-books-paragraph {
   margin: 0;
   font-size: 18px;
-  line-height: calc(24/18);
+  line-height: calc(24 / 18);
   text-align: center;
   letter-spacing: -0.02em;
   color: var(--dark-text-color-60);
 }
 
 .is-hidden {
-  display: none
+  display: none;
 }
