@@ -1,3 +1,10 @@
+html {
+  min-height: 100%;
+}
+
+.login-body{
+background-image: linear-gradient(to bottom right, var(--modal-bakdrop), var(--extra-bg-color), var(--extra-bg-color));
+}
 
 .modal-login {
   width: 100%;
@@ -7,6 +14,7 @@
   line-height: calc(24/18);
   padding: 60px 40px 40px 40px;
   border-radius: 18px;
+  margin: 60px auto;
 }
 
 .modal-login.light-theme {
@@ -36,9 +44,16 @@
   top: 20px;
   left: 40px;
   text-transform: uppercase;
-  color: var(--main-text-color);
   transform-origin: center left;
   transition: var(--transition-property) var(--transition-duration) var(--transition-timing-function);
+}
+
+.login-form-label.light-theme{
+  color: var(--main-text-color);
+}
+
+.login-form-label.dark-theme {
+  color: var(--bg-color);
 }
 
 .input {
