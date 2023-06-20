@@ -13,6 +13,18 @@
   width: 100%;
 }
 
+.category-thumb.light-theme::-webkit-scrollbar-thumb {
+  background: #e0e0e0;
+}
+
+.category-thumb.dark-theme::-webkit-scrollbar-thumb {
+  background: var(--dark-bg-color-60);
+}
+
+.category-thumb::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+
 @media screen and (max-width: 767.98px) {
   .category-thumb {
     max-width: 375px;
@@ -29,7 +41,7 @@
 /* desktop screen */
 @media screen and (min-width: 1440px) {
   .category-thumb {
-    width: 100%;
+    width: 356px;
     height: 472px;
   }
 }
