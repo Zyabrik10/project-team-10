@@ -1,9 +1,6 @@
 @import url('./variables.css');
 
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   height: 64px;
   background: var(--light-text-color);
   border: 1.5px solid var(--main-text-color);
@@ -12,12 +9,18 @@
   padding: 0 20px;
 }
 
+.header > .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
 /* header logo */
 .logo {
   display: flex;
   align-items: center;
   cursor: pointer;
-
 }
 
 .text-logo {
@@ -27,7 +30,6 @@
   text-decoration: none;
   color: var(--main-text-color);
 }
-
 
 /* header links */
 .header-links {
@@ -61,7 +63,11 @@
 .switcher {
   width: 40px;
   height: 24px;
-  background: linear-gradient(180deg, var(--extra-bg-color) 0%, var(--light-text-color-60) 100%);
+  background: linear-gradient(
+    180deg,
+    var(--extra-bg-color) 0%,
+    var(--light-text-color-60) 100%
+  );
   box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   cursor: pointer;
@@ -69,7 +75,7 @@
 }
 
 .switcher.active {
-  background: linear-gradient(180deg, #4F2EE8 0%, var(--sub-text-color) 100%);
+  background: linear-gradient(180deg, #4f2ee8 0%, var(--sub-text-color) 100%);
 }
 
 .switcher-handle {
@@ -105,12 +111,11 @@
   display: none;
   align-items: center;
   background-color: var(--light-text-color);
-  box-shadow:  1px 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   margin-left: 24px;
   padding: 5;
 }
-
 
 .menu-button {
   display: felx;
@@ -124,7 +129,6 @@
   fill: var(--main-text-color);
   margin-top: 35%;
 }
-
 
 @media only screen and (max-width: 400px) {
   .header {
@@ -171,9 +175,5 @@
     height: 34px;
     background: var(--place-bg-color);
     border-radius: 36px;
-  }  
+  }
 }
-
-
-
-
