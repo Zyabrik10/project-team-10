@@ -10,13 +10,24 @@ const loadCategory = document.querySelector('.load');
 
 fetchAllCategories()
   .then(data => {
-    console.log(data);
     const markup = data
       .map(({ list_name }) => {
         return `<li class="category-list-item global-list light-theme theme-switch">${list_name}</li>`;
       })
       .join('');
     categoryList.insertAdjacentHTML('beforeend', markup);
+
+    const lis = document.querySelectorAll('.category-list-item');
+
+    lis.forEach(e => {
+      e.addEventListener('click', activatedCategory);
+
+      function activatedCategory() {
+        lis.forEach(e => e.classList.remove('active'));
+        this.classList.add('active');
+      }
+    });
+
     shopping_info.theme === 'light'
       ? renderTheme('light')
       : renderTheme('dark');

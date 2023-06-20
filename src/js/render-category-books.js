@@ -12,9 +12,16 @@ const categoryList = document.querySelector('.category-list');
 const bookThumb = document.querySelector('.tb-container');
 const headingEl = document.querySelector('.heading-primary');
 const allCtgrEl = document.querySelector('#allctgr');
+const loader = document.querySelector('.loader');
+  loader.classList.add('is-hidden');
 
 categoryList.addEventListener('click', renderCategoryBooks);
+setTimeout(e => {
+  loader.classList.add('is-hidden');
+}, 2500);
 async function renderCategoryBooks(event) {
+  bookThumb.innerHTML = '';
+  loader.classList.remove('is-hidden');
   const item = event.target.textContent;
   const itemFirst = allCtgrEl.textContent;
 
@@ -40,6 +47,8 @@ async function renderCategoryBooks(event) {
     bookThumb.classList.add('flex-container');
 
     const data = await fetchBooksByExactCategory(item);
+    loader.classList.add('is-hidden');
+
     createMarkupBook(data);
   }
 }
@@ -47,8 +56,12 @@ async function renderCategoryBooks(event) {
 function createMarkupBook({ data }) {
   bookThumb.innerHTML = '';
   const markup = data
-
-    .map(({ author, title, book_image, _id }) => {
+    .map(({ list_name,
+          book_image = "https://bookcart.azurewebsites.net/Upload/Default_image.jpg",
+          title = "title not available",
+          author = "anonymous",
+          description,
+          _id, }) => {
       return `
           <li class="flex-container-item">
             <a href=# class="global-link" data-id="${_id}">
@@ -61,6 +74,7 @@ function createMarkupBook({ data }) {
           </li>`;
     })
     .join('');
+
   bookThumb.innerHTML = markup;
 }
 
@@ -70,14 +84,19 @@ const noBooksEl = document.querySelector('.no-books-card');
 
 fetchTopBooks().then(renderTopBooks);
 
-export function renderTopBooks(bestsellersArray) {
-  if (bestsellersArray.data.length == 0) {
+export function renderTopBooks({ data }) {
+  if (data.length == 0) {
     noBooksEl.classList.remove('is-hidden');
   } else {
-    const markupCategory = bestsellersArray.data
+    const markupCategory = data
       .map(({ list_name, books }) => {
         const markup = books
-          .map(({ author, title, book_image, _id }) => {
+          .map(({ list_name,
+          book_image = "https://bookcart.azurewebsites.net/Upload/Default_image.jpg",
+          title = "title not available",
+          author = "anonymous",
+          description,
+          _id, }) => {
             return `
           <li class="flex-container-item">
             <a href=# class="global-link" data-id="${_id}">
@@ -95,7 +114,7 @@ export function renderTopBooks(bestsellersArray) {
       <li class="tb-category-container">
         <h2 class='tb-category global-title'>${list_name}</h2>
         <div class='tb-books-container'>
-          <ul class="global-list flex-container">
+          <ul class="global-list flex-container hidden-books">
             ${markup}
           </ul>
         </div>
@@ -104,6 +123,7 @@ export function renderTopBooks(bestsellersArray) {
       `;
       })
       .join('');
+    loader.classList.add('is-hidden');
 
     bookThumb.insertAdjacentHTML('beforeend', markupCategory);
     shopping_info.theme === 'light'
@@ -113,23 +133,28 @@ export function renderTopBooks(bestsellersArray) {
   }
 }
 
+bookThumb.addEventListener('click', onSeeMoreClick);
 
-
-bookThumb.addEventListener('click', onSeeMoreClick)
-
- async function onSeeMoreClick(event) {
-   if (event.target.matches('button')) {
-     let bookTitle = event.target.closest('.tb-category-container').firstChild.nextSibling.textContent
-     let categoryContainer = event.target.closest('.tb-category-container').firstChild.nextSibling.nextSibling.nextSibling
+async function onSeeMoreClick(event) {
+  if (event.target.matches('button')) {
+    let bookTitle = event.target.closest('.tb-category-container').firstChild
+      .nextSibling.textContent;
+    let categoryContainer = event.target.closest('.tb-category-container')
+      .firstChild.nextSibling.nextSibling.nextSibling;
     const data = await fetchBooksByExactCategory(bookTitle);
-     createMarkupSeeMore(data, categoryContainer);
-     event.target.classList.add('is-hidden')
-   }
+    createMarkupSeeMore(data, categoryContainer);
+    event.target.classList.add('is-hidden');
+  }
 }
 
-function createMarkupSeeMore({ data },categoryContainer) {
+function createMarkupSeeMore({ data }, categoryContainer) {
   const markup = data
-    .map(({ author, title, book_image, _id }) => {
+    .map(({ list_name,
+          book_image = "https://bookcart.azurewebsites.net/Upload/Default_image.jpg",
+          title = "title not available",
+          author = "anonymous",
+          description,
+          _id, }) => {
       return `
           <li class="flex-container-item">
             <a href=# class="global-link" data-id="${_id}">
@@ -144,6 +169,6 @@ function createMarkupSeeMore({ data },categoryContainer) {
     .join('');
   const seeMoreMarkup = `<ul class="global-list flex-container">
             ${markup}
-          </ul>`
+          </ul>`;
   categoryContainer.innerHTML = seeMoreMarkup;
 }

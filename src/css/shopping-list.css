@@ -5,16 +5,16 @@
 } */
 
 h1.shop_title {
-  margin: 40px 0;
+  margin-bottom: 40px;
   font-weight: bold;
   font-size: 32px;
   line-height: 38px;
 }
 .shop_title.light-theme {
-  color: var(--light-text-color);
+  color: var(--main-text-color);
 }
 .shop_title.dark-theme {
-  color: var(--main-text-color);
+  color: var(--light-text-color);
 }
 .shop_title--violet {
   color: var(--extra-bg-color);
@@ -32,10 +32,10 @@ h1.shop_title {
   letter-spacing: -0.02em;
 }
 .shop_plug-title.light-theme {
-  color: var(--light-text-color-60);
+  color: var(--dark-text-color-60);
 }
 .shop_plug-title.dark-theme {
-  color: var(--dark-text-color-60);
+  color: var(--light-text-color-60);
 }
 
 .shop_plug-img {
