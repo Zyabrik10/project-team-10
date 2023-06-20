@@ -46,6 +46,7 @@ export function modalWindow() {
             function markupModal({book_image, author, title, description, buy_links}) {
                 backdropModal.innerHTML = `
                 <div class="wrap">
+                    <div class="modal-content-wrap">
                     <img class="book-icon" src="${book_image}" alt="Book wrap" width="287" height="458"/>
                     <div class="about-book">
                         <h2 class="book-title global-title">${title}</h2>
@@ -57,12 +58,13 @@ export function modalWindow() {
                             <li class="shop-list-item"><a class="shop-link global-link" href="${buy_links[4].url}"><img class="shop-icon" src=${require("../images/modal-window-book/icons/book-shop_bk.png")} alt="book-shop" width="38" height="36"/></a></li>
                         </ul>
                     </div>
+                    </div>
                     <button class="add-rem-btn global-button" type="button">xxxXXXxxx</button>
-                    <button class="close-btn global-button" type="button"><img class="shop-icon" src=${require("../images/modal-window-book/icons/x-close.png")} alt="X" width="18" height="18"/></button>
-                    <p class="congratulations global-p">Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.</p>
+                    <button class="close-btn global-button" type="button">&times;</button>
+                    <p class="congratulations global-p no-content">Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.</p>
                 </div>`;
-                  
-                
+                funcBtn();
+                // <img class="shop-icon" src=${require("../images/modal-window-book/icons/x-close.png")} alt="X" width="18" height="18"/>
             }
 
             function toggleModal() {
@@ -74,9 +76,26 @@ export function modalWindow() {
 
                 // markupModal(data)
             
-
+            function funcBtn() {
+                const addRemBtn = document.querySelector(".add-rem-btn")
+                const congratulations = document.querySelector(".congratulations")
+                addRemBtn.textContent = "ADD TO SHOPING LIST";        
+                addRemBtn.addEventListener("click", function () {                        
+                      if (0 === 0) {
+                          addBook();
+                          addRemBtn.textContent = "REMOVE FROM THE SHOPING LIST";
+                          congratulations.classList.remove("no-content")
+                      } else {
+                          removeBook();
+                          addRemBtn.textContent = "ADD TO SHOPING LIST";
+                          congratulations.classList.add("no-content")
+                      }
+                    });
+                }
+                
+            })
             
-        })
-
-}
-
+        }
+        
+        
+        
