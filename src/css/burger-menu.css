@@ -1,16 +1,18 @@
 body {
   position: relative;
 }
+
 .container {
   position: relative;
   width: 375px;
   height: 812px;
   background: radial-gradient(
     183.6% 183.01% at 59.76% -23.42%,
-    #4f2ee8 18.03%,
+    var(--extra-bg-color) 18.03%,
     #ffffff 100%
   );
 }
+
 .name {
   padding-top: 88px;
   display: flex;
@@ -23,6 +25,7 @@ body {
   width: 37px;
   height: 37px;
 }
+
 .preson-name {
   font-family: 'DM Sans';
   font-style: normal;
@@ -30,23 +33,23 @@ body {
   font-size: 22px;
   line-height: 29px;
   letter-spacing: -0.02em;
-  color: #ffffff;
+  color: var(--light-text-color);
 }
+
 .menu {
   margin-left: 129px;
   margin-top: 130px;
 }
+
 .button {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   padding: 8px 16px;
   gap: 10px;
-
   width: 72px;
   height: 34px;
-
-  background: #eac645;
+  background: var(--place-bg-color);
   border-radius: 36px;
   border: none;
   flex: none;
@@ -54,6 +57,7 @@ body {
   flex-grow: 0;
   justify-content: center;
 }
+
 .shopping {
   font-family: 'DM Sans';
   font-style: normal;
@@ -62,13 +66,14 @@ body {
   line-height: 18px;
   letter-spacing: -0.04em;
   text-transform: uppercase;
-
-  color: #ffffff;
+  color: var(--light-text-color);
   padding-right: 4px;
 }
+
 .shopping-list {
   display: flex;
 }
+
 .bottom-btn {
   position: absolute;
   left: 20px;
@@ -85,7 +90,7 @@ body {
   width: 118px;
   height: 48px;
   background: #ffffff;
-  border: 1.5px solid #111111;
+  border: 1.5px solid var(--main-text-color);
   border-radius: 18px;
   font-family: 'DM Sans';
   font-style: normal;
@@ -93,16 +98,16 @@ body {
   font-size: 14px;
   line-height: 18px;
   letter-spacing: -0.04em;
-  color: #111111;
+  color: var(--main-text-color);
 }
 
 .btn-arrow {
-  position: absolute;
   position: absolute;
   left: 80%;
   top: 52%;
   transform: translate(-50%, -50%);
 }
+
 .bg {
   position: absolute;
   bottom: -5px;
