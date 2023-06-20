@@ -1,10 +1,20 @@
+:root {
+  --place-bg-color: #4f2ee8;
+  --light-text-color: #ffffff;
+  --main-text-color: #111111;
+}
+
+body {
+  position: relative;
+}
+
 .container {
   position: relative;
   width: 375px;
   height: 812px;
   background: radial-gradient(
     183.6% 183.01% at 59.76% -23.42%,
-    var(--extra-bg-color) 18.03%,
+    var(--place-bg-color) 18.03%,
     #ffffff 100%
   );
 }
@@ -24,7 +34,6 @@
 
 .preson-name {
   font-family: 'DM Sans';
-  font-style: normal;
   font-weight: 700;
   font-size: 22px;
   line-height: 29px;
@@ -52,11 +61,11 @@
   order: 0;
   flex-grow: 0;
   justify-content: center;
+  color: var(--light-text-color);
 }
 
 .shopping {
   font-family: 'DM Sans';
-  font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 18px;
@@ -89,7 +98,6 @@
   border: 1.5px solid var(--main-text-color);
   border-radius: 18px;
   font-family: 'DM Sans';
-  font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 18px;
