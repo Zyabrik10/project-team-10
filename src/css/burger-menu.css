@@ -14,15 +14,27 @@
           transition: transform 250ms ease-in-out; */
 }
 
-.header-menu{
-  display: flex;
-  align-items: center;
-}
-
 .menu-container.is-open {
   display: block;
   /* transform: translateX(0); */
 }
+
+.header-menu{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-text {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.logo-menu {
+  display: flex;
+  justify-content: center;
+}
+
 
 .icon-menu-close{
   stroke: var(--main-text-color);
