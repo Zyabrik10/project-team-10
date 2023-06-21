@@ -141,5 +141,6 @@ function onClickDel(event) {
   if (!--number_of_books) {
     plug.style.display = 'block';
     localStorage.clear();
+    shopping_info;
   }
 }
