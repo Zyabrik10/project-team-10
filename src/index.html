@@ -25,13 +25,21 @@
 <body class="theme-switch light-theme home-pages">
   <header class="header light-theme theme-switch">
     <div class="container">
-      <nav class="logo">
+      <!-- <nav class="logo">
           <a class="text-logo global-link" href="#">
               <img id="logo-image" src="../src/images/header/logo-light.png" alt="Logo" class="logo-image theme-switch light-theme dark-theme">
           </a>
+      </nav> -->
 
-        
-      </nav>
+      <a class="global-link logo-menu" href="./index.html">
+        <img
+          src="./images/burger-menu/logo.png"
+          alt="logo-menu"
+          width="24"
+          height="24"
+        />
+        <b class="logo-text theme-switch light-theme dark-theme">Bookshelf</b>
+      </a>
 
       <nav>
         <ul class="header-links">
@@ -57,12 +65,24 @@
         </div>
       </div>
 
-      <button class="user-profile theme-switch light-theme dark-theme">
-        <svg class="avatar" width="37" height="37">
-          <use xlink:href="./images/header/icons/icons.svg#icon-user-non"></use>
-        </svg>
-      </button> <!-- js code in file "color-switcher" -->
-       
+ <!-- js code in file "color-switcher" -->
+<!-- Не залогінений користувач -->
+<button id="userProfileLoggedOut" class="user-profile theme-switch light-theme dark-theme">
+  <svg class="avatar" width="37" height="37">
+    <use xlink:href="./images/header/icons/icons.svg#icon-user-non"></use>
+  </svg>
+</button>
+
+<!-- Залогінений користувач -->
+<button id="userProfileLoggedIn" class="user-profile logged-in">
+  <svg class="avatar" width="37" height="37">
+    <image xlink:href="/src/images/header/user-avatar.png" width="37" height="37" />
+  </svg>
+  <span class="username">Stephen</span>
+  <svg class="status-icon" width="23" height="26">
+    <use xlink:href="./images/header/icons/icons.svg#icon-caret-down"></use>
+  </svg>
+</button>
       
 
       <button class="menu-button global-button">
