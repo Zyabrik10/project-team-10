@@ -2,11 +2,21 @@
 
 .header {
   height: 64px;
-  background: var(--light-text-color);
-  border: 1.5px solid var(--main-text-color);
+  /* background: var(--light-text-color);
+  border: 1.5px solid var(--main-text-color); */
   border-radius: 0 0 8px 8px;
   margin-bottom: 40px;
   padding: 0 20px;
+}
+
+.header.light-theme{
+  background: var(--light-text-color);
+  border: 1.5px solid var(--main-text-color);
+}
+
+.header.dark-theme{
+  background: var(--main-text-color);
+  border: 1.5px solid var(--light-text-color);
 }
 
 .header > .container {
@@ -31,6 +41,14 @@
   color: var(--main-text-color);
 }
 
+.logo-image.light-theme  {
+  color: var(--main-text-color);
+}
+
+.logo-image.dark-theme  {
+  color: var(--light-text-color);
+}
+
 /* header links */
 .header-links {
   list-style-type: none;
@@ -49,15 +67,33 @@
   align-items: center;
 }
 
+.link-text.light-theme  {
+  color: var(--main-text-color);
+}
+.link-text.dark-theme  {
+  color: var(--light-text-color);
+}
+
 .link-text.shopping-link::before {
   content: '';
   display: inline-block;
   width: 20px;
   height: 20px;
-  background-image: url('/src/images/header/icons/icons.svg#icon-shop');
-  background-repeat: no-repeat;
+  /* background-image: url('/src/images/header/icons/icons.svg#icon-shop');
+  background-repeat: no-repeat; */
   background-size: 20px;
   margin-right: 8px;
+}
+
+.sprite-image.light-theme{
+  background-image: url('/src/images/header/icons/icons.svg#icon-shop');
+  background-repeat: no-repeat;
+}
+
+.sprite-image.dark-theme{
+  background-image: url('/src/images/header/icons/icons.svg#icon-shop-dark');
+  background-repeat: no-repeat;
+  fill: var(--light-text-color) ;
 }
 
 .switcher {
@@ -90,7 +126,6 @@
   top: 2px;
   left: 2px;
 }
-
 .switcher-circle {
   width: 18px;
   height: 18px;
@@ -110,11 +145,77 @@
   height: 32px;
   display: none;
   align-items: center;
-  background-color: var(--light-text-color);
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   margin-left: 24px;
-  padding: 5;
+  padding: 5px;
+  cursor: pointer;
+  border: 0;
+  transition: all 250ms;
+  user-select: none;
+  touch-action: manipulation;
+  position: relative;
+}
+
+.user-profile::before {
+  content: "";
+  position: absolute; 
+  left: 190%;
+  font-weight: bolder;
+  transform: translateX(-50%);
+  border-radius: 1;
+  padding: 5px 10px 5px 10px;
+  background-color: inherit;
+  border-radius: 50%;
+  font-size: 14px;
+  pointer-events: none; 
+  opacity: 0; 
+  transition: opacity 0.3s ease; 
+}
+
+.user-profile:hover::before {
+  content: "LogIn ☼";
+  font-size:x-small;
+  
+  opacity: 1; 
+}
+.user-profile.light-theme:hover::before{
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.519);
+  color:  rgba(1, 1, 1, 0.821) ;
+}
+.user-profile.dark-theme:hover::before{
+  text-shadow: 2px 2px 2px rgba(234, 13, 220, 0.519);
+  color:  rgba(247, 242, 242, 0.821) ;
+}
+
+.user-profile .avatar {
+  display: flex;
+}
+
+.user-profile .text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none; 
+  opacity: 1; 
+  transition: opacity 0.3s ease; 
+}
+
+.user-profile:hover .text {
+  opacity: 0;
+}
+
+.user-profile:active {
+  transform:  translateY(-5px) ;
+}
+
+.user-profile.light-theme{
+  background-color: var(--light-text-color);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+.user-profile.dark-theme{
+  background-color: var(----main-text-color-text-color);
+  box-shadow: 1px 1px 5px 1px rgb(70, 3, 78);
 }
 
 .menu-button {
@@ -163,17 +264,27 @@
     display: none;
   }
 
-  .current-page .header-link.home-link .link-text {
-    width: 72px;
+  .home-pages .header-link.home-link .link-text {
+    width: 100%px;
     height: 34px;
     background: var(--place-bg-color);
     border-radius: 36px;
+    padding: 10px 15px 10px 15px;
+    font-weight: bold;
+    color: var(--main-text-color);
   }
 
-  .current-page .header-link.shopping-link .link-text {
-    width: 72px;
+  .shopp-pages .header-link.shopping-link .link-text {
+    width: 100%px;
     height: 34px;
     background: var(--place-bg-color);
     border-radius: 36px;
+    padding: 10px;
+    font-weight: bold;
+    color: var(--main-text-color);
   }
+  .shopp-pages .sprite-image{
+    fill: var(--main-text-color);
+  }
+
 }

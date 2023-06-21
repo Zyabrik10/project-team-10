@@ -13,16 +13,16 @@ const bookThumb = document.querySelector('.tb-container');
 const headingEl = document.querySelector('.heading-primary');
 const allCtgrEl = document.querySelector('#allctgr');
 const loader = document.querySelector('.loader');
-console.log(loader);
+  loader.classList.add('is-hidden');
 
 categoryList.addEventListener('click', renderCategoryBooks);
 setTimeout(e => {
   loader.classList.add('is-hidden');
 }, 2500);
 async function renderCategoryBooks(event) {
+  bookThumb.innerHTML = '';
   loader.classList.remove('is-hidden');
   const item = event.target.textContent;
-  console.log(item);
   const itemFirst = allCtgrEl.textContent;
 
   if (item === itemFirst) {
@@ -56,7 +56,12 @@ async function renderCategoryBooks(event) {
 function createMarkupBook({ data }) {
   bookThumb.innerHTML = '';
   const markup = data
-    .map(({ author, title, book_image, _id }) => {
+    .map(({ list_name,
+          book_image = "https://bookcart.azurewebsites.net/Upload/Default_image.jpg",
+          title = "title not available",
+          author = "anonymous",
+          description,
+          _id, }) => {
       return `
           <li class="flex-container-item">
             <a href=# class="global-link" data-id="${_id}">
@@ -79,14 +84,19 @@ const noBooksEl = document.querySelector('.no-books-card');
 
 fetchTopBooks().then(renderTopBooks);
 
-export function renderTopBooks(bestsellersArray) {
-  if (bestsellersArray.data.length == 0) {
+export function renderTopBooks({ data }) {
+  if (data.length == 0) {
     noBooksEl.classList.remove('is-hidden');
   } else {
-    const markupCategory = bestsellersArray.data
+    const markupCategory = data
       .map(({ list_name, books }) => {
         const markup = books
-          .map(({ author, title, book_image, _id }) => {
+          .map(({ list_name,
+          book_image = "https://bookcart.azurewebsites.net/Upload/Default_image.jpg",
+          title = "title not available",
+          author = "anonymous",
+          description,
+          _id, }) => {
             return `
           <li class="flex-container-item">
             <a href=# class="global-link" data-id="${_id}">
@@ -134,12 +144,18 @@ async function onSeeMoreClick(event) {
     const data = await fetchBooksByExactCategory(bookTitle);
     createMarkupSeeMore(data, categoryContainer);
     event.target.classList.add('is-hidden');
+    loader.classList.add('is-hidden');
   }
 }
 
 function createMarkupSeeMore({ data }, categoryContainer) {
   const markup = data
-    .map(({ author, title, book_image, _id }) => {
+    .map(({ list_name,
+          book_image = "https://bookcart.azurewebsites.net/Upload/Default_image.jpg",
+          title = "title not available",
+          author = "anonymous",
+          description,
+          _id, }) => {
       return `
           <li class="flex-container-item">
             <a href=# class="global-link" data-id="${_id}">

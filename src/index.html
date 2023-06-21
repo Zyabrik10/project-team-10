@@ -23,8 +23,8 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
 
-  <body class="theme-switch light-theme">
-    <button type="button" class="login-section global-button">Sign Up</button>
+<body class="theme-switch light-theme home-pages">
+  <button type="button" class="login-section global-button">Sign Up</button>
     <button type="button" class="scroll-up-button global-button">
       <svg class="scroll-up-svg">
         <use
@@ -32,33 +32,31 @@
         ></use>
       </svg>
     </button>
-    <header class="header light-theme theme-switch">
-      <div class="container">
-        <nav class="logo">
+  <header class="header light-theme theme-switch">
+    <div class="container">
+      <nav class="logo">
           <a class="text-logo global-link" href="#">
-            <img
-              src="/src/images/header/logo-light.png"
-              alt="Logo"
-              class="logo-image"
-            />
+              <img id="logo-image" src="../src/images/header/logo-light.png" alt="Logo" class="logo-image theme-switch light-theme dark-theme">
           </a>
-        </nav>
 
-        <nav>
-          <ul class="header-links">
-            <li class="header-link home-link">
-              <a class="link-text global-link current-page" href="./">Home</a>
-            </li>
-            <li class="header-link shopping-link">
-              <a class="link-text global-link" href="./shopping-list.html">
-                SHOPPING LIST
-                <svg class="sprite-image" width="20" height="20">
-                  <use href="./images/header/icons/icons.svg#icon-shop"></use>
-                </svg>
-              </a>
-            </li>
-          </ul>
-        </nav>
+        
+      </nav>
+
+      <nav>
+        <ul class="header-links">
+          <li class="header-link home-link">
+            <a class="link-text global-link current-page theme-switch light-theme dark-theme" href="./">Home</a>
+          </li>
+          <li class="header-link shopping-link">
+            <a class="link-text global-link theme-switch light-theme dark-theme" href="./shopping-list.html">
+              SHOPPING LIST
+              <svg class="sprite-image theme-switch light-theme dark-theme" width="20" height="20">
+                <use href="./images/header/icons/icons.svg#icon-shop"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
 
         <div class="switcher" data-checked="false">
           <div class="switcher-handle">
@@ -68,11 +66,13 @@
           </div>
         </div>
 
-        <div class="user-profile">
-          <svg class="avatar" width="37" height="37">
-            <use href="./images/header/icons/icons.svg#icon-user-non"></use>
-          </svg>
-        </div>
+      <button class="user-profile theme-switch light-theme dark-theme">
+        <svg class="avatar" width="37" height="37">
+          <use xlink:href="./images/header/icons/icons.svg#icon-user-non"></use>
+        </svg>
+      </button> <!-- js code in file "color-switcher" -->
+       
+      
 
         <button class="menu-button global-button">
           <svg class="menu-icon" width="40" height="40">

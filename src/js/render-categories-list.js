@@ -4,13 +4,13 @@ import { fetchAllCategories } from './fetch-func';
 import { shopping_info } from './shopping-list';
 
 import { renderTheme } from './switch-theme';
+import Notiflix from 'notiflix';
 
 const categoryList = document.querySelector('.category-list');
 const loadCategory = document.querySelector('.load');
 
 fetchAllCategories()
   .then(data => {
-    // console.log(data);
     const markup = data
       .map(({ list_name }) => {
         return `<li class="category-list-item global-list light-theme theme-switch">${list_name}</li>`;
