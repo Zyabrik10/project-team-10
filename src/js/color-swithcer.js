@@ -22,6 +22,21 @@ function changeLogoImage(theme) {
 }
     changeLogoImage('.dark');
 
+    // user login BUTTON  ----> якшо цей код не потрібен просто видаліть його:)
+    var userProfile = document.querySelector('.user-profile');
+var modal = document.getElementById('modal'); // поміняйте'modal' на своє
+
+userProfile.addEventListener('click', function() {
+  modal.style.display = 'block'; 
+});
+
+window.addEventListener('click', function(event) {
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
+});
+
+
 
 
 
