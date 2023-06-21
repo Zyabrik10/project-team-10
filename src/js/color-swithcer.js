@@ -10,20 +10,30 @@ switcher.addEventListener('click', function () {
   }
 });
 
-// for_THEME DarkandWhite
-// function toggleLogoImage(theme) {
-//   const logoImages = document.querySelectorAll('.logo-image');
-//   const logoImageSrc = theme === 'dark' ? '../src/images/header/logo-dark.png' : '../src/images/header/logo-light.png';
+// for_THEME DarkandWhite-LOGO
+function toggleLogoImage() {
+  const logoImages = document.querySelectorAll('.logo-image');
 
-//   logoImages.forEach((logoImage) => {
-//     logoImage.src = logoImageSrc;
-//   });
-// }
+  logoImages.forEach((logoImage) => {
+    if (logoImage.classList.contains('light-theme')) {
+      logoImage.src = require('/src/images/header/logo-light.png');
+    } else if (logoImage.classList.contains('dark-theme')) {
+      logoImage.src = require('/src/images/header/logo-dark.png');
+    }
+  });
+}
 
-// document.addEventListener('DOMContentLoaded', function() {
-//   const currentTheme = 'dark'; // Поточна тема (може бути 'light' або 'dark')
-//   toggleLogoImage(currentTheme);
-// });
+document.addEventListener('DOMContentLoaded', function() {
+  toggleLogoImage();
+
+  const themeSwitch = document.querySelector('.theme-switch');
+  themeSwitch.addEventListener('click', function() {
+
+    toggleLogoImage();
+  });
+});
+
+
 
     // user login BUTTON  ----> якшо цей код не потрібен просто видаліть його:)
     // var userProfile = document.querySelector('.user-profile');
@@ -40,7 +50,7 @@ switcher.addEventListener('click', function () {
 //   }
 // });
 
-  //JS для перевірки залогінений чи ні користувач
+  // JS для перевірки залогінений чи ні користувач
 
 // const userProfileLoggedOut = document.getElementById('userProfileLoggedOut');
 // const userProfileLoggedIn = document.getElementById('userProfileLoggedIn');

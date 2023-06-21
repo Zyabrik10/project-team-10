@@ -27,7 +27,7 @@
 }
 
 /* header logo */
-/* .logo {
+.logo {
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -47,19 +47,16 @@
 
 .logo-image.dark-theme  {
   color: var(--light-text-color);
-} */
+}
 
 /* header links */
 .header-links {
   list-style-type: none;
   display: none;
   align-items: center;
-  gap: 16px;
+  gap: 24px;
 }
 
-.header-link {
-  margin-left: 24px;
-}
 
 .link-text {
   text-decoration: none;
@@ -225,7 +222,7 @@
   height: 45px;
   background: #4f2ee8;
   border-radius: 36px;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: space-between;
   padding: 0 12px;
@@ -268,7 +265,7 @@
     justify-content: space-between;
     align-items: center;
   }
-
+ 
   .header-links {
     display: none;
   }
@@ -290,6 +287,9 @@
   .user-profile {
     display: flex;
     align-items: center;
+  }
+  .user-profile.logged-in{
+    display: flex;
   }
   .menu-button {
     display: none;
