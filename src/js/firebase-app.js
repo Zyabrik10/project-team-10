@@ -22,7 +22,8 @@ const auth = getAuth(app);
 const loginSectionEl = document.querySelector('.login-section');
 
 const user = auth.currentUser;
-const logInEl = document.querySelector('.login-section');
+// const logInEl = document.querySelector('.login-section');
+const logInEl = document.querySelector('.user-profile');
 
 const logOut = e => {
   signOut(auth)
