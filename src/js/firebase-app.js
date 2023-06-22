@@ -17,12 +17,12 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 // const logOutEl = document.querySelector('.log-out');
-// const loginSectionEl = document.querySelector('.login-section');
+const loginSectionEl = document.querySelector('.login-section');
 
 const user = auth.currentUser;
 // const logInEl = document.querySelector('.login-section');
-const logInEl = document.querySelector('.user-profile');
-const logOutEl = document.querySelector('.user-profile');
+const signUpEl = document.querySelector('#userProfileLoggedOut');
+const logOutEl = document.querySelector('#userProfileLoggedIn');
 
 const logOut = e => {
   signOut(auth)
@@ -45,7 +45,6 @@ const signUp = () => {
   signOut(auth)
     .then(() => {
       // Sign-out successful.
-
       Notiflix.Notify.info(`You are redirected to sign up...`);
       setTimeout(
         () => (window.location = 'http://localhost:1234/sign-up.html'),
@@ -62,11 +61,12 @@ const signUp = () => {
 onAuthStateChanged(auth, user => {
   if (user !== null) {
     console.log('User logged in.');
-    logOutEl.innerHTML = 'Log Out';
+    signUpEl.classList.add('is-hidden');
     logOutEl.addEventListener('click', logOut);
   } else {
     console.log('No user.');
-    logInEl.innerHTML = 'Sign Up';
-    logInEl.addEventListener('click', signUp);
+    logOutEl.style.display = 'none';
+    signUpEl.innerHTML = 'Sign Up';
+    signUpEl.addEventListener('click', signUp);
   }
 });
