@@ -24,6 +24,8 @@ const user = auth.currentUser;
 // const logInEl = document.querySelector('.login-section');
 const signUpEl = document.querySelector('#userProfileLoggedOut');
 const logOutEl = document.querySelector('#userProfileLoggedIn');
+const userLogged = document.querySelector('#userProfileLoggedInk')
+
 
 const logOut = e => {
   signOut(auth)
@@ -67,11 +69,11 @@ onAuthStateChanged(auth, user => {
   if (user !== null) {
     console.log('User logged in.');
     signUpEl.classList.remove('is-active');
-    logOutEl.classList.add('is-active');;
+    userLogged.classList.add('is-active');;
     logOutEl.addEventListener('click', logOut);
   } else {
     console.log('No user.');
-    logOutEl.classList.remove('is-active');
+    userLogged.classList.remove('is-active');
     signUpEl.classList.add('is-active');
     signUpEl.addEventListener('click', signUp);
   }

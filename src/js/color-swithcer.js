@@ -110,10 +110,9 @@ window.addEventListener('load', function () {
 });
 
 
-//ДлЯ КНОПИ КОРИСТУВАЧА ----> ЛОГАУТ
-const userProfileLoggedInButton = document.getElementById("userProfileLoggedIn");
+const userProfileLoggedInButton = document.getElementById("userProfileLoggedInk");
 const logoutModal = document.getElementById("logoutModal");
-const logoutButton = document.getElementById("logoutButton");
+const logoutButton = document.getElementById("userProfileLoggedIn");
 
 let isLogoutModalOpen = false;
 
@@ -141,8 +140,6 @@ function closeLogoutModal() {
 function logout() {
   // якщо треба, якщо ні просто видаліть цю функцію
 }
-
-
 
 
 
