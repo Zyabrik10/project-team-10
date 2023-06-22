@@ -67,6 +67,7 @@ onAuthStateChanged(auth, user => {
   if (user !== null) {
     console.log('User logged in.');
     signUpEl.style.display = 'none';
+    logOutEl.style.display = 'flex';
     logOutEl.addEventListener('click', logOut);
   } else {
     console.log('No user.');
