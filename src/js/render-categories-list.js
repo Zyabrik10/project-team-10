@@ -8,9 +8,12 @@ import Notiflix from 'notiflix';
 
 const categoryList = document.querySelector('.category-list');
 const loadCategory = document.querySelector('.load');
+const loader = document.querySelector('.loader');
 
 fetchAllCategories()
   .then(data => {
+    loader.classList.remove('is-hidden');
+
     const markup = data
       .map(({ list_name }) => {
         return `<li class="category-list-item global-list light-theme theme-switch">${list_name}</li>`;
@@ -32,6 +35,7 @@ fetchAllCategories()
     shopping_info.theme === 'light'
       ? renderTheme('light')
       : renderTheme('dark');
+
     loadCategory.classList.add('unvisible');
   })
   .catch(error => {
