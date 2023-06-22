@@ -109,6 +109,46 @@ window.addEventListener('load', function () {
   });
 });
 
+
+//ДлЯ КНОПИ КОРИСТУВАЧА ----> ЛОГАУТ
+const userProfileLoggedInButton = document.getElementById("userProfileLoggedIn");
+const logoutModal = document.getElementById("logoutModal");
+const logoutButton = document.getElementById("logoutButton");
+
+let isLogoutModalOpen = false;
+
+userProfileLoggedInButton.addEventListener("click", toggleLogoutModal);
+logoutButton.addEventListener("click", logout);
+
+function toggleLogoutModal() {
+  if (isLogoutModalOpen) {
+    closeLogoutModal();
+  } else {
+    openLogoutModal();
+  }
+}
+
+function openLogoutModal() {
+  logoutModal.style.display = "block";
+  isLogoutModalOpen = true;
+}
+
+function closeLogoutModal() {
+  logoutModal.style.display = "none";
+  isLogoutModalOpen = false;
+}
+
+function logout() {
+  // якщо треба, якщо ні просто видаліть цю функцію
+}
+
+
+
+
+
+
+
+
 // user login BUTTON  ----> якшо цей код не потрібен просто видаліть його:)
 // var userProfile = document.querySelector('.user-profile');
 // поміняйте'modal' на своє --- ↓
