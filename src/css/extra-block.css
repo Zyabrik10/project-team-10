@@ -24,7 +24,7 @@
   overflow-y: scroll;
   scroll-behavior: smooth;
 }
-.support-list::-webkit-scrollbar  {
+.support-list::-webkit-scrollbar {
   display: none;
 }
 
@@ -76,7 +76,6 @@
   width: 11.67px;
   fill: var(--extra-text-color);
 }
-
 .support-button {
   position: absolute;
   bottom: 5px;
@@ -140,24 +139,4 @@
   }
 }
 
-.scroll-up-button {
-  display: none; /* Hidden by default */
-  position: fixed;
-  bottom: 20px;
-  right: 30px;
-  z-index: 99;
-  border-radius: 50%;
-  padding-top: 21.1px;
-  padding-bottom: 22.15px;
-  padding-right: 17.05px;
-  padding-left: 18px;
-  background: var(--extra-text-color);
-  cursor: pointer;
-}
-.scroll-up-svg {
-  display: block;
-  height: 10.85px;
-  width: 18.95px;
-  fill: #ffffff;
-}
 
