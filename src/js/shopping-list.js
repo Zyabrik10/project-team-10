@@ -29,7 +29,7 @@ const logOut = e => {
   signOut(auth)
     .then(() => {
       // Sign-out successful.
-      // Notiflix.Notify.success(`You are signing out...`);
+      Notiflix.Notify.success(`You are signing out...`);
       setTimeout(
         () =>
           (window.location =
@@ -48,7 +48,7 @@ const signUp = () => {
   signOut(auth)
     .then(() => {
       // Sign-out successful.
-      // Notiflix.Notify.info(`You are redirected to sign up...`);
+      Notiflix.Notify.info(`You are redirected to sign up...`);
       setTimeout(
         () =>
           (window.location =
@@ -66,7 +66,7 @@ const signUp = () => {
 onAuthStateChanged(auth, user => {
   if (user !== null) {
     console.log('User logged in.');
-    // signUpEl.style.display = 'none';
+    signUpEl.style.display = 'none';
     logOutEl.addEventListener('click', logOut);
   } else {
     console.log('No user.');
