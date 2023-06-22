@@ -71,7 +71,7 @@ export function modalWindow() {
                         <ul class="shops-list global-list">
                             <li class="shop-list-item"><a class="shop-link global-link" href="${
                               buy_links[0].url
-                            }."><img class="shop-icon" src=${require('../images/modal-window-book/icons/amazon_bk.png')} alt="amazon" width="62" height="19"/></a></li>
+                            }."><img class="shop-icon theme-switch light-theme" src=${require('../images/modal-window-book/icons/amazon_bk.png')} alt="amazon" width="62" height="19"/></a></li>
                             <li class="shop-list-item"><a class="shop-link global-link" href="${
                               buy_links[1].url
                             }"><img class="shop-icon" src=${require('../images/modal-window-book/icons/open-book_bk.png')} alt="apple-book" width="32" height="32"/></a></li>

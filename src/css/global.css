@@ -179,12 +179,12 @@ main {
   flex: 1 1 auto;
 }
 
-.asides.shp-lst {
+.aside.shp-lst {
   display: none;
 }
 
 @media screen and (min-width: 1440px) {
-  .asides.shp-lst {
+  .aside.shp-lst {
     display: flex;
   }
 }

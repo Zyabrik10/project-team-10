@@ -192,6 +192,10 @@ color: var(--main-text-color);
   margin-bottom: 40px;
 }
 
+.shop-icon.dark-theme{
+  filter: brightness(0) invert(1);
+}
+
 .add-rem-btn {
   width: 100%;
   height: 46px;
@@ -225,7 +229,15 @@ color: var(--main-text-color);
   text-align: center;
   letter-spacing: -0.04em;
 
+
+}
+
+.congratulations.light-theme{
   color: rgba(17, 17, 17, 0.5);
+}
+
+.congratulations.dark-theme{
+  color: rgba(255, 255, 255, 0.5);
 }
 
 @media screen and (min-width: 768px) {
