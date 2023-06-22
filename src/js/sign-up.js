@@ -78,7 +78,8 @@ const onSubmit = e => {
         `${username}, you  successfully signed up and loginnig in now...!`
       );
       setTimeout(
-        () => (window.location = 'http://localhost:1234/index.html'),
+        () =>
+          (window.location = 'https://zyabrik10.github.io/project-team-10/'),
         3000
       );
     })

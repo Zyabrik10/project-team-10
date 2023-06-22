@@ -9,7 +9,6 @@ import {
 } from 'firebase/auth';
 
 import { getDatabase, ref, update } from 'firebase/database';
- 
 
 const firebaseConfig = {
   apiKey: 'AIzaSyDwpmuhImdY7RHC3U0YYZIshSlCJATjNaU',
@@ -76,7 +75,8 @@ const onLogin = e => {
       });
       Notiflix.Notify.success(`You are logging in now...`);
       setTimeout(
-        () => (window.location = 'http://localhost:1234/index.html'),
+        () =>
+          (window.location = 'https://zyabrik10.github.io/project-team-10/'),
         3000
       );
     })
