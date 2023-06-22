@@ -34,11 +34,20 @@ body.modal-open {
   z-index: 200;
   padding: 40px 24px;
 
-  background-color: var(--modal-bg);
-  border: 2px solid var(--modal-border-wrap-color);
+
   border-radius: 18px;
   overflow: auto;
   overflow-y: auto;
+}
+
+.wrap.light-theme{
+  background-color: var(--modal-bg);
+  border: 2px solid var(--modal-border-wrap-color);
+}
+
+.wrap.dark-theme {
+  background-color: var(--modal-border-wrap-color);
+  border: 2px solid var(--modal-bg);
 }
 
 @media screen and (min-width: 768px) {
