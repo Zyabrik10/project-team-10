@@ -7,20 +7,20 @@ export const shopping_info = JSON.parse(
 };
 
 export function saveShoppingList(listBooks) {
+  console.log('saveShoppingList', listBooks);
   localStorage.setItem('client-info', JSON.stringify(listBooks));
 }
 
-// перезапис об'єкту після видалення однієї книжки
 export function removeShoppingListBoock(idBoock) {
-  let result = {};
   for (const key in shopping_info.shopping_list) {
-    if (key !== idBoock) result[key] = shopping_info.shopping_list[key];
+    if (key === idBoock) delete shopping_info.shopping_list[key];
   }
-  localStorage.clear();
-  console.log('clear', shopping_info.shopping_list);
-  saveShoppingList({
-    theme: 'light',
-    shopping_list: result,
-  });
-  console.log('save', shopping_info.shopping_list);
+
+  saveShoppingList(shopping_info);
+}
+
+// додаємо в localStorage
+export function addBook(key_new, book) {
+  shopping_info.shopping_list[key_new] = book;
+  saveShoppingList(shopping_info);
 }
