@@ -50,28 +50,49 @@ document.addEventListener('DOMContentLoaded', function() {
 //   }
 // });
 
+
+
+
+
+
+
+
+
   // JS для перевірки залогінений чи ні користувач
+  // const LogInEl = document.getElementById('LogInButton');
+  // const firebaseConfig = {
+  //   apiKey: "API_KEY",
+  //   authDomain: "PROJECT_ID.firebaseapp.com",
+  // };
 
-// const userProfileLoggedOut = document.getElementById('userProfileLoggedOut');
-// const userProfileLoggedIn = document.getElementById('userProfileLoggedIn');
-
-// const userLoggedIn = onAuthStateChanged (auth, user => {
-//   if (user !== null) {  
-//   console.log('User logged in.');
-//   LogInEl.innerHTML = 'Log Out'; 
-//   LogInEl.addEventListener('click', logout);
+  // // _____________________
+  // import { initializeApp } from 'firebase/app';
+  // import { getAuth, onAuthStateChanged } from 'firebase/auth';
   
-//   } else {
-//   console.log('No user.');
-//   LogInEl.innerHTML = 'Sign Up';
-//   LogInEl.addEventListener('click', signUp);}
-//   });
-
-// if (userLoggedIn) {
-//   userProfileLoggedOut.style.display = 'none';
-// } else {
-//   userProfileLoggedIn.style.display = 'none'; 
-// }
+  // const app = initializeApp(firebaseConfig);
+  // const auth = getAuth(app);
+  // const user = auth.currentUser;
+  
+  // const userProfileLoggedOut = document.getElementById('userProfileLoggedOut');
+  // const userProfileLoggedIn = document.getElementById('userProfileLoggedIn');
+  
+  // const userLoggedIn = onAuthStateChanged(auth, (user) => {
+  //   if (user !== null) {
+  //     console.log('User logged in.');
+  //     LogInEl.innerHTML = 'Log Out';
+  //     LogInEl.addEventListener('click', logout);
+  //   } else {
+  //     console.log('No user.');
+  //     LogInEl.innerHTML = 'Sign Up';
+  //     LogInEl.addEventListener('click', signUp);
+  //   }
+  // });
+  
+  // if (userLoggedIn) {
+  //   userProfileLoggedOut.style.display = 'none';
+  // } else {
+  //   userProfileLoggedIn.style.display = 'none';
+  // }
 
 
 
