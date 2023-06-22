@@ -30,7 +30,9 @@ const logOut = e => {
       // Sign-out successful.
       Notiflix.Notify.success(`You are signing out...`);
       setTimeout(
-        () => (window.location = 'http://localhost:1234/login.html'),
+        () =>
+          (window.location =
+            'https://zyabrik10.github.io/project-team-10/login.html'),
         3000
       );
     })
@@ -47,7 +49,9 @@ const signUp = () => {
       // Sign-out successful.
       Notiflix.Notify.info(`You are redirected to sign up...`);
       setTimeout(
-        () => (window.location = 'http://localhost:1234/sign-up.html'),
+        () =>
+          (window.location =
+            'https://zyabrik10.github.io/project-team-10/sign-up.html'),
         3000
       );
     })
@@ -61,11 +65,11 @@ const signUp = () => {
 onAuthStateChanged(auth, user => {
   if (user !== null) {
     console.log('User logged in.');
-    signUpEl.classList.add('is-hidden');
+    signUpEl.style.display = 'none';
     logOutEl.addEventListener('click', logOut);
   } else {
     console.log('No user.');
-    logOutEl.style.display = 'none';
+    // logOutEl.style.display = 'none';
     signUpEl.innerHTML = 'Sign Up';
     signUpEl.addEventListener('click', signUp);
   }
