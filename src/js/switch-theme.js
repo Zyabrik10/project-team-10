@@ -35,7 +35,7 @@ function switchCheck() {
   } else {
     shopping_info.theme = 'dark';
   }
-  saveShoppingList();
+  saveShoppingList(shopping_info);
   switchTheme();
 }
 
