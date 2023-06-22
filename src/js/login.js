@@ -76,7 +76,7 @@ const onLogin = e => {
       Notiflix.Notify.success(`You are logging in now...`);
       setTimeout(
         () =>
-          (window.location = 'https://zyabrik10.github.io/project-team-10/'),
+          (window.location = 'https://millenialia.github.io/project-team-10-added-features/'),
         3000
       );
     })

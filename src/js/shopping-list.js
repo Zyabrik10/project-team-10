@@ -33,7 +33,7 @@ const logOut = e => {
       setTimeout(
         () =>
           (window.location =
-            'https://zyabrik10.github.io/project-team-10/login.html'),
+            'https://millenialia.github.io/project-team-10-added-features/login.html'),
         3000
       );
     })
@@ -52,7 +52,7 @@ const signUp = () => {
       setTimeout(
         () =>
           (window.location =
-            'https://zyabrik10.github.io/project-team-10/sign-up.html'),
+            'https://millenialia.github.io/project-team-10-added-features/sign-up.html'),
         3000
       );
     })
