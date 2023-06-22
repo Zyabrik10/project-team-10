@@ -36,9 +36,34 @@ function onScrollBtn() {
     supportEl.scrollTo({ top: supportEl.scrollHeight, behavior: 'smooth' });
     // supportBtn.classList.add('support-button-rotate');
   }
-  supportBtn.classList.toggle('support-button-rotate');
+supportBtn.classList.toggle('support-button-rotate');
   isScrolledToEnd = !isScrolledToEnd;
+}
+
+// Get the button:
+let scrollTopButton = document.querySelector('.scroll-up-button');
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function () {
+  scrollFunction();
 };
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    scrollTopButton.style.display = 'block';
+  } else {
+    scrollTopButton.style.display = 'none';
+  }
+}
+scrollTopButton.addEventListener('click', topFunction);
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  console.log('click');
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
 function onListScroll() {
   const isEndOfList = supportEl.scrollTop === supportEl.scrollHeight - supportEl.clientHeight;
     supportBtn.classList.toggle('support-button-rotate', isEndOfList);
