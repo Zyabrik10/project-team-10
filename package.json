@@ -2,10 +2,10 @@
   "name": "parcel-project-template",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://zyabrik10.github.io/project-team-10",
+  "homepage": "https://millenialia.github.io/project-team-10-added-features",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /project-team-10/"
+    "build": "parcel build src/*.html --public-url /project-team-10-added-features/"
   },
   "repository": {
     "type": "git",
