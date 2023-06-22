@@ -42,7 +42,7 @@
               class="logo-image theme-switch light-theme dark-theme"
             />
           </a>
-        </nav>
+      </nav>
 
         <nav>
           <ul class="header-links">
@@ -79,31 +79,42 @@
           </div>
         </div>
 
-        <button class="user-profile theme-switch light-theme dark-theme">
-          <svg class="avatar" width="37" height="37">
-            <use
-              xlink:href="./images/header/icons/icons.svg#icon-user-non"
-            ></use>
-          </svg>
-        </button>
-        <!-- js code in file "color-switcher" -->
+ <!-- js code in file "color-switcher" -->
+<!-- Не залогінений користувач -->
+<button id="userProfileLoggedOut" class="user-profile theme-switch light-theme dark-theme">
+  <svg class="avatar" width="37" height="37">
+    <use xlink:href="./images/header/icons/icons.svg#icon-user-non"></use>
+  </svg>
+</button>
 
-        <button class="menu-button global-button">
-          <svg class="menu-icon" width="40" height="40">
-            <use href="./images/header/icons/icons.svg#icon-menu"></use>
-          </svg>
-        </button>
+<!-- Залогінений користувач -->
+<button id="userProfileLoggedIn" class="user-profile logged-in">
+  <svg class="avatar" width="37" height="37">
+    <image xlink:href="/src/images/header/user-avatar.png" width="37" height="37" />
+  </svg>
+  <span class="username">Stephen</span>
+  <svg class="status-icon" width="23" height="26">
+    <use xlink:href="./images/header/icons/icons.svg#icon-caret-down"></use>
+  </svg>
+</button>
+      
+
+      <button class="menu-button global-button">
+        <svg class="menu-icon" width="40" height="40">
+          <use href="./images/header/icons/icons.svg#icon-menu"></use>
+        </svg>
+      </button>
+
+    </div>
+  </header>
+  <div class="main-block">
+    <div class="container">
+      
+      <div class="asides">
+        <include src="./partials/catalog-list.html"></include>
+        <include src="./partials/extra-block.html"></include>
       </div>
-    </header>
-    <div class="main-block">
-      <div class="container">
-        <div class="loader"></div>
-        <div class="asides">
-          <include src="./partials/catalog-list.html"></include>
-          <include src="./partials/extra-block.html"></include>
-        </div>
-        <include src="./partials/book-catalog.html"></include>
-      </div>
+      <include src="./partials/book-catalog.html"></include>
     </div>
 
     <script type="module" src="./index.js"></script>

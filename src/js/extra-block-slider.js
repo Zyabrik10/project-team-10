@@ -27,16 +27,16 @@ function addNum(value) {
 const supportBtn = document.querySelector('.js-sup-btn');
 let isScrolledToEnd = false;
 supportBtn.addEventListener('click', onScrollBtn);
-
+supportEl.addEventListener('scroll', onListScroll);
 function onScrollBtn() {
   if (isScrolledToEnd) {
-    supportEl.scrollTop = 0;
-    supportBtn.classList.remove('support-button-rotate');
+    supportEl.scrollTo({ top: 0,behavior:'smooth',});
+    // supportBtn.classList.remove('support-button-rotate');
   } else {
-    supportEl.scrollTop = supportEl.scrollHeight;
-    supportBtn.classList.add('support-button-rotate');
+    supportEl.scrollTo({ top: supportEl.scrollHeight, behavior: 'smooth' });
+    // supportBtn.classList.add('support-button-rotate');
   }
-
+supportBtn.classList.toggle('support-button-rotate');
   isScrolledToEnd = !isScrolledToEnd;
 }
 
@@ -62,4 +62,9 @@ function topFunction() {
   console.log('click');
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
+function onListScroll() {
+  const isEndOfList = supportEl.scrollTop === supportEl.scrollHeight - supportEl.clientHeight;
+    supportBtn.classList.toggle('support-button-rotate', isEndOfList);
 }
