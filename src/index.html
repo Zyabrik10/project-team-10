@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home | Book a book</title>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | Book a book</title>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -12,24 +13,21 @@
     rel="stylesheet" />
 
 
-    <!-- Normolize -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css"
-    />
+  <!-- Normolize -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css" />
 
-    <!-- Own Styles -->
-    <link rel="stylesheet" href="./style.css" />
-  </head>
+  <!-- Own Styles -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
 
 <body class="theme-switch light-theme home-pages">
   <header class="header light-theme theme-switch">
     <div class="container">
-      <nav class="logo">
-          <a class="text-logo global-link" href="#">
-              <img id="logo-image" src="../src/images/header/logo-light.png" alt="Logo" class="logo-image theme-switch light-theme dark-theme">
-          </a>
-      </nav>
+      <a class="logo text-logo global-link" href="./">
+        <img id="logo-image" src="../src/images/header/logo-light.png" alt="Logo"
+          class="logo-image theme-switch light-theme dark-theme">
+      </a>
 
       <nav>
         <ul class="header-links">
@@ -55,27 +53,28 @@
         </div>
       </div>
 
- <!-- js code in file "color-switcher" -->
-<!-- Не залогінений користувач -->
-<button id="userProfileLoggedOut" class="user-profile theme-switch light-theme dark-theme">
-  <svg class="avatar" width="37" height="37">
-    <use xlink:href="./images/header/icons/icons.svg#icon-user-non"></use>
-  </svg>
-</button>
+      <!-- js code in file "color-switcher" -->
+      <!-- Не залогінений користувач -->
+      <button type="button" id="userProfileLoggedOut" class="user-profile theme-switch light-theme dark-theme"
+        style="display: none;">
+        <svg class="avatar" width="37" height="37">
+          <use xlink:href="./images/header/icons/icons.svg#icon-user-non"></use>
+        </svg>
+      </button>
 
-<!-- Залогінений користувач -->
-<button id="userProfileLoggedIn" class="user-profile logged-in">
-  <svg class="avatar" width="37" height="37">
-    <image xlink:href="/src/images/header/user-avatar.png" width="37" height="37" />
-  </svg>
-  <span class="username">Stephen</span>
-  <svg class="status-icon" width="23" height="26">
-    <use xlink:href="./images/header/icons/icons.svg#icon-caret-down"></use>
-  </svg>
-</button>
+      <!-- Залогінений користувач -->
+      <button type="button" id="userProfileLoggedIn" class="user-profile logged-in" style="display: none;">
+        <svg class="avatar" width="37" height="37">
+          <image xlink:href="/src/images/header/user-avatar.png" width="37" height="37" />
+        </svg>
+        <span class="username">Stephen</span>
+        <svg class="status-icon" width="23" height="26">
+          <use xlink:href="./images/header/icons/icons.svg#icon-caret-down"></use>
+        </svg>
+      </button>
 
 
-      <button class="menu-button global-button">
+      <button type="button" class="menu-button global-button">
         <svg class="menu-icon theme-switch light-theme dark-theme" width="40" height="40">
           <use href="./images/header/icons/icons.svg#icon-menu"></use>
         </svg>
@@ -91,11 +90,11 @@
       </div>
       <include src="./partials/book-catalog.html"></include>
     </div>
-      <span class="loader"></span>
+    <span class="loader"></span>
 
-  <include src="./partials/burger-menu.html"></include>
-  <include src="./partials/modal-window-book.html"></include>
-  <script type="module" src="./index.js"></script>
+    <include src="./partials/burger-menu.html"></include>
+    <include src="./partials/modal-window-book.html"></include>
+    <script type="module" src="./index.js"></script>
 </body>
 
 </html>

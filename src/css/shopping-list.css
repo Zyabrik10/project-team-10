@@ -74,10 +74,10 @@ h1.shop_title {
   flex-direction: column;
 }
 .shop_card-div_description.dark-theme {
-  background-color: var(--main-bg-color);
+  background-color: #ffffff;
 }
 .shop_card-div_description.light-theme {
-  background-color: #ffffff;
+  background-color: var(--main-bg-color);
 }
 
 .shop_card-title {
@@ -86,10 +86,10 @@ h1.shop_title {
   text-transform: uppercase;
 }
 .shop_card-title.light-theme {
-  color: var(--light-text-color);
+  color: var(--main-text-color);
 }
 .shop_card-title.dark-theme {
-  color: var(--main-text-color);
+  color: var(--light-text-color);
 }
 
 .shop_card-category {
