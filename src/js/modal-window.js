@@ -70,9 +70,9 @@ export function modalWindow() {
                     <div class="modal-content-wrap">
                     <img class="book-icon" src="${book_image}" alt="Book wrap" width="287" height="458"/>
                     <div class="about-book">
-                        <h2 class="book-title global-title">${title}</h2>
-                        <p class="book-author global-p">${author}</p>
-                        <p class="book-descr global-p">${description}</p>
+                        <h2 class="book-title light-theme theme-switch global-title">${title}</h2>
+                        <p class="book-author light-theme theme-switch global-p">${author}</p>
+                        <p class="book-descr light-theme theme-switch global-p">${description}</p>
                         <ul class="shops-list global-list">
                             <li class="shop-list-item"><a class="shop-link global-link" href="${
                               buy_links[0].url
@@ -86,8 +86,8 @@ export function modalWindow() {
                         </ul>
                     </div>
                     </div>
-                    <button class="add-rem-btn global-button" type="button">xxxXXXxxx</button>
-                    <button class="close-btn global-button" type="button">&times;</button>
+                    <button class="add-rem-btn light-theme theme-switch global-button" type="button">xxxXXXxxx</button>
+                    <button class="close-btn light-theme theme-switch global-button" type="button">&times;</button>
                     <p class="congratulations global-p no-content">Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.</p>
                 </div>`;
       shopping_info.theme === 'light'
