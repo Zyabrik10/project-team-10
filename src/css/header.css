@@ -137,86 +137,48 @@
   left: calc(100% - 22px);
   background-position: 0 0;
 }
-
+/* кнопка незалогіненого */
 .user-profile {
-  width: 32px;
-  height: 32px;
+  width: 184px;
+  height: 48px;
+  background: var(--extra-bg-color);
+  border: 1.5px solid var(--main-text-color);
+  border-radius: 18px;
   display: none;
   align-items: center;
-  border-radius: 50%;
-  margin-left: 24px;
-  padding: 5px;
+  padding: 0 14px;
   cursor: pointer;
-  border: 0;
-  transition: all 250ms;
-  user-select: none;
-  touch-action: manipulation;
-  position: relative;
+  margin-left: 24px;
 }
 
-.user-profile::before {
-  content: "";
-  position: absolute; 
-  left: 190%;
-  font-weight: bolder;
-  transform: translateX(-50%);
-  border-radius: 1;
-  padding: 5px 10px 5px 10px;
-  background-color: inherit;
-  border-radius: 50%;
+.signup-text {
   font-size: 14px;
-  pointer-events: none; 
-  opacity: 0; 
-  transition: opacity 0.3s ease; 
+  line-height: 18px;
+  margin-right: auto;
 }
 
-.user-profile:hover::before {
-  content: "LogIn ☼";
-  font-size:x-small;
-  
-  opacity: 1; 
-}
-.user-profile.light-theme:hover::before{
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.519);
-  color:  rgba(1, 1, 1, 0.821) ;
-}
-.user-profile.dark-theme:hover::before{
-  text-shadow: 2px 2px 2px rgba(234, 13, 220, 0.519);
-  color:  rgba(247, 242, 242, 0.821) ;
+.other-svg {
+  margin-left: auto;
 }
 
-.user-profile .avatar {
-  display: flex;
+.signup-text.light-theme{
+  color: var(--light-text-color);
 }
-
-.user-profile .text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none; 
-  opacity: 1; 
-  transition: opacity 0.3s ease; 
-}
-
-.user-profile:hover .text {
-  opacity: 0;
+.signup-text.dark-theme {
+  color: var(--main-text-color);
 }
 
 .user-profile:active {
   transform:  translateY(-5px) ;
 }
 
-.user-profile.light-theme{
-  background-color: var(--light-text-color);
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-}
-.user-profile.dark-theme{
-  background-color: var(----main-text-color-text-color);
-  box-shadow: 1px 1px 5px 1px rgb(70, 3, 78);
+/* КНОПА Button LogIn -- On */
+
+.user-profile-container {
+  position: relative;
+  display: inline-block;
 }
 
-/* Button LogIn -- On */
 .user-profile.logged-in {
   width: 184px;
   height: 45px;
@@ -244,10 +206,59 @@
   width: 23px;
   height: 26px;
 }
+/* КНОПА ЛОГАУТ */
+.custom-profile {
+  width: 184px;
+  height: 48px;
+  background: var(--bg-color);
+  border: 1.5px solid var(--main-text-color);
+  border-radius: 18px;
+  display: none;
+  align-items: center;
+  padding: 0 14px;
+  cursor: pointer;
+  transition-duration: .2s;
+}
 
+.custom-profile:hover{
+  background-color: var(--extra-border-color-40);
+}
+
+.custom-signup-text {
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--main-text-color);
+  margin-right: auto;
+}
+
+.custom-other-svg {
+  margin-left: auto;
+}
+
+
+.modal {
+  display: none;
+  position: absolute;
+  left: 28px;
+  top: 105%;
+  z-index: 999;
+}
+
+.modal-content {
+  background: var(--bg-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  
+}
+.modal-content {
+  border-radius: 19px;
+  box-shadow: 6px 4px 2px 1px rgba(11, 11, 11, 0.2);
+}
+
+/* Кінець кнопи логаут */
 
 .menu-button {
-  display: felx;
+  display: flex;
   margin-left: 14px;
   background-color: inherit;
 }
@@ -294,6 +305,9 @@
   .user-profile {
     display: flex;
     align-items: center;
+  }
+  .custom-profile{
+    display: flex;
   }
   .user-profile.logged-in{
     display: flex;
