@@ -21,6 +21,7 @@ h1.shop_title {
 }
 
 .shop_plug {
+  display: none;
   margin: 120px auto;
   width: 265px;
 }
@@ -73,10 +74,10 @@ h1.shop_title {
   flex-direction: column;
 }
 .shop_card-div_description.dark-theme {
-  background-color: var(--main-bg-color);
+  background-color: #ffffff;
 }
 .shop_card-div_description.light-theme {
-  background-color: #ffffff;
+  background-color: var(--main-bg-color);
 }
 
 .shop_card-title {
@@ -85,10 +86,10 @@ h1.shop_title {
   text-transform: uppercase;
 }
 .shop_card-title.light-theme {
-  color: var(--light-text-color);
+  color: var(--main-text-color);
 }
 .shop_card-title.dark-theme {
-  color: var(--main-text-color);
+  color: var(--light-text-color);
 }
 
 .shop_card-category {
@@ -107,7 +108,7 @@ h1.shop_title {
   height: 28px;
   background-size: contain;
   background-repeat: no-repeat;
-  background-color: #ffffff;
+  background-color: transparent;
   background-image: url('../images/shoppin-list/icons/del.png');
   border: none;
   cursor: pointer;
@@ -153,8 +154,23 @@ h1.shop_title {
   filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
 }
 
-.shop_card-link .shop_amazon {
+.shop_card-link .shop_amazon--black,
+.shop_card-link .shop_amazon--wite {
   height: 11px;
+}
+
+.shop_card-link .shop_amazon--black.light-theme {
+  display: block;
+}
+.shop_card-link .shop_amazon--black.dark-theme {
+  display: none;
+}
+
+.shop_card-link .shop_amazon--wite.light-theme {
+  display: none;
+}
+.shop_card-link .shop_amazon--wite.dark-theme {
+  display: block;
 }
 
 /* tablet  & PC */
@@ -191,7 +207,8 @@ h1.shop_title {
   .shop_card-link img {
     height: 28px;
   }
-  .shop_card-link .shop_amazon {
+  .shop_card-link .shop_amazon--black,
+  .shop_card-link .shop_amazon--wite {
     height: 16px;
   }
 }

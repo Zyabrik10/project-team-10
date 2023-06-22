@@ -130,6 +130,11 @@
   max-width: 335px;
 }
 
+.tb-book-card:hover,
+.tb-book-card:focus {
+  transform: scale(1.03);
+}
+
 /* tablet */
 @media screen and (min-width: 768px) {
   .tb-book-card {
@@ -218,7 +223,7 @@
 }
 
 /* mobile */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .hidden-books > li:nth-child(n + 2) {
     display: none;
   }

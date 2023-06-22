@@ -26,16 +26,13 @@
   <body class="light-theme theme-switch shopp-pages">
     <header class="header light-theme theme-switch">
       <div class="container">
-        <nav class="logo">
-          <a class="text-logo global-link" href="#">
-            <img
-              id="logo-images"
-              src="/src/images/header/logo-light.png"
-              alt="Logo"
-              class="logo-image theme-switch light-theme dark-theme"
-            />
-          </a>
-        </nav>
+        <a class="logo text-logo global-link" href="./">
+          <img
+            src="/src/images/header/logo-light.png"
+            alt="Logo"
+            class="logo-image theme-switch light-theme dark-theme"
+          />
+        </a>
 
         <nav>
           <ul class="header-links">
@@ -107,7 +104,19 @@
           </svg>
         </button>
 
-        <button class="menu-button global-button">
+        <button
+          type="button"
+          class="user-profile theme-switch light-theme dark-theme"
+          style="display: none"
+        >
+          <svg class="avatar" width="37" height="37">
+            <use
+              xlink:href="./images/header/icons/icons.svg#icon-user-non"
+            ></use>
+          </svg>
+        </button>
+
+        <button type="button" class="menu-button global-button">
           <svg class="menu-icon" width="40" height="40">
             <use href="./images/header/icons/icons.svg#icon-menu"></use>
           </svg>
@@ -123,12 +132,14 @@
             ></use>
           </svg>
         </button>
-        <div class="asides">
+        <div class="aside shp-lst">
           <include src="./partials/extra-block.html"></include>
         </div>
         <include src="./partials/shopping-list.html"></include>
       </div>
     </div>
+
+    <include src="./partials/burger-menu.html"></include>
 
     <script type="module" src="./shopping-list.js"></script>
   </body>

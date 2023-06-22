@@ -100,7 +100,7 @@ function toggleLogoImage() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+window.addEventListener('load', function () {
   toggleLogoImage();
 
   const themeSwitch = document.querySelector('.theme-switch');
@@ -136,10 +136,11 @@ document.addEventListener('DOMContentLoaded', function () {
 //   LogInEl.addEventListener('click', logout);
 
 //   } else {
-//   console.log('No user.');
-//   LogInEl.innerHTML = 'Sign Up';
-//   LogInEl.addEventListener('click', signUp);}
-//   });
+//     console.log('No user.');
+//     LogInEl.innerHTML = 'Sign Up';
+//     LogInEl.addEventListener('click', signUp);
+//   }
+// });
 
 // if (userLoggedIn) {
 //   userProfileLoggedOut.style.display = 'none';

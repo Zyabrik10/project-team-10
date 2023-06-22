@@ -5,7 +5,7 @@
   "homepage": "https://millenialia.github.io/project-team-10-added-features",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /project-team-10/"
+    "build": "parcel build src/*.html --public-url /project-team-10-added-features/"
   },
   "repository": {
     "type": "git",

@@ -184,4 +184,7 @@ function createMarkupSeeMore({ data }, categoryContainer) {
             ${markup}
           </ul>`;
   categoryContainer.innerHTML = seeMoreMarkup;
+  shopping_info.theme === 'light'
+      ? renderTheme('light')
+      : renderTheme('dark');
 }
