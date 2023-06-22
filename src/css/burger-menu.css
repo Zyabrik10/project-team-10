@@ -36,8 +36,12 @@
 }
 
 
-.icon-menu-close{
+.icon-menu-close.light-theme{
   stroke: var(--main-text-color);
+}
+
+.icon-menu-close.dark-theme {
+  stroke: var(--light-text-color);
 }
 
 .menu-close{
