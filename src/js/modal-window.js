@@ -19,10 +19,8 @@ export function modalWindow() {
     const linkId = e.target.closest('.global-link');
     if (linkId && linkId.hasAttribute('data-id')) {
       const dataId = e.target.closest('.global-link').getAttribute('data-id');
-      console.log(dataId);
       fetchBook(dataId)
         .then(data => {
-          console.log(data);
 
           modal.classList.remove('is-hidden');
           body.classList.add('modal-open');
@@ -45,7 +43,6 @@ export function modalWindow() {
 
           document.addEventListener('keydown', event => {
             if (event.key === 'Escape') {
-              console.log('Esc');
               modal.classList.add('is-hidden');
               body.classList.remove('modal-open');
             }
@@ -54,8 +51,6 @@ export function modalWindow() {
         .catch(error => {
           console.error(error);
         });
-    } else {
-      console.log('Промазав по картці, спробуй ще)))');
     }
 
     function markupModal({
@@ -101,15 +96,12 @@ export function modalWindow() {
       addRemBtn.textContent = 'ADD TO SHOPING LIST';
       addRemBtn.addEventListener('click', function () {
         if (!shopping_info.shopping_list[id]) {
-          console.log('Add');
           addBook(id, book);
-          console.log('funcBtn');
           shopping_info.shopping_list;
 
           addRemBtn.textContent = 'REMOVE FROM THE SHOPING LIST';
           congratulations.classList.remove('no-content');
         } else {
-          console.log('Add');
           removeBook(id);
           addRemBtn.textContent = 'ADD TO SHOPING LIST';
           congratulations.classList.add('no-content');
