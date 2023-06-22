@@ -62,15 +62,16 @@ const signUp = () => {
     });
 };
 
-onAuthStateChanged(auth, user => {
-  if (user !== null) {
-    console.log('User logged in.');
-    signUpEl.classList.add('is-hidden');
-    logOutEl.addEventListener('click', logOut);
-  } else {
-    console.log('No user.');
-    logOutEl.style.display = 'none';
-    signUpEl.innerHTML = 'Sign Up';
-    signUpEl.addEventListener('click', signUp);
-  }
-});
+// onAuthStateChanged(auth, user => {
+//   if (user !== null) {
+//     console.log('User logged in.');
+//     signUpEl.classList.add('is-hidden');
+//     logOutEl.style.display = 'flex';
+//     logOutEl.addEventListener('click', logOut);
+//   } else {
+//     console.log('No user.');
+//     logOutEl.style.display = 'none';
+//     // signUpEl.innerHTML = 'Sign Up';
+//     signUpEl.addEventListener('click', signUp);
+//   }
+// });

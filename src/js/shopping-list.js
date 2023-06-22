@@ -66,13 +66,13 @@ const signUp = () => {
 onAuthStateChanged(auth, user => {
   if (user !== null) {
     console.log('User logged in.');
-    signUpEl.style.display = 'none';
-    logOutEl.style.display = 'flex';
+    signUpEl.classList.remove('is-active');
+    logOutEl.classList.add('is-active');;
     logOutEl.addEventListener('click', logOut);
   } else {
     console.log('No user.');
-    logOutEl.style.display = 'none';
-    signUpEl.innerHTML = 'Sign Up';
+    logOutEl.classList.remove('is-active');
+    signUpEl.classList.add('is-active');
     signUpEl.addEventListener('click', signUp);
   }
 });
