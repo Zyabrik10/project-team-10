@@ -57,9 +57,14 @@
 
  <!-- js code in file "color-switcher" -->
 <!-- Не залогінений користувач -->
-<button id="userProfileLoggedOut" class="user-profile theme-switch light-theme dark-theme">
-  <svg class="avatar" width="37" height="37">
+</button>
+<button id="userProfileLoggedOut" class="user-profile logged-in theme-switch light-theme dark-theme">
+  <svg class="avatar non-user" width="37" height="37">
     <use xlink:href="./images/header/icons/icons.svg#icon-user-non"></use>
+  </svg>
+   <span class="arrow-right">Sign Up</span>
+  <svg class="status-icon" width="23" height="26">
+    <use xlink:href="./images/header/icons/arrow-right.svg#icon-arrow-narrow-right"></use>
   </svg>
 </button>
 
@@ -85,13 +90,20 @@
   </header>
   <div class="main-block">
     <div class="container">
+      <button type="button" class="scroll-up-button global-button">
+      <svg class="scroll-up-svg">
+        <use
+          href="./images/extra-block/icons/scrollUp.svg#icon-scroll-up"
+        ></use>
+      </svg>
+    </button>
+    <span class="loader"></span>
       <div class="asides">
         <include src="./partials/catalog-list.html"></include>
         <include src="./partials/extra-block.html"></include>
       </div>
       <include src="./partials/book-catalog.html"></include>
     </div>
-      <span class="loader"></span>
 
 
   <include src="./partials/modal-window-book.html"></include>
