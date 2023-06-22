@@ -30,19 +30,31 @@ body.modal-open {
   transform: translate(-50%, -50%);
 
   width: 335px;
-  height: auto;
+  height: 100%;
   z-index: 200;
   padding: 40px 24px;
 
+
+  border-radius: 18px;
+  overflow: auto;
+  overflow-y: auto;
+}
+
+.wrap.light-theme{
   background-color: var(--modal-bg);
   border: 2px solid var(--modal-border-wrap-color);
-  border-radius: 18px;
+}
+
+.wrap.dark-theme {
+  background-color: var(--modal-border-wrap-color);
+  border: 2px solid var(--modal-bg);
 }
 
 @media screen and (min-width: 768px) {
   .wrap {
     width: 579px;
     padding: 40px;
+    max-height: 500px;
   }
 }
 
@@ -61,6 +73,11 @@ body.modal-open {
 
   background-color: transparent;
 }
+
+.close-btn.dark-theme{
+  color: var(--light-text-color);
+}
+
 
 .close-btn:hover,
 .close-btn:focus {
@@ -112,7 +129,15 @@ body.modal-open {
   font-weight: 700;
   font-size: 16px;
   line-height: 1.2;
+
+}
+
+.book-title.light-theme{
   color: var(--main-text-color);
+}
+
+.book-title.dark-theme{
+  color: var(--light-text-color);
 }
 
 @media screen and (min-width: 768px) {
@@ -143,8 +168,14 @@ body.modal-open {
   font-weight: 400;
   font-size: 14px;
   line-height: 1.3;
+}
 
-  color: var(--main-text-color);
+.book-descr.light-theme{
+color: var(--main-text-color);
+}
+
+.book-descr.dark-theme{
+  color: var(--light-text-color);
 }
 
 @media screen and (min-width: 768px) {
@@ -166,10 +197,17 @@ body.modal-open {
   height: 46px;
   margin-bottom: 8px;
 
-  color: var(--main-text-color);
   background-color: transparent;
   border: 2px solid var(--extra-bg-color);
   border-radius: 40px;
+}
+
+.add-rem-btn.light-theme{
+  color: var(--main-text-color);
+}
+
+.add-rem-btn.dark-theme {
+  color: var(--light-text-color);
 }
 
 .add-rem-btn:hover,
