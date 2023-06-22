@@ -54,11 +54,9 @@
   list-style-type: none;
   display: none;
   align-items: center;
+  gap: 24px;
 }
 
-.header-link {
-  margin-left: 24px;
-}
 
 .link-text {
   text-decoration: none;
@@ -218,6 +216,36 @@
   box-shadow: 1px 1px 5px 1px rgb(70, 3, 78);
 }
 
+/* Button LogIn -- On */
+.user-profile.logged-in {
+  width: 184px;
+  height: 45px;
+  background: #4f2ee8;
+  border-radius: 36px;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+}
+
+.user-profile.logged-in .avatar {
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+}
+
+.user-profile.logged-in .username {
+  color: #fff;
+  font-size: 16px;
+  margin-right: 9px;
+}
+
+.user-profile.logged-in .status-icon {
+  width: 23px;
+  height: 26px;
+}
+
+
 .menu-button {
   display: felx;
   margin-left: 14px;
@@ -237,7 +265,7 @@
     justify-content: space-between;
     align-items: center;
   }
-
+ 
   .header-links {
     display: none;
   }
@@ -259,6 +287,9 @@
   .user-profile {
     display: flex;
     align-items: center;
+  }
+  .user-profile.logged-in{
+    display: flex;
   }
   .menu-button {
     display: none;
