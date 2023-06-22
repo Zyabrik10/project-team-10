@@ -9,6 +9,7 @@ import {
 } from 'firebase/auth';
 
 import { getDatabase, ref, update } from 'firebase/database';
+ 
 
 const firebaseConfig = {
   apiKey: 'AIzaSyDwpmuhImdY7RHC3U0YYZIshSlCJATjNaU',
