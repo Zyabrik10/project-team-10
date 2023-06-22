@@ -137,7 +137,7 @@
   left: calc(100% - 22px);
   background-position: 0 0;
 }
-
+/* кнопка незалогіненого */
 .user-profile {
   display: none;
   justify-content: space-around;
@@ -164,7 +164,6 @@
     }
 }
 
-/* Button LogIn -- On */
 .user-profile.logged-in {
   width: 184px;
   height: 45px;
@@ -193,10 +192,59 @@
   color: #fff;
   font-size: 16px;
 }
+/* КНОПА ЛОГАУТ */
+.custom-profile {
+  width: 184px;
+  height: 48px;
+  background: var(--bg-color);
+  border: 1.5px solid var(--main-text-color);
+  border-radius: 18px;
+  display: none;
+  align-items: center;
+  padding: 0 14px;
+  cursor: pointer;
+  transition-duration: .2s;
+}
 
+.custom-profile:hover{
+  background-color: var(--extra-border-color-40);
+}
+
+.custom-signup-text {
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--main-text-color);
+  margin-right: auto;
+}
+
+.custom-other-svg {
+  margin-left: auto;
+}
+
+
+.modal {
+  display: none;
+  position: absolute;
+  left: 28px;
+  top: 105%;
+  z-index: 999;
+}
+
+.modal-content {
+  background: var(--bg-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+
+}
+.modal-content {
+  border-radius: 19px;
+  box-shadow: 6px 4px 2px 1px rgba(11, 11, 11, 0.2);
+}
+
+/* Кінець кнопи логаут */
 
 .menu-button {
-  display: felx;
+  display: flex;
   margin-left: 14px;
   background-color: inherit;
 }
@@ -242,6 +290,9 @@
   }
   .user-profile {
     align-items: center;
+  }
+  .custom-profile{
+    display: flex;
   }
   .user-profile.logged-in{
 
