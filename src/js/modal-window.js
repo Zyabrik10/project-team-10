@@ -2,7 +2,8 @@
 // також логіку при натиснення на кнопку додати книгу або видалити
 
 import { removeBook } from './books-action';
-import { addBook, saveShoppingList, shopping_info } from './shopping-list';
+import { saveShoppingList, shopping_info } from './shopping-list';
+import { addBook, removeBook } from './books-action';
 import { fetchBook } from './fetch-func';
 
 export function modalWindow() {
@@ -34,7 +35,7 @@ export function modalWindow() {
             body.classList.remove('modal-open');
           });
 
-          backdropModal.addEventListener('click', () => {
+          backdropModal.addEventListener('click', event => {
             if (event.target === backdropModal) {
               modal.classList.add('is-hidden');
               body.classList.remove('modal-open');
@@ -95,7 +96,8 @@ export function modalWindow() {
       const congratulations = document.querySelector('.congratulations');
       addRemBtn.textContent = 'ADD TO SHOPING LIST';
       addRemBtn.addEventListener('click', function () {
-        if (localStorage.getItem(id) === null) {
+        if (!shopping_info.shopping_list[id]) {
+          console.log('Add');
           addBook(id, book);
           console.log('funcBtn');
           shopping_info.shopping_list;
@@ -103,6 +105,7 @@ export function modalWindow() {
           addRemBtn.textContent = 'REMOVE FROM THE SHOPING LIST';
           congratulations.classList.remove('no-content');
         } else {
+          console.log('Add');
           removeBook(id);
           addRemBtn.textContent = 'ADD TO SHOPING LIST';
           congratulations.classList.add('no-content');
