@@ -13,15 +13,15 @@ const bookThumb = document.querySelector('.tb-container');
 const headingEl = document.querySelector('.heading-primary');
 const allCtgrEl = document.querySelector('#allctgr');
 const loader = document.querySelector('.loader');
-  loader.classList.add('is-hidden');
+  loader.classList.add('is-loader-hidden');
 
 categoryList.addEventListener('click', renderCategoryBooks);
 setTimeout(e => {
-  loader.classList.add('is-hidden');
+  loader.classList.add('is-loader-hidden');
 }, 2500);
 async function renderCategoryBooks(event) {
   bookThumb.innerHTML = '';
-  loader.classList.remove('is-hidden');
+  loader.classList.remove('is-loader-hidden');
   const item = event.target.textContent;
   const itemFirst = allCtgrEl.textContent;
 
@@ -47,7 +47,7 @@ async function renderCategoryBooks(event) {
     bookThumb.classList.add('flex-container');
 
     const data = await fetchBooksByExactCategory(item);
-    loader.classList.add('is-hidden');
+    loader.classList.add('is-loader-hidden');
 
     createMarkupBook(data);
   }
@@ -123,7 +123,7 @@ export function renderTopBooks({ data }) {
       `;
       })
       .join('');
-    loader.classList.add('is-hidden');
+    loader.classList.add('is-loader-hidden');
 
     bookThumb.insertAdjacentHTML('beforeend', markupCategory);
     shopping_info.theme === 'light'
@@ -144,7 +144,7 @@ async function onSeeMoreClick(event) {
     const data = await fetchBooksByExactCategory(bookTitle);
     createMarkupSeeMore(data, categoryContainer);
     event.target.classList.add('is-hidden');
-    loader.classList.add('is-hidden');
+    loader.classList.add('is-loader-hidden');
   }
 }
 

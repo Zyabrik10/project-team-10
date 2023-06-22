@@ -279,6 +279,7 @@
   border-left: 5px solid transparent;
   z-index: 2;
 }
+
 @keyframes rotation {
   0% {
     transform: rotate(0deg);
@@ -286,6 +287,9 @@
   100% {
     transform: rotate(360deg);
   }
+}
+.is-loader-hidden {
+  display: none;
 }
 
 .scroll-up-button {

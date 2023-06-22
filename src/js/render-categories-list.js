@@ -9,10 +9,11 @@ import Notiflix from 'notiflix';
 const categoryList = document.querySelector('.category-list');
 const loadCategory = document.querySelector('.load');
 const loader = document.querySelector('.loader');
+loader.classList.add('is-loader-hidden');
 
 fetchAllCategories()
   .then(data => {
-    loader.classList.remove('is-hidden');
+    loader.classList.remove('is-loader-hidden');
 
     const markup = data
       .map(({ list_name }) => {
@@ -25,6 +26,7 @@ fetchAllCategories()
 
     lis.forEach(e => {
       e.addEventListener('click', activatedCategory);
+      loader.classList.remove('is-hidden-loader');
 
       function activatedCategory() {
         lis.forEach(e => e.classList.remove('active'));
