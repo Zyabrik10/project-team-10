@@ -93,7 +93,9 @@ export function modalWindow() {
     function funcBtn(id, book) {
       const addRemBtn = document.querySelector('.add-rem-btn');
       const congratulations = document.querySelector('.congratulations');
+      if (!shopping_info.shopping_list[id]){
       addRemBtn.textContent = 'ADD TO SHOPING LIST';
+      } else { addRemBtn.textContent = 'REMOVE FROM THE SHOPING LIST';}
       addRemBtn.addEventListener('click', function () {
         if (!shopping_info.shopping_list[id]) {
           addBook(id, book);
