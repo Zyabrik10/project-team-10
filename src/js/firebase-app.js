@@ -3,8 +3,6 @@ import Notiflix from 'notiflix';
 
 import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 
-// import { getDatabase } from 'firebase/database';
-
 const firebaseConfig = {
   apiKey: 'AIzaSyDwpmuhImdY7RHC3U0YYZIshSlCJATjNaU',
   authDomain: 'project-team-10-5792d.firebaseapp.com',
@@ -15,16 +13,16 @@ const firebaseConfig = {
   measurementId: 'G-CCNXH403RH',
 };
 
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 // const logOutEl = document.querySelector('.log-out');
-const loginSectionEl = document.querySelector('.login-section');
+// const loginSectionEl = document.querySelector('.login-section');
 
 const user = auth.currentUser;
 // const logInEl = document.querySelector('.login-section');
 const logInEl = document.querySelector('.user-profile');
+const logOutEl = document.querySelector('.user-profile');
 
 const logOut = e => {
   signOut(auth)
@@ -64,8 +62,8 @@ const signUp = () => {
 onAuthStateChanged(auth, user => {
   if (user !== null) {
     console.log('User logged in.');
-    logInEl.innerHTML = 'Log Out';
-    logInEl.addEventListener('click', logOut);
+    logOutEl.innerHTML = 'Log Out';
+    logOutEl.addEventListener('click', logOut);
   } else {
     console.log('No user.');
     logInEl.innerHTML = 'Sign Up';
