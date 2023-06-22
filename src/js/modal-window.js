@@ -36,9 +36,26 @@ export function modalWindow() {
 
                         const closeModalBtn = document.querySelector(".close-btn");
                          closeModalBtn.addEventListener("click", () => {
-                             modal.classList.add("is-hidden")
+                             modal.classList.add("is-hidden");
                              body.classList.remove('modal-open');
-                        });
+                         });
+
+                         backdropModal.addEventListener("click", () => {
+                             if (event.target === backdropModal)
+                             {
+                                 modal.classList.add("is-hidden");
+                             body.classList.remove('modal-open')};
+                         })
+
+                         document.addEventListener("keydown", (event) => {
+                             if (event.key === "Escape") {
+                                console.log("Esc")
+                                modal.classList.add("is-hidden");
+                                body.classList.remove('modal-open');
+                                                           
+                             }
+                             
+                         });
 
                     })
                     .catch((error) => {
