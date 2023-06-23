@@ -1,0 +1,190 @@
+@import url('./variables.css');
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+  transition: 0.3s ease-in-out;
+}
+
+body.light-theme::-webkit-scrollbar-thumb {
+  background: #e0e0e0;
+}
+
+body.dark-theme::-webkit-scrollbar-thumb {
+  background: var(--dark-bg-color-60);
+}
+
+/* Handle on hover */
+body::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: calc(18 / 14);
+  color: var(--main-text-color);
+  letter-spacing: -0.04em;
+  padding-bottom: 80px;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    padding-bottom: 100px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  body {
+    padding-bottom: 72px;
+  }
+}
+
+body.light-theme {
+  background: #f6f6f6;
+}
+
+body.dark-theme {
+  background: #202024;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+@media screen and (min-width: 375px) {
+  .container {
+    max-width: 375px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 0 32px;
+    max-width: 768px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    padding: 0 24px;
+    max-width: 1440px;
+  }
+}
+
+.global-title,
+.global-p {
+  margin: 0;
+}
+
+.global-link {
+  color: currentColor;
+  text-decoration: none;
+}
+
+.global-button {
+  color: currentColor;
+
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+
+  line-height: inherit;
+  letter-spacing: inherit;
+
+  cursor: pointer;
+
+  border: none;
+}
+
+.global-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Готова сітка з флексами */
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--flex-item-gap);
+}
+
+.flex-container-item {
+  flex-basis: calc(
+    (100% - (var(--flex-item) - 1) * var(--flex-item-gap)) / var(--flex-item)
+  );
+}
+
+.main-block > .container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .main-block > .container {
+    gap: 100px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .main-block > .container {
+    flex-direction: row;
+    gap: 30px;
+  }
+}
+
+.asides {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .asides {
+    flex-direction: row;
+    gap: 32px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .asides {
+    flex-direction: column;
+    gap: 86px;
+  }
+}
+
+main {
+  flex: 1 1 auto;
+}
+
+.aside.shp-lst {
+  display: none;
+}
+
+@media screen and (min-width: 1440px) {
+  .aside.shp-lst {
+    display: flex;
+  }
+}

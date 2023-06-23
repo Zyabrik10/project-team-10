@@ -1,0 +1,71 @@
+<header class="header light-theme theme-switch">
+    <div class="container">
+      <a class="logo text-logo global-link" href="./">
+        <img src="../src/images/header/logo-light.png" alt="Logo"
+          class="logo-image theme-switch light-theme dark-theme">
+      </a>
+
+      <nav>
+        <ul class="header-links">
+          <li class="header-link home-link">
+            <a class="link-text global-link theme-switch light-theme dark-theme" href="./">Home</a>
+          </li>
+          <li class="header-link shopping-link">
+            <a class="link-text global-link theme-switch light-theme dark-theme" href="./shopping-list.html">
+              SHOPPING LIST
+              <svg class="sprite-image theme-switch light-theme dark-theme" width="20" height="20">
+                <use href="./images/header/icons/icons.svg#icon-shop"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="switcher" data-checked="false">
+        <div class="switcher-handle">
+          <svg class="switcher-circle">
+            <use href="./images/header/icons/icons.svg#icon-circle"></use>
+          </svg>
+        </div>
+      </div>
+
+ <!-- js code in file "color-switcher" -->
+<!-- Не залогінений користувач -->
+</button>
+<button id="userProfileLoggedOut" class="user-profile theme-switch light-theme">
+   <span class="arrow-right">Sign Up</span>
+  <svg class="status-icon" width="23" height="26">
+    <use xlink:href="./images/header/icons/arrow-right.svg#icon-arrow-narrow-right"></use>
+  </svg>
+</button>
+
+      <!-- Залогінений користувач -->
+      <div class="logout-btns">
+      <button type="button" id="userProfileLoggedInk" class="user-profile logged-in">
+        <svg class="avatar-header" width="30" height="30">
+      <use xlink:href="./images/header/icons/icons.svg#icon-user-non"></use>
+    </svg>
+        <span class="username">User</span>
+        <svg class="status-icon" width="23" height="26">
+          <use xlink:href="./images/header/icons/icons.svg#icon-caret-down"></use>
+        </svg>
+      </button>
+          <div class="modal-content" id="logoutModal">
+            <button type="button" id="userProfileLoggedIn" class="custom-profile">
+              <span class="custom-signup-text">Log out</span>
+              <svg class="custom-other-svg" width="13.33" height="10">
+                <use xlink:href="./images/header/icons/icons.svg#icon-login-button"></use>
+              </svg>
+            </button>
+            
+          </div>
+        </div>
+
+      <button type="button" class="menu-button global-button">
+        <svg class="menu-icon theme-switch light-theme dark-theme" width="40" height="40">
+          <use href="./images/header/icons/icons.svg#icon-menu"></use>
+        </svg>
+      </button>
+
+    </div>
+  </header>

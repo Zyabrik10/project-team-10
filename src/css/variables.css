@@ -1,0 +1,35 @@
+:root {
+  /* cell */
+  --flex-item: 5;
+  --flex-item-gap: 20px;
+
+  /* text */
+  --main-text-color: #111111;
+  --main-text-color-60: rgba(17, 17, 17, 0.6);
+  --extra-text-color: #4f2ee8;
+  --sub-text-color: #b4afaf;
+  --light-text-color: #fff;
+  --light-text-color-60: rgba(255, 255, 255, 0.6);
+  --place-text-color: #eac645;
+  --dark-text-color-60: rgba(0, 0, 0, 0.6);
+
+  /* background */
+  --dark-bg-color-60: rgba(17, 17, 17, 0.6);
+  --main-bg-color: #111111;
+  --extra-bg-color: #4f2ee8;
+  --place-bg-color: #eac645;
+  --bg-color: #f6f6f6;
+  --modal-bakdrop: rgba(17, 17, 17, 0.4);
+  --modal-bg: #ffffff;
+
+  /* border */
+  --extra-border-color: #4f2ee8;
+  --extra-border-color-40: rgba(79, 46, 232, 0.4);
+  --modal-border-wrap-color: #111111;
+  --empty: #fff;
+
+  /* transition */
+  --transition-property: color, background, box-shadow, transform;
+  --transition-duration: 0.3s;
+  --transition-timing-function: ease-out;
+}

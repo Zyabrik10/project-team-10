@@ -1,0 +1,318 @@
+@import url('./variables.css');
+
+.header {
+  height: 64px;
+  /* background: var(--light-text-color);
+  border: 1.5px solid var(--main-text-color); */
+  border-radius: 0 0 8px 8px;
+  margin-bottom: 40px;
+  padding: 0 20px;
+}
+
+.header.light-theme{
+  background: var(--light-text-color);
+  border: 1.5px solid var(--main-text-color);
+}
+
+.header.dark-theme{
+  background: var(--main-text-color);
+  border: 1.5px solid var(--light-text-color);
+}
+
+.header > .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* header logo */
+.logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.text-logo {
+  width: 109px;
+  height: 28px;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--main-text-color);
+}
+
+.logo-image.light-theme  {
+  color: var(--main-text-color);
+}
+
+.logo-image.dark-theme  {
+  color: var(--light-text-color);
+}
+
+/* header links */
+.header-links {
+  list-style-type: none;
+  display: none;
+  align-items: center;
+  gap: 24px;
+}
+
+
+.link-text {
+  text-decoration: none;
+  color: var(--main-text-color);
+  display: flex;
+  align-items: center;
+}
+
+.link-text.light-theme  {
+  color: var(--main-text-color);
+}
+.link-text.dark-theme  {
+  color: var(--light-text-color);
+}
+
+.link-text.shopping-link::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  /* background-image: url('/src/images/header/icons/icons.svg#icon-shop');
+  background-repeat: no-repeat; */
+  background-size: 20px;
+  margin-right: 8px;
+}
+
+.sprite-image.light-theme{
+  background-image: url('/src/images/header/icons/icons.svg#icon-shop');
+  background-repeat: no-repeat;
+}
+
+.sprite-image.dark-theme{
+  background-image: url('/src/images/header/icons/icons.svg#icon-shop-dark');
+  background-repeat: no-repeat;
+  fill: var(--light-text-color) ;
+}
+
+.switcher {
+  width: 40px;
+  height: 24px;
+  background: linear-gradient(
+    180deg,
+    var(--extra-bg-color) 0%,
+    var(--light-text-color-60) 100%
+  );
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.switcher.active {
+  background: linear-gradient(180deg, #4f2ee8 0%, var(--sub-text-color) 100%);
+}
+
+.switcher-handle {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background: no-repeat;
+  background-position: -20px 0;
+  border-radius: 50%;
+  transition: left 0.3s ease-in-out;
+  background-color: var(--light-text-color);
+  top: 2px;
+  left: 2px;
+}
+.switcher-circle {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  left: 1px;
+  top: 3px;
+  fill: var(--light-text-color);
+}
+
+.switcher.active .switcher-handle {
+  left: calc(100% - 22px);
+  background-position: 0 0;
+}
+/* кнопка незалогіненого */
+.user-profile {
+  display: none;
+  justify-content: space-around;
+  width: 184px;
+  height: 48px;
+  border-radius: 18px;
+  margin-left: 24px;
+  padding: 14px;
+  cursor: pointer;
+  transition: all 250ms;
+  user-select: none;
+  touch-action: manipulation;
+  position: relative;
+  background-color: var(--extra-bg-color);
+  border: 1.5px solid var(--main-text-color);
+  color: var(--light-text-color);
+}
+
+
+
+@media screen and (min-width: 768px) {
+  .user-profile.is-active {
+      display: flex;
+    }
+}
+
+.user-profile.logged-in {
+  width: 184px;
+  height: 45px;
+  border-radius: 36px;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 768px) {
+  .user-profile.logged-in.is-active {
+      display: flex;
+    }
+}
+
+.avatar-header {
+  display: flex;
+  background-color: var(--light-text-color);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-left: 12px;
+}
+
+.user-profile.logged-in .username {
+  color: #fff;
+  font-size: 16px;
+}
+/* КНОПА ЛОГАУТ */
+.custom-profile {
+  width: 184px;
+  height: 48px;
+  background: var(--bg-color);
+  border: 1.5px solid var(--main-text-color);
+  border-radius: 18px;
+  /* display: none; */
+  align-items: center;
+  padding: 0 14px;
+  cursor: pointer;
+  transition-duration: .2s;
+  margin-left: 24px;
+}
+
+.custom-profile:hover{
+  background-color: var(--extra-border-color-40);
+}
+
+.custom-signup-text {
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--main-text-color);
+  margin-right: auto;
+}
+
+.custom-other-svg {
+  margin-left: auto;
+}
+
+
+.modal {
+  display: none;
+}
+
+
+.logout-btns{
+  display: flex;
+  flex-direction: column;
+}
+/* Кінець кнопи логаут */
+
+.menu-button {
+  display: flex;
+  margin-left: 14px;
+  background-color: inherit;
+}
+
+.menu-icon {
+  width: 100%;
+  height: 100%;
+
+  margin-top: 35%;
+}
+
+.menu-icon.light-theme {
+  fill: var(--main-text-color);
+}
+.menu-icon.dark-theme {
+  fill: var(--light-text-color);
+}
+
+@media only screen and (max-width: 400px) {
+  .header {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header-links {
+    display: none;
+  }
+
+  .menu-button {
+    display: flex;
+    margin-left: 14px;
+  }
+}
+
+@media only screen and (min-width: 750px) {
+  .header {
+    justify-content: flex-start;
+  }
+
+  .header-links {
+    display: flex;
+  }
+  .user-profile {
+    align-items: center;
+  }
+  .custom-profile{
+    display: flex;
+  }
+  .user-profile.logged-in{
+
+  }
+  .menu-button {
+    display: none;
+  }
+
+  .home-pages .header-link.home-link .link-text {
+    width: 100%;
+    height: 34px;
+    background: var(--place-bg-color);
+    border-radius: 36px;
+    padding: 10px 15px 10px 15px;
+    font-weight: bold;
+    color: var(--main-text-color);
+  }
+
+  .shopp-pages .header-link.shopping-link .link-text {
+    width: 100%;
+    height: 34px;
+    background: var(--place-bg-color);
+    border-radius: 36px;
+    padding: 10px;
+    font-weight: bold;
+    color: var(--main-text-color);
+  }
+  .shopp-pages .sprite-image{
+    fill: var(--main-text-color);
+  }
+
+}

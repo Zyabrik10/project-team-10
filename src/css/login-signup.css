@@ -1,0 +1,137 @@
+html {
+  min-height: 100%;
+}
+
+.login-body {
+  background-image: linear-gradient(to bottom right, var(--modal-bakdrop), var(--extra-bg-color), var(--extra-bg-color));
+}
+
+.modal-login {
+  width: 100%;
+  max-width: 579px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: calc(24/18);
+  padding: 60px 40px 40px 40px;
+  border-radius: 18px;
+  margin: 60px auto;
+}
+
+.modal-login.light-theme {
+  background-color: var(--bg-color);
+  border: 2px solid var(--main-text-color);
+}
+
+.modal-login.dark-theme {
+  background-color: #202024;
+  border: 2px solid var(--bg-color);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.login-form>label {
+  position: relative;
+}
+
+.login-form-label {
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  text-transform: uppercase;
+  transform-origin: center left;
+  transition: var(--transition-property) var(--transition-duration) var(--transition-timing-function);
+}
+
+.login-form-label.light-theme {
+  color: var(--main-text-color);
+}
+
+.login-form-label.dark-theme {
+  color: var(--bg-color);
+}
+
+.input {
+  /* width: 100%; */
+  width: 499px;
+  height: 64px;
+  padding-left: 40px;
+  border-radius: 40px;
+  background-color: transparent;
+  outline: transparent;
+}
+
+.input.light-theme {
+  color: var(--main-text-color);
+  border: 2px solid var(--main-text-color);
+}
+
+.input.dark-theme {
+  color: var(--light-text-color);
+  border: 2px solid var(--light-text-color);
+}
+
+.input::placeholder {
+  opacity: 0;
+  transition: var(--transition-property) var(--transition-duration) var(--transition-timing-function);
+}
+
+.input:focus,
+.input:not(:placeholder-shown) {
+  border-color: var(--extra-text-color);
+}
+
+.input:focus::placeholder {
+  opacity: 1;
+}
+
+.input:focus+.login-form-label,
+.input:not(:placeholder-shown)+.login-form-label {
+  transform: translateY(-43px) scale(0.8);
+}
+
+.login-btn {
+  width: 499px;
+  height: 64px;
+  border-radius: 40px;
+  text-transform: uppercase;
+  transition: var(--transition-property) var(--transition-duration) var(--transition-timing-function);
+}
+
+.login-btn.light-theme {
+  background-color: var(--main-text-color);
+  color: var(--light-text-color);
+}
+
+.login-btn.dark-theme {
+  background-color: var(--light-text-color);
+  color: var(--main-text-color);
+}
+
+.login-btn:hover,
+.login-btn:focus {
+  transform: scale(1.05);
+}
+
+.sign-switcher {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign-active-link {
+  text-transform: uppercase;
+  color: var(--extra-text-color);
+  text-decoration: underline;
+}
+
+.sign-link {
+  text-transform: uppercase;
+  color: var(--main-text-color-60);
+}
