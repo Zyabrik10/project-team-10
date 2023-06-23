@@ -1,0 +1,142 @@
+@import url('./variables.css');
+
+.support-aside {
+  position: relative;
+  width: 100%;
+  max-width: 335px;
+  height: 352px;
+  box-shadow: 0px 10px 10px 0px #f5f5f71a;
+  border-radius: 10px;
+  background: radial-gradient(
+      183.6% 183.01% at 59.76% -23.42%,
+      var(--extra-text-color) 18.03%,
+      var(--light-text-color) 100%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+}
+.support-aside,
+.support-item a {
+  color: var(--light-text-color);
+}
+.support-list {
+  padding-left: 0px;
+  height: 200px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+.support-list::-webkit-scrollbar {
+  display: none;
+}
+
+.support-img-01 {
+  width: 131px;
+}
+.support-img-02 {
+  width: 62px;
+}
+.support-img-03 {
+  width: 101px;
+}
+.support-img-04 {
+  width: 82px;
+}
+.support-img-05 {
+  width: 55px;
+}
+.support-img-06 {
+  width: 116px;
+}
+.support-img-07 {
+  width: 149px;
+}
+.support-img-08 {
+  width: 133px;
+}
+.support-img-09 {
+  width: 81px;
+}
+
+.support-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.14;
+  margin-bottom: 40px;
+  padding-top: 24px;
+}
+.support-title img {
+  margin-left: 12px;
+}
+
+.support-svg {
+  display: block;
+  height: 5.98px;
+  width: 11.67px;
+  fill: var(--extra-text-color);
+}
+.support-button {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  border-radius: 50%;
+  padding-top: 13.1px;
+  padding-bottom: 12.93px;
+  padding-right: 10.17px;
+  padding-left: 10.17px;
+  background: var(--light-text-color);
+  transition: transform 0.3s ease;
+}
+
+
+.support-button.support-button-rotate {
+  transform: translate(-50%, -50%) scale(1) rotate(180deg);
+}
+
+.support-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: 40px;
+  margin-bottom: 15px;
+}
+
+.item-number {
+  line-height: 1.29;
+}
+
+@media screen and (min-width: 377px) and (max-width: 767px) {
+  .support-aside {
+    height: 472px;
+  }
+  .support-button {
+    bottom: 0px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .support-aside {
+    width: 356px;
+    height: 490px;
+  }
+}
+@media screen and (min-width: 377px) {
+  .support-list {
+    height: 300px;
+  }
+
+  .support-svg {
+    height: 6.58px;
+    width: 12.83px;
+  }
+  .support-button {
+    padding-top: 15.8px;
+    padding-bottom: 15.62px;
+    padding-right: 12.58px;
+    padding-left: 12.58px;
+  }
+}
+
+

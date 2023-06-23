@@ -1,0 +1,123 @@
+@import url('./variables.css');
+
+.menu-container{
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  position: fixed;
+  overflow: auto;
+  background: radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4F2EE8 18.03%, #FFFFFF 100%);
+      /* transform: translateX(100%);
+          transition: transform 250ms ease-in-out; */
+}
+
+.menu-container.is-open {
+  display: block;
+  /* transform: translateX(0); */
+}
+
+.header-menu{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-text {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.logo-menu {
+  display: flex;
+  justify-content: center;
+}
+
+
+.icon-menu-close.light-theme{
+  stroke: var(--main-text-color);
+}
+
+.icon-menu-close.dark-theme {
+  stroke: var(--light-text-color);
+}
+
+.menu-close{
+  background-color: transparent;
+  margin-left: 14px;
+}
+
+.user-menu-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--light-text-color);
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  margin-left: 20px;
+}
+
+.links-menu-list{
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 20px;
+  margin: auto;
+  margin-top: 120px;
+}
+
+.colored-link-menu{
+  display: flex;
+  justify-content: center;
+  /* width: 72px; */
+  padding: 8px 16px;
+  color: var(--light-text-color);
+  padding: 8px 14px;
+  background-color: var(--place-text-color);
+  border-radius: 18px;
+}
+
+.img-menu-list{
+  display: flex;
+  flex-direction: row;
+  width: 450px;
+  height: 439px;
+  column-gap: 36px;
+  row-gap: 26px;
+  flex-wrap: wrap;
+  transform: rotate(-15deg);
+  position: absolute;
+  top: 360px;
+  right: -40px;
+}
+
+.menu-img{
+  width: 84px;
+  height: 133px;
+  border-radius: 8px;
+}
+
+.logout-menu-btn{
+  width: 118px;
+  height: 48px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background-color: var(--light-text-color);
+  border: 1.5px solid var(--main-text-color);
+  border-radius: 18px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 100000000000;
+}
+
+.logout-arrow{
+  stroke: var(--place-text-color);
+}
