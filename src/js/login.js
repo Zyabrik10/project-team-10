@@ -46,13 +46,13 @@ const updateFormData = () => {
 
 const onInput = e => {
   formData[e.target.name.trim()] = e.target.value.trim();
-  localStorage.setItem('sign-up-form', JSON.stringify(formData));
+  localStorage.setItem('login-form', JSON.stringify(formData));
 
   if (formData.email === undefined) {
     formData.email = '';
   }
-  if (formData.username === undefined) {
-    formData.username = '';
+  if (formData.password === undefined) {
+    formData.password = '';
   }
 };
 
@@ -68,6 +68,8 @@ const onLogin = e => {
     .then(userCredential => {
       // Signed in
       const user = userCredential.user;
+      localStorage.setItem('_userEmail', JSON.stringify(email));
+      localStorage.removeItem('login-form');
 
       const dt = new Date();
       update(ref(database, 'users/' + user.uid), {
@@ -76,7 +78,8 @@ const onLogin = e => {
       Notiflix.Notify.success(`You are logging in now...`);
       setTimeout(
         () =>
-          (window.location = 'https://millenialia.github.io/project-team-10-added-features/'),
+          (window.location =
+            'https://millenialia.github.io/project-team-10-added-features/'),
         3000
       );
     })
