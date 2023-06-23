@@ -89,6 +89,8 @@
   background: var(--light-text-color);
   transition: transform 0.3s ease;
 }
+
+
 .support-button.support-button-rotate {
   transform: translate(-50%, -50%) scale(1) rotate(180deg);
 }
