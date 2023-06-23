@@ -25,9 +25,15 @@ const user = auth.currentUser;
 const signUpEl = document.querySelector('#userProfileLoggedOut');
 const logOutEl = document.querySelector('#userProfileLoggedIn');
 const userLogged = document.querySelector('#userProfileLoggedInk');
+const shoppingListEl = document.querySelector('.shopping-cart');
+let numberOfBooks = JSON.parse(localStorage.getItem('number_of_books'))
+  ? JSON.parse(localStorage.getItem('number_of_books'))
+  : null;
 let userEmail = JSON.parse(localStorage.getItem('_userEmail'))
   ? JSON.parse(localStorage.getItem('_userEmail'))
   : null;
+
+shoppingListEl.innerHTML = numberOfBooks ? numberOfBooks : '';
 
 const logOut = e => {
   signOut(auth)
@@ -97,7 +103,10 @@ export const shopping_info = JSON.parse(localStorage.getItem(userEmail)) || {
 
 export function saveShoppingList(listBooks) {
   console.log('user', userEmail);
-  console.log('saveShoppingList', listBooks);
+  const number_of_books = Object.keys(listBooks.shopping_list).length;
+  shoppingListEl.innerHTML = number_of_books ? number_of_books : '';
+  localStorage.setItem('number_of_books', JSON.stringify(number_of_books));
+  console.log('number of books ', number_of_books);
   localStorage.setItem(userEmail, JSON.stringify(listBooks));
 }
 
