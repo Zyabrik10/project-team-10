@@ -40,7 +40,7 @@ h1.shop_title {
 }
 
 .shop_plug-img {
-  width: 160px;
+  width: 100px;
   height: 142px;
   display: block;
   margin-left: auto;
@@ -212,25 +212,3 @@ h1.shop_title {
     height: 16px;
   }
 }
-
-.scroll-up-button {
-  display: none; /* Hidden by default */
-  position: fixed;
-  bottom: 20px;
-  right: 30px;
-  z-index: 99;
-  border-radius: 50%;
-  padding-top: 21.1px;
-  padding-bottom: 22.15px;
-  padding-right: 17.05px;
-  padding-left: 18px;
-  background: var(--extra-text-color);
-  cursor: pointer;
-}
-.scroll-up-svg {
-  display: block;
-  height: 10.85px;
-  width: 18.95px;
-  fill: #ffffff;
-}
-

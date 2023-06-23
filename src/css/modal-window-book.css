@@ -30,31 +30,19 @@ body.modal-open {
   transform: translate(-50%, -50%);
 
   width: 335px;
-  height: 100%;
+  height: auto;
   z-index: 200;
   padding: 40px 24px;
 
-
-  border-radius: 18px;
-  overflow: auto;
-  overflow-y: auto;
-}
-
-.wrap.light-theme{
   background-color: var(--modal-bg);
   border: 2px solid var(--modal-border-wrap-color);
-}
-
-.wrap.dark-theme {
-  background-color: var(--modal-border-wrap-color);
-  border: 2px solid var(--modal-bg);
+  border-radius: 18px;
 }
 
 @media screen and (min-width: 768px) {
   .wrap {
     width: 579px;
     padding: 40px;
-    max-height: 500px;
   }
 }
 
@@ -73,11 +61,6 @@ body.modal-open {
 
   background-color: transparent;
 }
-
-.close-btn.dark-theme{
-  color: var(--light-text-color);
-}
-
 
 .close-btn:hover,
 .close-btn:focus {
@@ -129,15 +112,7 @@ body.modal-open {
   font-weight: 700;
   font-size: 16px;
   line-height: 1.2;
-
-}
-
-.book-title.light-theme{
   color: var(--main-text-color);
-}
-
-.book-title.dark-theme{
-  color: var(--light-text-color);
 }
 
 @media screen and (min-width: 768px) {
@@ -168,14 +143,8 @@ body.modal-open {
   font-weight: 400;
   font-size: 14px;
   line-height: 1.3;
-}
 
-.book-descr.light-theme{
-color: var(--main-text-color);
-}
-
-.book-descr.dark-theme{
-  color: var(--light-text-color);
+  color: var(--main-text-color);
 }
 
 @media screen and (min-width: 768px) {
@@ -192,26 +161,15 @@ color: var(--main-text-color);
   margin-bottom: 40px;
 }
 
-.shop-icon.dark-theme{
-  filter: brightness(0) invert(1);
-}
-
 .add-rem-btn {
   width: 100%;
   height: 46px;
   margin-bottom: 8px;
 
+  color: var(--main-text-color);
   background-color: transparent;
   border: 2px solid var(--extra-bg-color);
   border-radius: 40px;
-}
-
-.add-rem-btn.light-theme{
-  color: var(--main-text-color);
-}
-
-.add-rem-btn.dark-theme {
-  color: var(--light-text-color);
 }
 
 .add-rem-btn:hover,
@@ -229,15 +187,7 @@ color: var(--main-text-color);
   text-align: center;
   letter-spacing: -0.04em;
 
-
-}
-
-.congratulations.light-theme{
   color: rgba(17, 17, 17, 0.5);
-}
-
-.congratulations.dark-theme{
-  color: rgba(255, 255, 255, 0.5);
 }
 
 @media screen and (min-width: 768px) {

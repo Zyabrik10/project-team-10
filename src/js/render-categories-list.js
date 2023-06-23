@@ -25,7 +25,6 @@ fetchAllCategories()
 
     lis.forEach(e => {
       e.addEventListener('click', activatedCategory);
-      loader.classList.remove('is-hidden');
 
       function activatedCategory() {
         lis.forEach(e => e.classList.remove('active'));

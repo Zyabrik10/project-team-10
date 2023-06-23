@@ -151,7 +151,7 @@ body.dark-theme {
 @media screen and (min-width: 1440px) {
   .main-block > .container {
     flex-direction: row;
-    gap: 30px;
+    gap: 35px;
   }
 }
 
@@ -179,12 +179,12 @@ main {
   flex: 1 1 auto;
 }
 
-.aside.shp-lst {
+.asides.shp-lst {
   display: none;
 }
 
 @media screen and (min-width: 1440px) {
-  .aside.shp-lst {
+  .asides.shp-lst {
     display: flex;
   }
 }

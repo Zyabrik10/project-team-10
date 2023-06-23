@@ -24,10 +24,6 @@
             <path fill="#fff" style="fill: var(--color1, #fff)" d="M5.897 12h16.513l-7.423 8.391c-0.221 0.25-0.521 0.39-0.834 0.39s-0.613-0.14-0.834-0.39l-7.423-8.391z"></path>
       </symbol>
 
-      <symbol id="icon-login-button" viewBox="0 0 43 32">
-            <path fill="none" stroke="#eac645" style="stroke: var(--color1, #eac645)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="5.3333" d="M3.555 16h35.556M39.111 16l-13.333-13.333M39.111 16l-13.333 13.333"></path>
-      </symbol>
-
   </defs>
 </svg>
 
