@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home | Book a book</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Normolize -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css"
+    />
+
+    <!-- Own Styles -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body class="login-body">
+    <div class="modal-login light-theme theme-switch">
+      <form class="login-form" autocomplete="off">
+        <label>
+          <input
+            type="email"
+            name="email"
+            class="input light-theme theme-switch"
+            placeholder="example@gmail.com"
+            autofocus
+            required
+          />
+          <span class="login-form-label">Email</span>
+        </label>
+        <label>
+          <input
+            type="password"
+            name="password"
+            class="input light-theme theme-switch"
+            placeholder="********"
+            autofocus
+            required
+          />
+          <span class="login-form-label">Password</span>
+        </label>
+        <label>
+          <input
+            type="text"
+            name="username"
+            class="input light-theme theme-switch"
+            placeholder=" "
+            autofocus
+            required
+          />
+          <span class="login-form-label">Username</span>
+        </label>
+        <button
+          type="submit"
+          class="login-btn global-button light-theme theme-switch"
+        >
+          Sign up
+        </button>
+      </form>
+      <div class="sign-switcher">
+        <p class="sign-active-link">Sign up</p>
+        <p><a href="./login.html" class="global-link sign-link">Sign in</a></p>
+      </div>
+    </div>
+
+    <script type="module" src="./js/sign-up.js"></script>
+  </body>
+</html>

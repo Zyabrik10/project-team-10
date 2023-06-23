@@ -13,7 +13,7 @@ const bookThumb = document.querySelector('.tb-container');
 const headingEl = document.querySelector('.heading-primary');
 const allCtgrEl = document.querySelector('#allctgr');
 const loader = document.querySelector('.loader');
-  loader.classList.add('is-hidden');
+loader.classList.add('is-hidden');
 
 categoryList.addEventListener('click', renderCategoryBooks);
 setTimeout(e => {
@@ -56,13 +56,16 @@ async function renderCategoryBooks(event) {
 function createMarkupBook({ data }) {
   bookThumb.innerHTML = '';
   const markup = data
-    .map(({ list_name,
-          book_image = "https://bookcart.azurewebsites.net/Upload/Default_image.jpg",
-          title = "title not available",
-          author = "anonymous",
-          description,
-          _id, }) => {
-      return `
+    .map(
+      ({
+        list_name,
+        book_image = 'https://bookcart.azurewebsites.net/Upload/Default_image.jpg',
+        title = 'title not available',
+        author = 'anonymous',
+        description,
+        _id,
+      }) => {
+        return `
           <li class="flex-container-item">
             <a href=# class="global-link" data-id="${_id}">
               <div class="tb-book-card">
@@ -72,7 +75,8 @@ function createMarkupBook({ data }) {
               </div>
             </a>
           </li>`;
-    })
+      }
+    )
     .join('');
 
   bookThumb.innerHTML = markup;
@@ -91,13 +95,16 @@ export function renderTopBooks({ data }) {
     const markupCategory = data
       .map(({ list_name, books }) => {
         const markup = books
-          .map(({ list_name,
-          book_image = "https://bookcart.azurewebsites.net/Upload/Default_image.jpg",
-          title = "title not available",
-          author = "anonymous",
-          description,
-          _id, }) => {
-            return `
+          .map(
+            ({
+              list_name,
+              book_image = 'https://bookcart.azurewebsites.net/Upload/Default_image.jpg',
+              title = 'title not available',
+              author = 'anonymous',
+              description,
+              _id,
+            }) => {
+              return `
           <li class="flex-container-item">
             <a href=# class="global-link" data-id="${_id}">
               <div class="tb-book-card">
@@ -108,7 +115,8 @@ export function renderTopBooks({ data }) {
             </a>
           </li>
           `;
-          })
+            }
+          )
           .join('');
         return `
       <li class="tb-category-container">
@@ -150,13 +158,16 @@ async function onSeeMoreClick(event) {
 
 function createMarkupSeeMore({ data }, categoryContainer) {
   const markup = data
-    .map(({ list_name,
-          book_image = "https://bookcart.azurewebsites.net/Upload/Default_image.jpg",
-          title = "title not available",
-          author = "anonymous",
-          description,
-          _id, }) => {
-      return `
+    .map(
+      ({
+        list_name,
+        book_image = 'https://bookcart.azurewebsites.net/Upload/Default_image.jpg',
+        title = 'title not available',
+        author = 'anonymous',
+        description,
+        _id,
+      }) => {
+        return `
           <li class="flex-container-item">
             <a href=# class="global-link" data-id="${_id}">
               <div class="tb-book-card">
@@ -166,10 +177,14 @@ function createMarkupSeeMore({ data }, categoryContainer) {
               </div>
             </a>
           </li>`;
-    })
+      }
+    )
     .join('');
   const seeMoreMarkup = `<ul class="global-list flex-container">
             ${markup}
           </ul>`;
   categoryContainer.innerHTML = seeMoreMarkup;
+  shopping_info.theme === 'light'
+      ? renderTheme('light')
+      : renderTheme('dark');
 }
