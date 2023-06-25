@@ -22,75 +22,21 @@
 </head>
 
 <body class="theme-switch light-theme home-pages">
-  <header class="header light-theme theme-switch">
-    <div class="container">
-      <a class="logo text-logo global-link" href="./">
-        <img id="logo-image" src="../src/images/header/logo-light.png" alt="Logo"
-          class="logo-image theme-switch light-theme dark-theme">
-      </a>
-
-      <nav>
-        <ul class="header-links">
-          <li class="header-link home-link">
-            <a class="link-text global-link current-page theme-switch light-theme dark-theme" href="./">Home</a>
-          </li>
-          <li class="header-link shopping-link">
-            <a class="link-text global-link theme-switch light-theme dark-theme" href="./shopping-list.html">
-              SHOPPING LIST
-              <svg class="sprite-image theme-switch light-theme dark-theme" width="20" height="20">
-                <use href="./images/header/icons/icons.svg#icon-shop"></use>
-              </svg>
-            </a>
-          </li>
-        </ul>
-      </nav>
-
-      <div class="switcher" data-checked="false">
-        <div class="switcher-handle">
-          <svg class="switcher-circle">
-            <use href="./images/header/icons/icons.svg#icon-circle"></use>
-          </svg>
-        </div>
-      </div>
-
-      <!-- js code in file "color-switcher" -->
-      <!-- Не залогінений користувач -->
-      <button type="button" id="userProfileLoggedOut" class="user-profile theme-switch light-theme dark-theme"
-        style="display: none;">
-        <svg class="avatar" width="37" height="37">
-          <use xlink:href="./images/header/icons/icons.svg#icon-user-non"></use>
-        </svg>
-      </button>
-
-      <!-- Залогінений користувач -->
-      <button type="button" id="userProfileLoggedIn" class="user-profile logged-in" style="display: none;">
-        <svg class="avatar" width="37" height="37">
-          <image xlink:href="/src/images/header/user-avatar.png" width="37" height="37" />
-        </svg>
-        <span class="username">Stephen</span>
-        <svg class="status-icon" width="23" height="26">
-          <use xlink:href="./images/header/icons/icons.svg#icon-caret-down"></use>
-        </svg>
-      </button>
-
-
-      <button type="button" class="menu-button global-button">
-        <svg class="menu-icon theme-switch light-theme dark-theme" width="40" height="40">
-          <use href="./images/header/icons/icons.svg#icon-menu"></use>
-        </svg>
-      </button>
-
-    </div>
-  </header>
+  <include src="./partials/header.html"></include>
   <div class="main-block">
     <div class="container">
+      <button type="button" class="scroll-up-button global-button">
+        <svg class="scroll-up-svg">
+          <use href="./images/extra-block/icons/scrollUp.svg#icon-scroll-up"></use>
+        </svg>
+      </button>
+      <span class="loader"></span>
       <div class="asides">
         <include src="./partials/catalog-list.html"></include>
         <include src="./partials/extra-block.html"></include>
       </div>
       <include src="./partials/book-catalog.html"></include>
     </div>
-    <span class="loader"></span>
 
     <include src="./partials/burger-menu.html"></include>
     <include src="./partials/modal-window-book.html"></include>

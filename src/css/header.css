@@ -137,117 +137,136 @@
   left: calc(100% - 22px);
   background-position: 0 0;
 }
-
+/* кнопка незалогіненого */
 .user-profile {
-  width: 32px;
-  height: 32px;
   display: none;
-  align-items: center;
-  border-radius: 50%;
+  justify-content: space-around;
+  width: 184px;
+  height: 48px;
+  border-radius: 18px;
   margin-left: 24px;
-  padding: 5px;
+  padding: 14px;
   cursor: pointer;
-  border: 0;
   transition: all 250ms;
   user-select: none;
   touch-action: manipulation;
   position: relative;
+  background-color: var(--extra-bg-color);
+  border: 1.5px solid var(--main-text-color);
+  color: var(--light-text-color);
 }
 
-.user-profile::before {
-  content: "";
-  position: absolute; 
-  left: 190%;
-  font-weight: bolder;
-  transform: translateX(-50%);
-  border-radius: 1;
-  padding: 5px 10px 5px 10px;
-  background-color: inherit;
-  border-radius: 50%;
-  font-size: 14px;
-  pointer-events: none; 
-  opacity: 0; 
-  transition: opacity 0.3s ease; 
+
+
+@media screen and (min-width: 768px) {
+  .user-profile.is-active {
+      display: flex;
+    }
+    .custom-profile{
+      display: none;
+    }
 }
 
-.user-profile:hover::before {
-  content: "LogIn ☼";
-  font-size:x-small;
-  
-  opacity: 1; 
-}
-.user-profile.light-theme:hover::before{
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.519);
-  color:  rgba(1, 1, 1, 0.821) ;
-}
-.user-profile.dark-theme:hover::before{
-  text-shadow: 2px 2px 2px rgba(234, 13, 220, 0.519);
-  color:  rgba(247, 242, 242, 0.821) ;
-}
-
-.user-profile .avatar {
-  display: flex;
-}
-
-.user-profile .text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none; 
-  opacity: 1; 
-  transition: opacity 0.3s ease; 
-}
-
-.user-profile:hover .text {
-  opacity: 0;
-}
-
-.user-profile:active {
-  transform:  translateY(-5px) ;
-}
-
-.user-profile.light-theme{
-  background-color: var(--light-text-color);
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-}
-.user-profile.dark-theme{
-  background-color: var(----main-text-color-text-color);
-  box-shadow: 1px 1px 5px 1px rgb(70, 3, 78);
-}
-
-/* Button LogIn -- On */
 .user-profile.logged-in {
   width: 184px;
   height: 45px;
-  background: #4f2ee8;
   border-radius: 36px;
   display: none;
   align-items: center;
   justify-content: space-between;
-  padding: 0 12px;
 }
 
-.user-profile.logged-in .avatar {
-  width: 37px;
-  height: 37px;
+@media screen and (min-width: 768px) {
+  .user-profile.logged-in.is-active {
+      display: flex;
+    }
+
+    .custom-profile{
+      display: none;
+    }
+}
+
+.avatar-header {
+  display: flex;
+  background-color: var(--light-text-color);
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
+  margin-left: 12px;
 }
 
 .user-profile.logged-in .username {
   color: #fff;
   font-size: 16px;
-  margin-right: 9px;
+}
+/* КНОПА ЛОГАУТ */
+
+.logout-btns {
+  display: flex;
+  align-items: flex-start;
 }
 
-.user-profile.logged-in .status-icon {
-  width: 23px;
-  height: 26px;
+.user-profile-container {
+  position: relative;
 }
 
+.user-profile {
+  margin-right: 10px;
+}
+
+.modal-content {
+  display: none;
+  position: absolute;
+  top: calc(100% + 1px);
+  left: 25px;
+  border-radius: 18px;
+ 
+}
+
+.modal-content.light-theme{
+  box-shadow: 4px 3px 2px 1px rgba(34, 34, 35, 0.2);
+}
+.modal-content.dark-theme{
+  box-shadow: 4px 3px 2px 1px rgba(128, 128, 130, 0.2);
+}
+
+.custom-profile {
+  width: 184px;
+  height: 48px;
+  background: var(--bg-color);
+  border: 1.5px solid var(--main-text-color);
+  border-radius: 18px;
+  display: none;
+  align-items: center;
+  padding: 0 14px;
+  cursor: pointer;
+  transition-duration: .3s;
+}
+/* #userProfileLoggedInk{
+  width: 250px;
+} */
+.custom-profile:hover {
+  background-color: var(--sub-text-color);
+}
+
+.custom-signup-text {
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--main-text-color);
+  margin-right: 10px;
+}
+
+.custom-other-svg {
+  width: 13.33px;
+  height: 10px;
+  margin-left: auto;
+}
+
+
+/* Кінець кнопи логаут */
 
 .menu-button {
-  display: felx;
+  display: flex;
   margin-left: 14px;
   background-color: inherit;
 }
@@ -255,7 +274,7 @@
 .menu-icon {
   width: 100%;
   height: 100%;
- 
+
   margin-top: 35%;
 }
 
@@ -272,7 +291,7 @@
     justify-content: space-between;
     align-items: center;
   }
- 
+
   .header-links {
     display: none;
   }
@@ -281,6 +300,7 @@
     display: flex;
     margin-left: 14px;
   }
+  
 }
 
 @media only screen and (min-width: 750px) {
@@ -292,18 +312,19 @@
     display: flex;
   }
   .user-profile {
-    display: flex;
     align-items: center;
-  }
-  .user-profile.logged-in{
     display: flex;
   }
+  .custom-profile {
+    display: flex;
+  }
+  
   .menu-button {
     display: none;
   }
 
   .home-pages .header-link.home-link .link-text {
-    width: 100%px;
+    width: 100%;
     height: 34px;
     background: var(--place-bg-color);
     border-radius: 36px;
@@ -313,7 +334,7 @@
   }
 
   .shopp-pages .header-link.shopping-link .link-text {
-    width: 100%px;
+    width: 100%;
     height: 34px;
     background: var(--place-bg-color);
     border-radius: 36px;

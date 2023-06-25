@@ -8,7 +8,7 @@
   height: 100vh;
 
   position: fixed;
-  overflow: hidden;
+  overflow: auto;
   background: radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4F2EE8 18.03%, #FFFFFF 100%);
       /* transform: translateX(100%);
           transition: transform 250ms ease-in-out; */
@@ -36,8 +36,12 @@
 }
 
 
-.icon-menu-close{
+.icon-menu-close.light-theme{
   stroke: var(--main-text-color);
+}
+
+.icon-menu-close.dark-theme {
+  stroke: var(--light-text-color);
 }
 
 .menu-close{
