@@ -1,0 +1,35 @@
+.scroll-up{
+  --size: 55px;
+  width: var(--size);
+  height: var(--size);
+
+  border-radius: 100%;
+
+  background-color: var(--violet);
+
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity 0.3s ease;
+}
+
+.scroll-up.active{
+  opacity: 1;
+  pointer-events: all;
+}
+
+.scroll-up svg{
+  width: calc(var(--size) * 0.5);
+  height: calc(var(--size) * 0.5);
+}

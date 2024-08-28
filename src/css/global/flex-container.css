@@ -1,0 +1,14 @@
+.flex-container {
+  --flex-items: 3;
+  --flex-items-gap: 25px;
+
+  display: flex;
+  gap: var(--flex-items-gap);
+  flex-wrap: wrap;
+}
+
+.flex-container > * {
+  flex-basis: calc(
+    (100% - (var(--flex-items) - 1) * var(--flex-items-gap)) / var(--flex-items)
+  );
+}

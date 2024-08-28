@@ -1,0 +1,33 @@
+.light-theme {
+  --black: #111111;
+  --black-1: #202024;
+  --black-60: rgba(17, 17, 17, 0.6);
+  --dark-text-color-60: rgba(0, 0, 0, 0.6);
+  --sub-text-color: #b4afaf;
+  --violet: #4f2ee8;
+  --violet-40: rgba(79, 46, 232, 0.4);
+  --yellow: #eac645;
+  --white: #fff;
+  --white-60: rgba(255, 255, 255, 0.6);
+  --white-2: #F6F6F6;
+
+  /* transition */
+  --transition-property: color, background, box-shadow, transform;
+  --transition-duration: 0.3s;
+  --transition-timing-function: ease-out;
+}
+
+.dark-theme {
+  --black: #fff;
+  --black-1: #202024;
+  --black-60: rgba(255, 255, 255, 0.6);
+  --dark-text-color-60: rgba(255, 255, 255, 0.6);
+  --sub-text-color: #b4afaf;
+  --violet: #eac645;
+  --violet-40: rgba(79, 46, 232, 0.4);
+  --yellow: #4f2ee8;
+  --white-60: rgba(17, 17, 17, 0.6);
+  --white: #111111;
+  --white-2: #202024;
+
+}

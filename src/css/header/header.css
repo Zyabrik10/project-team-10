@@ -1,0 +1,27 @@
+.header,
+.header > .container{
+  display: flex;
+  align-items: center;
+}
+
+.header {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  margin-bottom: 40px;
+
+  padding: 5px 0;
+
+  background: var(--white);
+  border: 1.5px solid var(--black);
+  color: var(--black);
+
+  height: 64px;
+}
+
+.logo{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--black);
+  font-size: 18px;
+}

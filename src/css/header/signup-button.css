@@ -1,0 +1,20 @@
+.signup-button {
+  display: none;
+  align-items: center;
+  justify-content: space-around;
+
+  width: 184px;
+  height: 48px;
+
+  border-radius: 18px;
+  padding: 14px;
+  background-color: #4f2ee8;
+  border: 1.5px solid var(--balck);
+  color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  .signup-button {
+    display: flex;
+  }
+}

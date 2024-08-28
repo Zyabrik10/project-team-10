@@ -1,11 +1,25 @@
-import './js/switch-theme';
-import './js/extra-block-slider';
-import './js/modal-window';
-import './js/burger-menu';
-import './js/render-categories-list';
-import './js/render-categories-books';
-import './js/books-action';
-import './js/choose-category';
-import './js/render-category-books';
-import './js/shopping-list';
-import './js/color-swithcer';
+import cardBox from "./js/config/cardBox";
+import {
+  initBurgerMenu,
+  initLocalStorage,
+  initAsideBooksCategories,
+  initAllBooks,
+  initSupportAside,
+  initThemeSwitcher,
+  initScrollUpButton,
+  initAuth,
+} from "./js/init";
+import _ from "lodash";
+
+window.addEventListener("load", () => {
+  cardBox.init(".spec-books-container");
+
+  initBurgerMenu();
+  initScrollUpButton();
+  initLocalStorage();
+  initAsideBooksCategories();
+  initAllBooks();
+  initSupportAside();
+  initThemeSwitcher();
+  initAuth();
+});

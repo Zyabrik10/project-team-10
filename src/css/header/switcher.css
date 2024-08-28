@@ -1,0 +1,53 @@
+.switcher {
+  width: 40px;
+  height: 24px;
+  background: linear-gradient(
+    180deg,
+    #4f2ee8 0%,
+    rgba(255, 255, 255, 0.6) 100%
+  );
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.switcher.active {
+  background: linear-gradient(180deg, #4f2ee8 0%, #b4afaf 100%);
+}
+
+.switcher-handle {
+  position: relative;
+  top: 50%;
+  left: 4%;
+  transform: translate(0, -50%);
+
+  width: 20px;
+  height: 20px;
+
+  border-radius: 100%;
+  transition: transform 0.3s ease;
+  background-color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.1), 1px 1px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.switcher-circle {
+  --size: 16px;
+  width: var(--size);
+  height: var(--size);
+
+  border: 1px solid  rgba(0, 0, 0, 0.1);
+  border-radius: 100%;
+}
+
+.theme-input-switcher{
+  display: none;
+}
+
+.theme-input-switcher:checked ~ .switcher-handle{
+    transform: translate(83%, -50%);
+}
