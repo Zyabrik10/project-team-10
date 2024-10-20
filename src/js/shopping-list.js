@@ -2,7 +2,7 @@
 import { initializeApp } from 'firebase/app';
 import Notiflix from 'notiflix';
 import { getDatabase, ref, child, get } from 'firebase/database';
-import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
+import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth'; 
 
 const firebaseConfig = {
   apiKey: 'AIzaSyDwpmuhImdY7RHC3U0YYZIshSlCJATjNaU',
