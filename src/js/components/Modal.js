@@ -1,6 +1,6 @@
 export default function Modal() {
   return `
- <div class="book-modal-wrraper">
+ <div class="book-modal-wrapper">
       <div class="book-modal-content">
         <button class="book-modal-close-button" type="button">&times;</button>
         <div class="book-modal-content-box">
@@ -14,12 +14,12 @@ export default function Modal() {
             <ul class="book-modal-shops-list">
               <li>
                 <a class="book-modal-shop-link" href="">
-                  <img class="book-modal-shop-icon" src=${require("../../images/modal-window-book/icons/amazon_bk.png")} alt="amazon" width="62" height="19"/>
+                  <img class="book-modal-shop-icon" src=${require('../../images/modal-window-book/icons/amazon_bk.png')} alt="amazon" width="62" height="19"/>
                 </a>
               </li>
               <li>
                 <a class="book-modal-shop-link" href="">
-                  <img class="book-modal-shop-icon" src=${require("../../images/modal-window-book/icons/open-book_bk.png")} alt="apple-book" width="32" height="32"/>
+                  <img class="book-modal-shop-icon" src=${require('../../images/modal-window-book/icons/open-book_bk.png')} alt="apple-book" width="32" height="32"/>
                 </a>
               </li>
             </ul>

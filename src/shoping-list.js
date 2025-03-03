@@ -2,17 +2,17 @@ import { user } from "./js/config";
 import {
   initBurgerMenu,
   initLocalStorage,
-  initChoosedBooksList,
+  initChosenBooksList,
   initThemeSwitcher,
   initSupportAside,
   initAuth,
-} from "./js/init";
-import toggleNoBooksAlert from "./js/utils/toggleNoBooksAlert";
+} from './js/init';
+import toggleNoBooksAlert from './js/utils/toggleNoBooksAlert';
 
-window.addEventListener("load", () => {
+window.addEventListener('load', () => {
   initBurgerMenu();
   initLocalStorage();
-  initChoosedBooksList();
+  initChosenBooksList();
   initThemeSwitcher();
   initSupportAside();
   initAuth();

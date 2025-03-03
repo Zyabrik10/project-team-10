@@ -1,4 +1,4 @@
-.book-modal-wrraper {
+.book-modal-wrapper {
   position: fixed;
   top: 0;
   left: 0;
@@ -7,7 +7,7 @@
 
   background-color: rgba(17, 17, 17, 0.4);
 
-  display: none;
+  display: flex;
 
   justify-content: center;
   align-items: center;
@@ -15,10 +15,17 @@
   padding: 10px;
 
   z-index: 100;
+
+  opacity: 0;
+
+  transition: opacity 0.3s ease;
+
+  pointer-events: none;
 }
 
-.book-modal-wrraper.active {
-  display: flex;
+.book-modal-wrapper.active {
+  opacity: 1;
+  pointer-events: all;
 }
 
 .book-modal-content {
@@ -36,6 +43,14 @@
   max-height: 762px;
 
   overflow-y: auto;
+
+  transform: scale(0);
+
+  transition: transform 0.3s ease;
+}
+
+.book-modal-wrapper.active .book-modal-content{
+  transform: scale(1);
 }
 
 @media screen and (min-width: 768px) {
