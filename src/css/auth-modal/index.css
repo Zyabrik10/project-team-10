@@ -8,7 +8,7 @@
   background: var(--violet);
   z-index: 100;
 
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
 
@@ -16,10 +16,16 @@
 
   padding: 20px;
 
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition: opacity 0.3s ease;
 }
 
-.auth-modal.active{
-  display: flex;
+.auth-modal.active {
+  opacity: 1;
+  pointer-events: all;
 }
 
 .auth-container {
@@ -29,6 +35,13 @@
   height: 516px;
   background: #f6f6f6;
   padding: 24px;
+
+  transform: scale(0);
+  transition: transform 0.3s ease;
+}
+
+.auth-modal.active .auth-container {
+  transform: scale(1);
 }
 
 .auth-close-button {
@@ -75,8 +88,6 @@
   letter-spacing: -0.01em;
   text-transform: uppercase;
   color: #111;
-
-  outline: none;
 }
 
 .auth-input-label-box-text {
@@ -101,41 +112,62 @@
 }
 
 .auth-input-label-box > input:focus + .auth-input-label-box-text,
-.auth-input-label-box input.active + .auth-input-label-box-text{
+.auth-input-label-box input.active + .auth-input-label-box-text {
   transform: translateY(-100%) scale(0.8);
   top: 0;
   color: var(--violet);
 }
 
 .auth-input-label-box input:focus,
-.auth-input-label-box input.active{
-    border: 2px solid var(--violet);
+.auth-input-label-box input.active {
+  border: 2px solid var(--violet);
 }
 
-.auth-main-button{
-    margin-bottom: 20px;
-    background-color: #111;
-    color: #fff;
+.auth-main-button {
+  margin-bottom: 20px;
+  background-color: #111;
+  color: #fff;
+  transition: transform 0.1s ease, background-color 0.3s ease;
 }
 
-.auth-navigation{
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+.auth-main-button:active {
+  transform: scale(0.95);
 }
 
-.auth-navigation label{
-    cursor: pointer;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 1.33;
-    letter-spacing: -0.01em;
-    text-transform: uppercase;
-    text-decoration: underline;
-    text-decoration-skip-ink: none;
+.auth-main-button:hover,
+.auth-main-button:focus {
+  background-color: var(--violet);
+}
+
+.auth-main-button:disabled {
+  background-color: var(--violet-y-90);
+}
+
+.auth-navigation {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.auth-navigation label {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.33;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+
+  transition: color 0.3s ease;
+}
+
+.auth-navigation label:hover,
+.auth-navigation label:focus{
+  color: var(--violet-y-90);
 }
 
 .signup-form-selector:checked ~ .auth-navigation .to-signup-button,
-.signin-form-selector:checked ~ .auth-navigation .to-signin-button{
-    color: var(--violet);
+.signin-form-selector:checked ~ .auth-navigation .to-signin-button {
+  color: var(--violet);
 }

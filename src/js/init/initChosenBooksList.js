@@ -1,13 +1,9 @@
 import ShoppingListItem from "../components/ShoppingListItem";
-import { choosedBookCategories, booksAPI, user } from "../config";
-import toggleNoBooksAlert from "../utils/toggleNoBooksAlert";
-
+import { choosedBookCategories, booksAPI, booksStorage } from '../config';
+import toggleNoBooksAlert from '../utils/toggleNoBooksAlert';
 
 export default function initChosenBooksList() {
-  const { booksStorage } = user;
-
   choosedBookCategories.init('.shopping-list-container', ShoppingListItem);
-
   const booksIdList = booksStorage.getBooks();
 
   booksIdList.map(async id => {
@@ -26,7 +22,7 @@ export default function initChosenBooksList() {
               e.remove();
               booksStorage.removeBookById(id);
 
-              if (user.booksStorage.books.length === 0) {
+              if (booksStorage.books.length === 0) {
                 toggleNoBooksAlert();
               }
             }

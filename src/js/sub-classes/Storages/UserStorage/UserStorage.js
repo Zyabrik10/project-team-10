@@ -1,49 +1,86 @@
-import { Storage } from "../../../classes";
-import setAuthUser from "../../../utils/user/setAuthUser";
-import setUnAuthUser from "../../../utils/user/setUnAuthUser";
-import BooksStorage from "../BooksStorage/BooksStorage";
-import ThemeStorage from "../ThemeStorage/ThemeStorage";
+import { Storage } from '../../../classes';
+import { getAuthedUserToken } from '../../../utils/user-firebase';
+import ThemeStorage from '../ThemeStorage/ThemeStorage';
 
 export default class UserStorage {
-    constructor() {
-        this.themeStorage = new ThemeStorage();
-        this.booksStorage = new BooksStorage();
-        this.storage = new Storage("user");
+  constructor() {
+    this.themeStorage = new ThemeStorage();
+    this.storage = new Storage('user');
+    this.formStorage = new Storage('formStorage');
 
-        this.user = {
-            token: "",
-            email: "",
-            username:""
-        }
+    this.user = {
+      id: '',
+      token: '',
+      email: '',
+      username: '',
+      isVerified: false,
+    };
+  }
+
+  initFormStorage() {
+    const formStorage = this.getFormStorage();
+    if (!formStorage) {
+      this.formStorage.setItem({
+        signup: {
+          email: '',
+          username: '',
+        },
+        signin: {
+          email: '',
+        },
+      });
+    }
+  }
+
+  getFormStorage() {
+    return this.formStorage.getItem();
+  }
+
+  setFormStorage(type, item, value) {
+    const newStorage = {
+      ...this.formStorage.getItem(),
+      [type]: {
+        ...this.formStorage.getItem()[type],
+        [item]: value,
+      },
+    };
+    this.formStorage.setItem(newStorage);
+  }
+
+  getUser() {
+    return this.storage.getItem();
+  }
+
+  async initUser() {
+    const user = this.getUser();
+
+    if (!user) {
+      this.storage.setItem(this.user);
+      return;
     }
 
-    getUser() {
-        const user = this.storage.getItem();
-        return user;
+    this.user = user;
+
+    if ((await getAuthedUserToken()) === this.user.token) {
+      this.isVerified = true;
+      this.saveUser();
+    } else {
+      this.isVerified = false;
     }
+  }
 
-    async initUser() {
-        const user = this.getUser();
-        if (!user) {
-            this.storage.setItem(this.user);
-            this.user = user;
-            setAuthUser();
-        } else {
-            setUnAuthUser();
-        }
+  saveUser() {
+    this.storage.setItem(this.user);
+  }
 
-    }
+  updateUser(newUser) {
+    const { email, username, token, id, isVerified } = newUser;
+    if (email !== undefined) this.user.email = email;
+    if (username !== undefined) this.user.username = username;
+    if (token !== undefined) this.user.token = token;
+    if (id !== undefined) this.user.id = id;
+    if (isVerified !== undefined) this.isVerified = isVerified;
 
-    saveUser() {
-        this.storage.setItem(this.user);
-    }
-
-    updateUser(newUser) {
-        const {email, username, token} = newUser;
-        if (email) this.user.email = email;
-        if (username) this.user.username = username;
-        if (token) this.user.token = token;
-
-        this.saveUser();
-    }
+    this.saveUser();
+  }
 }

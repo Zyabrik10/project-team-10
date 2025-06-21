@@ -1,4 +1,5 @@
 .light-theme {
+  --white-forever: white;
   --black: #111111;
   --black-1: #202024;
   --black-60: rgba(17, 17, 17, 0.6);
@@ -6,6 +7,8 @@
   --sub-text-color: #b4afaf;
   --violet: #4f2ee8;
   --violet-40: rgba(79, 46, 232, 0.4);
+  --violet-y-40: rgba(79, 46, 232, 0.4);
+  --violet-y-90: rgba(63, 36, 184, 0.9);
   --yellow: #eac645;
   --white: #fff;
   --white-60: rgba(255, 255, 255, 0.6);
@@ -25,9 +28,10 @@
   --sub-text-color: #b4afaf;
   --violet: #eac645;
   --violet-40: rgba(79, 46, 232, 0.4);
+  --violet-y-40: rgba(234, 198, 69, 0.4);
+  --violet-y-90: rgba(199, 169, 59, 0.9);
   --yellow: #4f2ee8;
   --white-60: rgba(17, 17, 17, 0.6);
   --white: #111111;
   --white-2: #202024;
-
 }

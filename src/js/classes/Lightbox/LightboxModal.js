@@ -1,5 +1,5 @@
 import { Modal } from '../../components';
-import { user } from '../../config';
+import { booksStorage } from '../../config';
 
 export default class LightboxModal {
   static instance = null;
@@ -47,7 +47,7 @@ export default class LightboxModal {
       '.book-modal-text-congratulation'
     );
 
-    this.booksStorage = user.booksStorage;
+    this.booksStorage = booksStorage;
 
     this.addButton.addEventListener('click', ({ currentTarget }) => {
       const id = currentTarget.dataset.id;

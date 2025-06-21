@@ -37,11 +37,11 @@
         />
         <form class="signup-form">
           <label class="auth-input-label-box" for="signup-name" aria-label="name">
-            <input type="text" id="signup-name" name="signup_username" />
+            <input type="text" id="signup-name" name="signup_username" data-type="signup" data-item="username"/>
             <p class="auth-input-label-box-text">Name</p>
           </label>
           <label class="auth-input-label-box" for="signup-email" aria-label="email">
-            <input type="text" id="signup-email" name="signup_email" />
+            <input type="text" id="signup-email" name="signup_email" data-type="signup" data-item="email"/>
             <p class="auth-input-label-box-text">Email</p>
           </label>
           <label class="auth-input-label-box" for="signup-password" aria-label="Password">
@@ -59,7 +59,7 @@
         />
         <form class="signin-form">
           <label class="auth-input-label-box" for="signin-email" aria-label="email">
-            <input type="text" id="signin-email" name="signin_email"/>
+            <input type="text" id="signin-email" name="signin_email" data-type="signin" data-item="email"/>
             <p class="auth-input-label-box-text">Email</p>
           </label>
           <label class="auth-input-label-box" for="signin-password" aria-label="Password">
@@ -147,14 +147,14 @@
               </li>
             </ul>
           </nav>
-          <!-- <button class="signup-button burger-menu" type="button">
+          <button class="signup-button burger-menu" type="button">
             <span class="arrow-right">Sign Up</span>
             <svg class="status-icon" width="23" height="26">
               <use
                 xlink:href="./images/header/icons/arrow-right.svg#icon-arrow-narrow-right"
               ></use>
             </svg>
-          </button> -->
+          </button>
         </div>
       </div>
     </div>
@@ -203,14 +203,19 @@
               <div class="switcher-circle"></div>
             </div>
           </label>
-          <!-- <button class="signup-button" type="button">
-            <span class="arrow-right">Sign Up</span>
-            <svg class="status-icon" width="23" height="26">
-              <use
-                xlink:href="./images/header/icons/arrow-right.svg#icon-arrow-narrow-right"
-              ></use>
-            </svg>
-          </button> -->
+          <div class="header-user-box">
+            <button class="signup-button" type="button">
+              <span class="arrow-right">Sign Up</span>
+              <svg class="status-icon" width="23" height="26">
+                <use
+                  xlink:href="./images/header/icons/arrow-right.svg#icon-arrow-narrow-right"
+                ></use>
+              </svg>
+            </button>
+            <button class="logout-button" type="button">
+              <span class="arrow-right">Log Out</span>
+            </button>
+          </div>
           <button type="button" class="header-burger-menu-button" type="button">
             <svg class="menu-icon" width="40" height="40">
               <use href="./images/header/icons/icons.svg#icon-menu"></use>

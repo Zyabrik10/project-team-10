@@ -1,4 +1,3 @@
-import { user } from "./js/config";
 import {
   initBurgerMenu,
   initLocalStorage,

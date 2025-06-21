@@ -38,19 +38,19 @@
         />
         <form class="signup-form">
           <label class="auth-input-label-box" for="signup-name" aria-label="name">
-            <input type="text" id="signup-name" name="signup_username"  value="test"/>
+            <input type="text" id="signup-name" name="signup_username" data-type="signup" data-item="username"/>
             <p class="auth-input-label-box-text">Name</p>
           </label>
           <label class="auth-input-label-box" for="signup-email" aria-label="email">
-            <input type="text" id="signup-email" name="signup_email"  value="test@gmail.com"/>
+            <input type="text" id="signup-email" name="signup_email" data-type="signup" data-item="email"/>
             <p class="auth-input-label-box-text">Email</p>
           </label>
           <label class="auth-input-label-box" for="signup-password" aria-label="Password">
-            <input type="password" id="signup-password" name="signup_password" value="test_1"/>
+            <input type="password" id="signup-password" name="signup_password" value="test_1234"/>
             <p class="auth-input-label-box-text">Password</p>
           </label>
 
-          <button class="auth-main-button">Sign Up</button>
+          <button class="auth-main-button signup">Sign Up</button>
         </form>
         <input
           class="signin-form-selector"
@@ -60,15 +60,15 @@
         />
         <form class="signin-form">
           <label class="auth-input-label-box" for="signin-email" aria-label="email">
-            <input type="text" id="signin-email" name="signin_email"/>
+            <input type="text" id="signin-email" name="signin_email" data-type="signin" data-item="email"/>
             <p class="auth-input-label-box-text">Email</p>
           </label>
           <label class="auth-input-label-box" for="signin-password" aria-label="Password">
-            <input type="password" id="signin-password" name="signin_password"/>
+            <input type="password" id="signin-password" name="signin_password" value="test_1234"/>
             <p class="auth-input-label-box-text">Password</p>
           </label>
 
-          <button class="auth-main-button">Sign In</button>
+          <button class="auth-main-button login">Log In</button>
         </form>
 
         <div class="auth-navigation">
@@ -76,7 +76,7 @@
             >Sign Up</label
           >
           <label class="to-signin-button" for="signin-form-selector"
-            >Sign In</label
+            >Log In</label
           >
         </div>
       </div>
@@ -204,14 +204,19 @@
               <div class="switcher-circle"></div>
             </div>
           </label>
-          <!-- <button class="signup-button" type="button">
-            <span class="arrow-right">Sign Up</span>
-            <svg class="status-icon" width="23" height="26">
-              <use
-                xlink:href="./images/header/icons/arrow-right.svg#icon-arrow-narrow-right"
-              ></use>
-            </svg>
-          </button> -->
+          <div class="header-user-box">
+            <button class="signup-button" type="button">
+              <span class="arrow-right">Sign Up</span>
+              <svg class="status-icon" width="23" height="26">
+                <use
+                  xlink:href="./images/header/icons/arrow-right.svg#icon-arrow-narrow-right"
+                ></use>
+              </svg>
+            </button>
+            <button class="logout-button" type="button">
+              <span class="arrow-right">Log Out</span>
+            </button>
+          </div>
           <button type="button" class="header-burger-menu-button" type="button">
             <svg class="menu-icon" width="40" height="40">
               <use href="./images/header/icons/icons.svg#icon-menu"></use>
