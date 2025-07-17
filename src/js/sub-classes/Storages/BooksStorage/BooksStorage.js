@@ -1,4 +1,4 @@
-import { addDoc, collection, doc, getDoc, getDocs } from 'firebase/firestore';
+import { addDoc, collection, doc, getDocs, deleteDoc } from 'firebase/firestore';
 import { catchError, renderShoppingListAmount } from '../../../utils';
 import { db } from '../../../utils/user-firebase';
 import { user } from '../../../config';
@@ -23,36 +23,37 @@ const getAllDocuments = catchError(async collectionName => {
   return documents;
 });
 
-const addDocument = catchError(async collectionName => {
+const addDocument = catchError(async (userId, bookId) => {
   // Reference to the collection
-  const collectionRef = collection(db, collectionName);
+  const collectionRef = collection(db, 'books');
 
   // Add a new document with an auto-generated ID
-  console.log(data);
-  const docRef = await addDoc(collectionRef, data);
+  const docRef = await addDoc(collectionRef, {
+    userId,
+    bookId,
+  });
 
   console.log('Document written with ID: ', docRef.id);
   return docRef.id; // Return the ID of the newly created document
 });
 
-export default class BooksStorage {
+export default class BooksStorage{
   constructor() {
     this.books = [];
   }
 
-  doesBookPresent(bookId) {
-    return this.books.find(id => id === bookId);
+  doesBookPresent(bId) {
+    return this.books.find(({bookId}) => bookId === bId);
   }
 
   async getBooks() {
     const books = await getAllDocuments('books');
-    return books;
+    return books.filter(({userId})=>userId === user.user.id);
   }
 
   async init() {
     const books = await this.getBooks();
     if (!books) {
-      this.setBooks([]);
       this.books = [];
     } else {
       this.books = books;
@@ -60,29 +61,25 @@ export default class BooksStorage {
     renderShoppingListAmount();
   }
 
-  addBook(bookId) {
+  async addBook(bookId) {
     for (const element of this.books) if (bookId === element) return;
 
     this.books.push(bookId);
-    this.setBooks(this.books);
-  }
-
-  async setBooks(books) {
-    books.forEach(async book_id => {
-      await addDocument('books', { user_id: user.user.id, book_id });
-    });
-
-    this.books = books;
-
+    await addDocument(user.user.id, bookId);
     renderShoppingListAmount();
   }
 
-  removeBookById(id) {
-    this.books = this.books.filter(bookId => bookId !== id);
-    this.setBooks(this.books);
+  async removeBookById(deleteBookId) {
+    if (!this.doesBookPresent(deleteBookId)) return;
+    const dbBookId = this.books.filter(({bookId}) => bookId === deleteBookId)[0].id;
+    await deleteDoc(doc(db, 'books', dbBookId));
+    this.books = this.books.filter(({bookId}) => bookId !== deleteBookId);
+    renderShoppingListAmount();
   }
 
-  removeBooks() {
-    this.setBooks([]);
+  async removeBooks() {
+    this.books.forEach(async (bookId)=>{
+      this.removeBookById(bookId);
+    });
   }
 }

@@ -16,7 +16,7 @@ export default class LightboxContainer {
 
     if (target === currentTarget) return;
 
-    booksAPI.getBookBookbyId(target.dataset.id).then((data) => {
+    booksAPI.getBookBookById(target.dataset.id).then((data) => {
       this.modal.element.classList.add("active");
       this.modal.render({...data, _id: target.dataset.id});
     });

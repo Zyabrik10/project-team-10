@@ -18,7 +18,7 @@ export default class BooksAPI {
     }
   }
 
-  async getBookBookbyId(bookId) {
+  async getBookBookById(bookId) {
     try {
       const response = await this.API.fetch({ api: `/${bookId}` });
 

@@ -9,7 +9,6 @@ import {
   initScrollUpButton,
   initAuth,
 } from "./js/init";
-import _ from "lodash";
 
 window.addEventListener("load", () => {
   cardBox.init(".spec-books-container");

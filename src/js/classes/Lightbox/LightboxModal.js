@@ -49,7 +49,7 @@ export default class LightboxModal {
 
     this.booksStorage = booksStorage;
 
-    this.addButton.addEventListener('click', ({ currentTarget }) => {
+    this.addButton.addEventListener('click', async ({ currentTarget }) => {
       const id = currentTarget.dataset.id;
       if (!this.doesBookPresent) {
         this.congratulation.classList.add('active');
