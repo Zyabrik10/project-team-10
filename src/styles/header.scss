@@ -1,0 +1,232 @@
+header {
+  position: relative;
+  background: var(--color-11);
+  border: 1.5px solid var(--color-1);
+  height: 64px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  margin-bottom: 2.85em;
+  z-index: 2;
+}
+
+.header-container,
+.header-nav ul,
+.header-container a.shopping-cart,
+.header-extra-list {
+  display: flex;
+  align-items: center;
+}
+
+.header-container {
+  height: 100%;
+}
+
+//  === NAV ===
+.header-nav {
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    & {
+      display: block;
+    }
+  }
+
+  ul {
+    margin-left: 2.85em;
+    gap: 1.71em;
+
+    a {
+      border-radius: 2.57em;
+      padding: 0.57em 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &.current {
+        color: #111;
+        background: var(--color-14);
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      &.shopping-cart {
+        gap: 5px;
+      }
+    }
+  }
+}
+
+// EXTRA
+
+.header-extra-list {
+  margin-left: auto;
+  display: flex;
+  gap: 1.71em;
+  align-items: center;
+}
+
+.header-language-switcher {
+  width: 40px;
+  height: 24px;
+  cursor: pointer;
+  background: linear-gradient(#4f2ee8 0%, rgba(255, 255, 255, 0.6) 100%);
+  border-radius: 12px;
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
+
+  input {
+    display: none;
+
+    &:checked ~ .switcher-handle {
+      transform: translate(83%, -50%);
+    }
+  }
+
+  .switcher-handle {
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 100%;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s;
+    display: flex;
+    position: relative;
+    top: 50%;
+    left: 4%;
+    transform: translateY(-50%);
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1),
+      1px 1px 2px rgba(0, 0, 0, 0.1);
+
+    &::before {
+      content: "";
+      display: block;
+      width: 16px;
+      height: 16px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 100%;
+    }
+  }
+}
+
+.header-auth-buttons {
+  display: none;
+
+  button {
+    border: 1.5px solid var(--color-1);
+    color: #fff;
+    background-color: #4f2ee8;
+    border-radius: 18px;
+    justify-content: space-around;
+    align-items: center;
+    width: 184px;
+    height: 48px;
+    padding: 14px;
+    display: none;
+  }
+
+  button[data-role="signin"] {
+    display: flex;
+  }
+
+  button[data-role="logout"] {
+    display: none;
+  }
+
+  &.active {
+    button[data-role="signin"] {
+      display: none;
+    }
+
+    button[data-role="logout"] {
+      display: flex;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    display: block;
+  }
+}
+
+.header-mobile-menu-button {
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  font-size: 1em;
+  transition: color 0.3s;
+  position: relative;
+
+  svg[data-role="burger"] {
+    opacity: 1;
+  }
+  svg[data-role="close"] {
+    opacity: 0;
+  }
+
+  &.active {
+    svg[data-role="burger"] {
+      opacity: 0;
+    }
+    svg[data-role="close"] {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  svg {
+    stroke: currentColor;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-37%, -36%);
+    transition: opacity var(--g-t), transform var(--g-t);
+  }
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.mobile-modal {
+  padding-top: 100px;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--g-t);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 1.71em;
+
+  background: radial-gradient(
+    183.6% 183.01% at 59.76% -23.42%,
+    #4f2ee8 18.03%,
+    #fff 100%
+  );
+
+  &.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  nav.header-nav {
+    display: block;
+
+    ul {
+      flex-direction: column;
+      color: white;
+      margin: 0;
+    }
+  }
+
+  div.header-auth-buttons {
+    display: block;
+  }
+}

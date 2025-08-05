@@ -1,0 +1,189 @@
+.main-block {
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+
+  padding-bottom: 20px !important;
+
+  @media screen and (min-width: 1440px) {
+    & {
+      flex-direction: row;
+    }
+  }
+
+  main & .asides {
+    flex-shrink: 0;
+  }
+
+  main {
+    width: 100%;
+
+    .books-section .books {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+
+      .books-list {
+        --flex-items-gap: 20px;
+        --flex-items: 1;
+
+        @media screen and (min-width: 768px) {
+            & {
+              --flex-items: 3;
+            }
+          }
+
+        @media screen and (min-width: 1440px) {
+            & {
+              --flex-items: 5;
+            }
+          }
+
+        .book-item {
+          display: block;
+          width: 100%;
+
+          @media screen and (min-width: 768px) {
+            & {
+              width: auto;
+            }
+          }
+
+          div {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+
+            img {
+              width: 100%;
+              height: auto;
+
+              @media screen and (min-width: 768px) {
+                &{
+                  max-width: 221px;
+                  height: 316px;
+                }
+              }
+
+              @media screen and (min-width: 1440px) {
+                &{
+                  max-width: auto;
+                  height: 256px;
+                }
+              }
+            }
+
+            .quick-view {
+              width: 100%;
+
+              text-align: center;
+              text-transform: uppercase;
+              letter-spacing: -0.04em;
+              color: var(--color-11);
+
+              pointer-events: none;
+
+              font-size: 14px;
+              font-weight: 500;
+
+              line-height: 1.29;
+
+              position: absolute;
+              bottom: 0px;
+              left: 0px;
+              transform: translateY(100%);
+
+              background: var(--color-6);
+              padding: 26px 10px;
+              transition: transform 0.3s;
+            }
+          }
+
+          &:hover .quick-view,
+          &:focus .quick-view {
+            transform: translateY(0);
+          }
+
+          h4 {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            text-transform: uppercase;
+            width: 185px;
+            margin-top: 18px;
+            margin-bottom: 4px;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1.125;
+          }
+
+          p {
+            text-overflow: ellipsis;
+            font-style: italic;
+            overflow: hidden;
+            white-space: nowrap;
+            width: 180px;
+            font-size: 12px;
+            line-height: 1.16667;
+            color: var(--color-5);
+          }
+        }
+      }
+
+      .book-category-item {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+        h3 {
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          text-align: left;
+          text-transform: uppercase;
+          letter-spacing: 0.03em;
+          color: var(--color-5);
+          margin-bottom: 10px;
+          font-weight: 400;
+          overflow: hidden;
+        }
+
+        button.see-more {
+          letter-spacing: -0.01em;
+          text-transform: uppercase;
+          border: 2px solid var(--color-6);
+          background-color: rgba(0, 0, 0, 0);
+          border-radius: 26px;
+          margin-top: 8px;
+          margin-left: auto;
+          padding: 14px 28px;
+          font-weight: 700;
+          transition: background-color var(--g-t), color var(--g-t);
+
+          &:hover {
+            background-color: var(--color-6);
+            color: var(--color-15);
+          }
+        }
+      }
+    }
+
+    .books-section h2 {
+      margin-bottom: 40px;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.1875;
+
+      @media screen and (min-width: 768px) {
+        & {
+          font-size: 48px;
+          line-height: 1.08333;
+        }
+      }
+
+      span {
+        color: var(--color-6);
+      }
+    }
+  }
+}

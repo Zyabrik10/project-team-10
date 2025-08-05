@@ -1,0 +1,94 @@
+@use "./reset-normalize.scss";
+@use "./variables.scss";
+@use "./header.scss";
+@use "./modal.scss";
+@use "./main-block.scss";
+@use "./asides.scss";
+@use "./shop-card.scss";
+@use "./anchor.scss";
+
+svg{
+  fill: currentColor;
+}
+
+*{
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--color-1);
+  background: var(--color-13);
+  font-family: DM Sans, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+
+  @media screen and (min-width: 768px){
+    &{
+      font-size: 13px;
+    }
+  }
+
+  @media screen and (min-width: 1440px){
+    &{
+      font-size: 14px;
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+  height: 167px;
+  background: transparent;
+  background: #e0e0e0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+
+  @media screen and (min-width: 375px) {
+    & {
+      max-width: 375px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    & {
+      padding: 0 32px;
+      max-width: 768px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    & {
+      padding: 0 24px;
+      max-width: 1440px;
+    }
+  }
+}
+
+.flex-container {
+  --flex-items: 5;
+  --flex-items-gap: 20px;
+
+  display: flex;
+  gap: var(--flex-items-gap);
+  flex-wrap: wrap;
+
+  li {
+    flex-basis: calc(
+      (100% - (var(--flex-items) - 1) * var(--flex-items-gap)) /
+        var(--flex-items)
+    );
+  }
+}

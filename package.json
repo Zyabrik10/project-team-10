@@ -1,36 +1,24 @@
 {
-  "name": "parcel-project-template",
-  "version": "2.0.0",
-  "description": "",
-  "homepage": "https://zyabrik10.github.io/project-team-10",
+  "name": "bookshelf",
+  "private": true,
+  "version": "0.0.0",
+  "source": "src/index.ejs",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
-    "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /project-team-10/"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/goitacademy/project-team-10.git"
-  },
-  "keywords": [],
-  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/goitacademy/parcel-project-template/issues"
-  },
-  "dependencies": {
-    "axios": "^1.4.0",
-    "firebase": "^9.22.2",
-    "lodash": "^4.1.1",
-    "modern-normalize": "^1.1.0",
-    "notiflix": "^3.2.6"
+    "start": "parcel src/index.ejs src/shopping-list.ejs",
+    "build": "parcel build"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.6.0",
+    "@parcel/transformer-sass": "^2.15.4",
     "buffer": "^6.0.3",
-    "parcel": "^2.14.2",
-    "parcel-reporter-clean-dist": "^1.0.4",
-    "posthtml-include": "^1.7.4",
-    "process": "^0.11.10"
+    "ejs": "^3.1.10",
+    "parcel": "^2.14.0",
+    "parcel-transformer-ejs": "^1.0.1",
+    "posthtml-include": "^2.0.1"
   },
-  "browserslist": "> 0.5%, last 2 versions, not dead"
+  "dependencies": {
+    "axios": "^1.11.0",
+    "firebase": "^12.0.0",
+    "notiflix": "^3.2.8"
+  }
 }

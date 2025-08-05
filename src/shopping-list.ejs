@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookshelf</title>
+
+    <!-- Fonts -->
+    <%- include('./includes/fonts.ejs') %>
+
+    <link rel="stylesheet" href="./styles/index.scss" />
+    <link rel="stylesheet" href="./styles/shopping-list.page.scss" />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <%- include('./includes/header/header.ejs') %>
+    <!-- MAIN -->
+    <div class="container main-block">
+      <div class="asides"><%- include('./includes/asides/support.ejs') %></div>
+      <main>
+        <section class="books-section">
+          <h2>Shopping <span style="color: var(--color-6)">List</span></h2>
+          <p class="no-books" style="text-align: center; margin-top: 30px; font-size: 2em; font-weight: bold;">No chosen books</p>
+          <div class="books"></div>
+        </section>
+      </main>
+    </div>
+    <!-- /MAIN -->
+    <!-- MODALS -->
+    <%- include('./includes/modals/registration-modal.ejs') %>
+    <!-- /MODALS -->
+    <%- include('./includes/anchor.ejs') %>
+
+    <script src="./scripts/load-fav-books.script.js" type="module"></script>
+  </body>
+</html>

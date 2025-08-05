@@ -1,0 +1,51 @@
+<div class="modal" id="registration-modal">
+    <div class="registration-modal content">
+        <button data-role="close">×</button>
+
+        <div class="forms">
+            <form data-role="signin">
+                <label class="modal-form-label" for="signup-name" aria-label="name">
+                    <input id="signup-name" name="username" type="text" autocomplete="off" />
+                    <span>Name</span>
+                </label>
+                <label class="modal-form-label" for="signup-email" aria-label="email">
+                    <input id="signup-email" name="email" type="text" autocomplete="off"/>
+                    <span>Email</span>
+                </label>
+                <label class="modal-form-label" for="signup-password" aria-label="Password">
+                    <input id="signup-password" name="password" type="password" />
+                    <span>Password</span>
+                </label>
+                <button>Sign Up</button>
+            </form>
+            <form data-role="login">
+                <label class="modal-form-label" for="login-email" aria-label="email">
+                    <input id="login-email" name="email" type="text" autocomplete="off"/>
+                    <span>Email</span>
+                </label>
+                <label class="modal-form-label" for="login-password" aria-label="Password">
+                    <input id="login-password" name="password" type="password" value="test_1234"/>
+                    <span>Password</span>
+                </label>
+                <button>Log In</button>
+            </form>
+        </div>
+
+        <div class="registration-modal-navigation">
+            <input type="radio" name="registration-modal-navigation" id="signup-radio-input" checked/>
+            <label class="button" for="signup-radio-input" data-role="signup">Sign Up</label>
+            <input type="radio" name="registration-modal-navigation" id="login-radio-input" />
+            <label class="button" for="login-radio-input" data-role="login">Log In</label>
+        </div>
+    </div>
+</div>
+
+
+<!-- Switching between forms -->
+<script src="./scripts/switching-between-auth-form.script.js"></script>
+
+<!-- Input focus animation -->
+<script src="./scripts/form-input.script.js" type="module"></script>
+
+<!-- Init Show/Hide modal behavior Script for registration -->
+<script src="./scripts/registration-auth.script.js" type="module"></script>

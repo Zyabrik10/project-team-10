@@ -1,9 +1,0 @@
-export { default as initAuth } from "./initAuth";
-export { default as initAllBooks } from "./initAllBooks";
-export { default as initBurgerMenu } from "./initBurgerMenu";
-export { default as initSupportAside } from "./initSupportAside";
-export { default as initLocalStorage } from "./initLocalStorage";
-export { default as initThemeSwitcher } from "./initThemeSwitcher";
-export { default as initScrollUpButton } from "./initScrollUpButton";
-export { default as initChosenBooksList } from './initChosenBooksList';
-export { default as initAsideBooksCategories } from "./initAsideBooksCategories";

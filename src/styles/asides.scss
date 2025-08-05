@@ -1,0 +1,145 @@
+.asides {
+  & > div {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    position: sticky;
+    top: 10px;
+
+    @media screen and (min-width: 768px) {
+      & {
+        flex-direction: row;
+      }
+    }
+
+    @media screen and (min-width: 1440px) {
+      & {
+        flex-direction: column;
+      }
+    }
+  }
+
+  aside {
+    flex-shrink: 0;
+    width: 100%;
+
+    @media screen and (min-width: 375px) {
+      & {
+        max-width: 335px;
+      }
+    }
+  }
+
+  .categories {
+    .category-list {
+      height: 228px;
+      overflow-y: scroll;
+
+      @media screen and (min-width: 768px) {
+        & {
+          flex-direction: column;
+          height: 472px;
+        }
+      }
+
+      input[type="radio"] {
+        display: none;
+
+        & + label {
+          display: block;
+          width: 100%;
+          text-align: left;
+          height: 40px;
+          cursor: pointer;
+          color: var(--color-3);
+          background-color: rgba(0, 0, 0, 0);
+          padding: 12px 0;
+          text-transform: capitalize;
+          font-size: 16px;
+
+          &:hover {
+            color: var(--color-6);
+            text-decoration: underline;
+          }
+        }
+
+        &:checked + label {
+          text-transform: uppercase;
+          color: var(--color-6);
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  .support {
+    color: #fff;
+    background: radial-gradient(
+      183.6% 183.01% at 59.76% -23.42%,
+      #4f2ee8 18.03%,
+      #fff 100%
+    );
+    border-radius: 10px;
+    padding: 1.71em 2.85em;
+    position: relative;
+    box-shadow: 0 10px 10px rgba(245, 245, 247, 0.1);
+
+    @media screen and (min-width: 768px) {
+      & {
+        width: 335px;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    .title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+
+      margin-bottom: 30px;
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.14;
+    }
+
+    ul {
+      scroll-behavior: smooth;
+      height: 300px;
+      margin-bottom: 1.71em;
+      overflow-y: scroll;
+
+      a {
+        align-items: center;
+        gap: 16px;
+        padding: 10px 0;
+        display: flex;
+      }
+    }
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin: 0 auto;
+      width: 40px;
+      height: 40px;
+      background: #fff;
+      border-radius: 100%;
+      padding: 0.71em;
+      transition: transform 0.3s;
+
+      svg {
+        transition: transform var(--g-t);
+      }
+
+      &.active svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
