@@ -1,0 +1,10 @@
+.asides {
+  display: none;
+}
+
+@media screen and (width >= 1440px) {
+  .asides {
+    display: block;
+  }
+}
+/*# sourceMappingURL=shopping-list.2ddf6821.css.map */
