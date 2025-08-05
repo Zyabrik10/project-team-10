@@ -1,1 +1,0 @@
-{"mappings":"AAAA;;;;AAGI;EACI","sources":["src/styles/shopping-list.page.scss"],"sourcesContent":[".asides{\r\n    display: none;\r\n\r\n    @media screen and (min-width: 1440px){\r\n        &{\r\n            display: block;\r\n        }\r\n    }\r\n}"],"names":[],"version":3,"file":"shopping-list.2ddf6821.css.map","sourceRoot":"/__parcel_source_root/"}
